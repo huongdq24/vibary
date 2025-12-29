@@ -59,18 +59,21 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <nav className="hidden items-center gap-6 md:flex">
-             {secondaryNavLinks.map(link => (
-                <Link
-                    key={link.href}
-                    href={link.href}
-                    className={cn(
-                        "text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70",
-                        pathname.startsWith(link.href) && "font-bold"
-                    )}
-                >
-                    {link.label}
-                </Link>
-             ))}
+             {secondaryNavLinks.map(link => {
+                const isActive = pathname.startsWith(link.href);
+                return (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        className={cn(
+                            "text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70",
+                            isActive && "font-bold"
+                        )}
+                    >
+                        {link.label}
+                    </Link>
+                )
+             })}
           </nav>
           <Button variant="ghost" size="icon" asChild>
             <Link href="/cart" className="relative flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black">
