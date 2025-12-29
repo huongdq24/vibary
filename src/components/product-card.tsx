@@ -47,7 +47,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
            {randomPositionClass && (
              <div className={cn(
-                "absolute inset-0 p-8 flex flex-col transition-opacity duration-300 opacity-0 group-hover:opacity-100",
+                "absolute inset-0 p-8 flex flex-col transition-opacity duration-300",
                 randomPositionClass
              )}>
                 <div className="bg-white text-black border border-black rounded-full px-4 py-1.5 inline-block">
