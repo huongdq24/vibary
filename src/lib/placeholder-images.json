@@ -189,14 +189,38 @@
     {
       "id": "faq-step-1",
       "description": "Illustration for choosing a product.",
-      "imageUrl": "/images/how-to-buy-step-1.png",
+      "imageUrl": "/images/cachmua/1.webp",
       "imageHint": "shopping cart"
     },
     {
       "id": "faq-step-2",
       "description": "Illustration for writing a wish.",
-      "imageUrl": "/images/how-to-buy-step-2.png",
+      "imageUrl": "/images/cachmua/2.webp",
       "imageHint": "greeting card"
+    },
+    {
+      "id": "faq-step-3",
+      "description": "Illustration for filling information.",
+      "imageUrl": "/images/cachmua/3.webp",
+      "imageHint": "information form"
+    },
+    {
+      "id": "faq-step-4",
+      "description": "Illustration for payment.",
+      "imageUrl": "/images/cachmua/4.webp",
+      "imageHint": "payment methods"
+    },
+    {
+      "id": "faq-step-5",
+      "description": "Illustration for confirmation.",
+      "imageUrl": "/images/cachmua/5.webp",
+      "imageHint": "phone confirmation"
+    },
+    {
+      "id": "faq-step-6",
+      "description": "Illustration for delivery.",
+      "imageUrl": "/images/cachmua/6.webp",
+      "imageHint": "delivery person"
     }
   ]
 }

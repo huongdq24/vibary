@@ -1,3 +1,4 @@
+
 import { faqs } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
@@ -25,25 +26,25 @@ const howToSteps = [
     step: 3,
     title: "Thông tin",
     description: "Điền đầy đủ thông tin giao hàng.",
-    imageId: null,
+    imageId: "faq-step-3",
   },
   {
     step: 4,
     title: "Thanh toán",
     description: "Hoàn tất thanh toán bằng phương pháp chuyển khoản nhanh 24/7.",
-    imageId: null,
+    imageId: "faq-step-4",
   },
   {
     step: 5,
     title: "Xác nhận",
     description: "Đơn hàng của bạn sẽ được nhân viên của chúng tôi liên hệ qua điện thoại để xác nhận.",
-    imageId: null,
+    imageId: "faq-step-5",
   },
   {
     step: 6,
     title: "Giao hàng",
     description: "Bánh sẽ được chuẩn bị thật chỉn chu để giao tới bạn.",
-    imageId: null,
+    imageId: "faq-step-6",
   },
 ];
 
