@@ -91,22 +91,9 @@ function HeroCarousel() {
   );
 }
 
-function AnnouncementBar() {
-  return (
-     <div className="bg-background text-foreground border-y">
-        <div className="container mx-auto flex h-10 max-w-full items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="whitespace-nowrap flex items-center gap-12 font-fraunces text-sm text-[#0A0A0A]">
-              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
-              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
-          </div>
-        </div>
-      </div>
-  )
-}
-
-const marqueeVariants = {
+const marqueeVariantsLR = {
   animate: {
-    x: [0, '-100%'],
+    x: ['-100%', '0%'],
     transition: {
       x: {
         repeat: Infinity,
@@ -117,6 +104,49 @@ const marqueeVariants = {
     },
   },
 };
+
+const marqueeVariantsRL = {
+  animate: {
+    x: ['0%', '-100%'],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 40,
+        ease: "linear",
+      },
+    },
+  },
+};
+
+
+function AnnouncementBar() {
+  const announcements = ["GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35", "TRAO BÁNH TẬN TAY, TẠI BẮC NINH"];
+  const duplicatedAnnouncements = [...announcements, ...announcements];
+
+  return (
+     <div className="bg-background text-foreground border-y overflow-hidden">
+        <motion.div
+          className="flex h-10 items-center justify-around whitespace-nowrap"
+          variants={marqueeVariantsRL}
+          animate="animate"
+        >
+          {duplicatedAnnouncements.map((text, index) => (
+            <div key={index} className="flex-shrink-0 w-full flex justify-center">
+              <p className="font-fraunces text-sm text-[#0A0A0A] text-center">
+                {text.includes("091 255 03 35") ? (
+                  <>
+                    GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a>
+                  </>
+                ) : text}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+  )
+}
+
 
 function FeaturedProducts() {
     const featuredProducts = [...products, ...products];
@@ -136,14 +166,14 @@ function FeaturedProducts() {
             </div>
              <motion.div 
                 className="flex"
-                variants={marqueeVariants}
+                variants={marqueeVariantsLR}
                 animate="animate"
                 whileHover={{ animationPlayState: 'paused' }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
              >
                 {featuredProducts.map((product, index) => (
-                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/5">
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/5 px-2">
                         <ProductCard product={product} />
                     </div>
                 ))}

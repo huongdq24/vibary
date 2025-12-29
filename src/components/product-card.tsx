@@ -15,7 +15,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <Card className="group relative flex h-full flex-col overflow-hidden border-0 shadow-none bg-transparent">
       <Link href={`/products/${product.slug}`} className="flex flex-col h-full text-center">
         <CardHeader className="p-0">
-          <div className="aspect-square w-full overflow-hidden">
+          <div className="aspect-square w-full overflow-hidden rounded-lg">
             {placeholder && (
               <Image
                 src={placeholder.imageUrl}
@@ -37,3 +37,5 @@ export function ProductCard({ product }: ProductCardProps) {
     </Card>
   );
 }
+
+    
