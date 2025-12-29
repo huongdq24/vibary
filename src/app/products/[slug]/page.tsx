@@ -119,14 +119,14 @@ export default function ProductDetailPage({
         </div>
       </div>
 
-       <div className="mt-16 border-t pt-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div>
+       <div className="mt-16 border-t border-b">
+        <div className="grid grid-cols-1 md:grid-cols-3 md:divide-x">
+          <div className="py-8 md:pr-8">
             <h4 className="font-bold tracking-wider text-sm uppercase mb-4">KÍCH THƯỚC</h4>
             <p className="text-muted-foreground text-sm">{product.detailedDescription.dimensions}</p>
             <p className="text-muted-foreground text-sm mt-1">{product.detailedDescription.serving}</p>
           </div>
-          <div>
+          <div className="py-8 md:px-8">
             <h4 className="font-bold tracking-wider text-sm uppercase mb-4">HƯỚNG DẪN SỬ DỤNG</h4>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground text-sm">
                 {product.detailedDescription.storage.split('. ').filter(s => s).map((line, index) => (
@@ -134,7 +134,7 @@ export default function ProductDetailPage({
                 ))}
             </ul>
           </div>
-          <div>
+          <div className="py-8 md:pl-8">
             <h4 className="font-bold tracking-wider text-sm uppercase mb-4">PHỤ KIỆN ĐÍNH KÈM</h4>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground text-sm">
                 {product.detailedDescription.accessories.map((item, index) => (
