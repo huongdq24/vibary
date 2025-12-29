@@ -11,6 +11,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/hooks/use-cart";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import React, { useState, useEffect } from 'react';
+
 
 const mainNavLinks = [
     { href: '/products', label: 'SẢN PHẨM' },
@@ -26,6 +28,12 @@ const secondaryNavLinks = [
 export function Header() {
   const { cartCount } = useCart();
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
 
   const isLinkActive = (href: string) => {
     // For `/products`, we want to match sub-paths as well.
@@ -83,7 +91,7 @@ export function Header() {
           <Link href="/cart" className="relative flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70">
             <ShoppingBag className="h-5 w-5" />
             <span className="hidden md:inline">GIỎ</span>
-            {cartCount > 0 && (
+            {isClient && cartCount > 0 && (
               <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
                 {cartCount}
               </span>
