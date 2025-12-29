@@ -101,46 +101,46 @@ function AnnouncementBar() {
   )
 }
 
-const categories = [
-  {
-    name: 'bánh ngọt',
-    href: '/products',
-    imageId: 'category-sweet-cake',
-    description: 'Dành cho những tín đồ hảo ngọt'
-  },
-  {
-    name: 'bánh mặn',
-    href: '/products',
-    imageId: 'category-salty-cake',
-    description: 'Hương vị đậm đà khó cưỡng'
-  },
-  {
-    name: 'bánh sinh nhật',
-    href: '/products',
-    imageId: 'category-birthday-cake',
-    description: 'Dành cho từ 2-10 người'
-  },
-  {
-    name: 'Đồ uống',
-    href: '/products',
-    imageId: 'category-drinks',
-    description: 'Giải nhiệt và thư giãn'
-  },
-  {
-    name: 'Bánh khác',
-    href: '/products',
-    imageId: 'category-other-cakes',
-    description: 'Khám phá những hương vị mới'
-  },
-  {
-    name: 'Đồ ăn khác',
-    href: '/products',
-    imageId: 'category-other-food',
-    description: 'Nhiều lựa chọn hấp dẫn khác'
-  },
-];
-
 function CategorySection() {
+    const categories = [
+      {
+        name: 'bánh ngọt',
+        href: '/products',
+        imageId: 'category-sweet-cake',
+        description: 'Dành cho những tín đồ hảo ngọt'
+      },
+      {
+        name: 'bánh mặn',
+        href: '/products',
+        imageId: 'category-salty-cake',
+        description: 'Hương vị đậm đà khó cưỡng'
+      },
+      {
+        name: 'bánh sinh nhật',
+        href: '/products',
+        imageId: 'category-birthday-cake',
+        description: 'Dành cho từ 2-10 người'
+      },
+      {
+        name: 'Đồ uống',
+        href: '/products',
+        imageId: 'category-drinks',
+        description: 'Giải nhiệt và thư giãn'
+      },
+      {
+        name: 'Bánh khác',
+        href: '/products',
+        imageId: 'category-other-cakes',
+        description: 'Khám phá những hương vị mới'
+      },
+      {
+        name: 'Đồ ăn khác',
+        href: '/products',
+        imageId: 'category-other-food',
+        description: 'Nhiều lựa chọn hấp dẫn khác'
+      },
+    ];
+
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
