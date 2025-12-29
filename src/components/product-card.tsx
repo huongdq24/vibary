@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
@@ -9,7 +10,7 @@ type ProductCardProps = {
 };
 
 export function ProductCard({ product }: ProductCardProps) {
-  const placeholder = PlaceHolderImages.find((p) => p.id === product.imageId);
+  const placeholder = PlaceHolderImages.find((p) => p.id === product.imageIds[0]);
   const priceToShow = product.sizes ? product.sizes[0].price : product.price;
 
   return (

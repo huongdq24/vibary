@@ -18,7 +18,7 @@ export type Product = {
     name: string;
     price: number;
   }[];
-  imageId: string;
+  imageIds: string[];
   collection: string;
   categorySlug: string;
   flavorProfile?: string[];

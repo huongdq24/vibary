@@ -1,3 +1,4 @@
+
 import { articles } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { notFound } from "next/navigation";
