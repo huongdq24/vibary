@@ -63,7 +63,7 @@
     {
       "id": "product-1",
       "description": "Lychee & Rose Delight cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882670233_Be-in-blossom-entremet-cake-lafuong-pastry-shop-hanoi-1.jpg",
+      "imageUrl": "https://images.prismic.io/lf-web/ZqcFKB5LeNNTxjJn_SecretGarden2.png?auto=format%2Ccompress&width=640&height=640&q=80&fit=max&w=3840",
       "imageHint": "pink cake"
     },
     {
@@ -117,7 +117,7 @@
     {
       "id": "blog-2",
       "description": "Image for behind the scenes article.",
-      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "cake decorating"
     },
     {
@@ -135,7 +135,7 @@
     {
       "id": "about-banner",
       "description": "Banner image for the about page.",
-      "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "pastry kitchen"
     }
   ]
