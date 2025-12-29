@@ -4,58 +4,81 @@
 
 @layer base {
   :root {
-    --background: 0 0% 97.3%;
-    --foreground: 20 14.3% 18.1%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+ 
     --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 18.1%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 18.1%;
-    --primary: 0 56% 91%;
-    --primary-foreground: 20 14.3% 12.1%;
-    --secondary: 0 50% 94%;
-    --secondary-foreground: 20 14.3% 12.1%;
-    --muted: 0 30% 92%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --accent: 33 56% 76%;
-    --accent-foreground: 20 14.3% 12.1%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 340 82% 90%; /* Light Pink */
+    --primary-foreground: 340 90% 10%;
+ 
+    --secondary: 40 85% 95%; /* Cream */
+    --secondary-foreground: 40 10% 20%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 340 82% 90%; /* Light Pink */
+    --accent-foreground: 340 90% 10%;
+ 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 30% 90%;
-    --input: 0 30% 90%;
-    --ring: 33 56% 76%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 340 82% 90%; /* Light Pink */
+ 
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+
+    /* Admin Sidebar */
+    --sidebar-background: 38 60% 98%; /* Off-white / Cream */
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-accent: 340 82% 92%; /* Slightly darker pink for hover */
+    --sidebar-accent-foreground: 340 90% 10%;
+    --sidebar-ring: 340 82% 90%;
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 98%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 0 0% 98%;
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 56% 91%;
-    --primary-foreground: 20 14.3% 12.1%;
-    --secondary: 0 50% 94%;
-    --secondary-foreground: 20 14.3% 12.1%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 33 56% 76%;
-    --accent-foreground: 20 14.3% 12.1%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 340 82% 90%;
+    --primary-foreground: 340 90% 10%;
+ 
+    --secondary: 40 85% 95%;
+    --secondary-foreground: 40 10% 20%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 340 82% 90%;
+    --accent-foreground: 340 90% 10%;
+ 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 33 56% 76%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 340 82% 90%;
+
+    /* Admin Sidebar Dark */
+    --sidebar-background: 222.2 84% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-accent: 340 82% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-ring: 340 82% 90%;
   }
 }
 

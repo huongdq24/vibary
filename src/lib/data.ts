@@ -1,4 +1,5 @@
 
+
 import type { Product, Collection, Article, FaqItem, NavLink } from './types';
 
 export const navLinks: NavLink[] = [
@@ -74,7 +75,8 @@ export const products: Product[] = [
         'Thạch vải & mứt mâm xôi',
         'Bạt bánh hạnh nhân',
         'Đế giòn'
-    ]
+    ],
+    stock: 15,
   },
   {
     id: 'prod-002',
@@ -109,7 +111,8 @@ export const products: Product[] = [
         'Mousse dừa',
         'Bạt bánh hạnh nhân',
         'Đế dừa giòn'
-    ]
+    ],
+    stock: 12,
   },
   {
     id: 'prod-003',
@@ -140,7 +143,8 @@ export const products: Product[] = [
         'Kem yuzu',
         'Bạt bánh mè đen',
         'Đế giòn'
-    ]
+    ],
+    stock: 20,
   },
   {
     id: 'prod-004',
@@ -175,7 +179,8 @@ export const products: Product[] = [
         'Kem praline hạt dẻ',
         'Bạt bánh sô cô la',
         'Đế giòn feuilletine'
-    ]
+    ],
+    stock: 8,
   },
   {
     id: 'prod-005',
@@ -206,7 +211,8 @@ export const products: Product[] = [
         'Mứt dâu tây',
         'Bạt bánh vani',
         'Đế bánh quy'
-    ]
+    ],
+    stock: 18,
   },
   {
     id: 'prod-006',
@@ -237,7 +243,8 @@ export const products: Product[] = [
         'Thạch chanh dây',
         'Bạt bánh hạnh nhân',
         'Đế giòn'
-    ]
+    ],
+    stock: 30,
   },
   {
     id: 'prod-007',
@@ -268,7 +275,8 @@ export const products: Product[] = [
         'Thạch mâm xôi',
         'Bạt bánh hạt dẻ cười',
         'Đế giòn'
-    ]
+    ],
+    stock: 5,
   },
   {
     id: 'prod-008',
@@ -299,7 +307,8 @@ export const products: Product[] = [
         'Đế bánh quy bơ',
         'N/A',
         'N/A'
-    ]
+    ],
+    stock: 9,
   }
 ];
 

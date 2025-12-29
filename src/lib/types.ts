@@ -1,4 +1,5 @@
 
+
 export type Product = {
   id: string;
   slug: string;
@@ -23,6 +24,7 @@ export type Product = {
   categorySlug: string;
   flavorProfile?: string[];
   structure?: string[];
+  stock: number; // Added for inventory
 };
 
 export type Collection = {
@@ -63,4 +65,36 @@ export type CartItem = {
   imageId: string;
   slug: string;
   size?: string;
+};
+
+// Admin Types
+export type OrderStatus = "new" | "processing" | "shipping" | "completed" | "cancelled";
+
+export type Order = {
+  id: string;
+  customerName: string;
+  customerAvatar: string;
+  date: string;
+  total: number;
+  status: OrderStatus;
+  items: number;
+};
+
+export type Customer = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatar: string;
+  totalOrders: number;
+  totalSpent: number;
+  joinedDate: string;
+};
+
+export type InventoryItem = {
+    id: string;
+    name: string;
+    stock: number;
+    unit: 'g' | 'kg' | 'ml' | 'l' | 'units';
+    parLevel: number;
 };
