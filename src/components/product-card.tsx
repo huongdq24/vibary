@@ -14,9 +14,11 @@ type ProductCardProps = {
 };
 
 const positionClasses = [
-  'justify-center items-center text-center',
-  'justify-start items-end text-left',
-  'justify-end items-start text-right'
+  'justify-center items-center',
+  'justify-start items-end',
+  'justify-end items-start',
+  'justify-start items-start',
+  'justify-end items-end'
 ];
 
 export function ProductCard({ product }: ProductCardProps) {
@@ -45,10 +47,12 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
            {randomPositionClass && (
              <div className={cn(
-                "absolute inset-0 p-6 flex flex-col transition-opacity duration-300 opacity-0 group-hover:opacity-100 bg-black/20",
+                "absolute inset-0 p-8 flex flex-col transition-opacity duration-300 opacity-0 group-hover:opacity-100",
                 randomPositionClass
              )}>
-                <h3 className="font-headline text-2xl uppercase tracking-wider text-white" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>{product.name}</h3>
+                <div className="bg-white text-black border border-black rounded-full px-4 py-1.5 inline-block">
+                    <span className="text-xs font-body uppercase tracking-wider font-bold">{product.name}</span>
+                </div>
              </div>
            )}
         </div>
