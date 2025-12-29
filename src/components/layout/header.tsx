@@ -31,18 +31,22 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
       <div className="container mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <nav className="hidden items-center gap-6 md:flex">
-          {mainNavLinks.map(link => (
-             <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                    "text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70",
-                    pathname === link.href && "font-bold"
-                )}
-            >
-                {link.label}
-            </Link>
-          ))}
+          {mainNavLinks.map(link => {
+            const isActive = pathname.startsWith(link.href);
+            return (
+              <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                      "text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full",
+                      isActive && link.href === '/products' ? "border border-black" : "",
+                      isActive && link.href !== '/products' ? "font-bold" : ""
+                  )}
+              >
+                  {link.label}
+              </Link>
+            )
+          })}
         </nav>
         
         <div className="flex items-center justify-center flex-1 md:flex-none">
@@ -61,7 +65,7 @@ export function Header() {
                     href={link.href}
                     className={cn(
                         "text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70",
-                        pathname === link.href && "font-bold"
+                        pathname.startsWith(link.href) && "font-bold"
                     )}
                 >
                     {link.label}
