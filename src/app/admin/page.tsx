@@ -12,7 +12,8 @@ import {
   Users,
   Cake,
   AlertTriangle,
-  ClipboardList
+  ClipboardList,
+  ShoppingCart
 } from 'lucide-react';
 import {
   Avatar,
@@ -270,4 +271,5 @@ export default function Dashboard() {
       </div>
     </>
   );
-}
+
+    
