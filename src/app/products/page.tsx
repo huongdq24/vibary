@@ -55,12 +55,12 @@ export default function ProductsPage() {
     <div className="bg-background">
         <nav className="sticky top-20 z-40 bg-background/80 backdrop-blur-lg border-b">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-center items-center h-16 space-x-6 overflow-x-auto">
+                <div className="flex justify-start items-center h-16 space-x-6 overflow-x-auto">
                     {productCategories.map(category => (
                         <a
                             key={category.slug}
                             href={`#${category.slug}`}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+                            className="text-sm font-bold uppercase text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                         >
                             {category.title}
                         </a>
@@ -79,13 +79,13 @@ export default function ProductsPage() {
 
           return (
             <section key={category.slug} id={category.slug} className="scroll-mt-24">
-              <div className="mb-12 pt-12 text-center">
+              <div className="mb-12 pt-12 text-left">
                 <p className="text-sm uppercase tracking-widest text-muted-foreground">{category.subtitle}</p>
                 <div className="inline-block">
-                  <h1 className="font-headline text-4xl md:text-5xl mt-2">{category.title}</h1>
-                  <Separator className="my-2 h-0.5 w-2/3 mx-auto bg-foreground" />
+                  <h1 className="font-headline text-4xl md:text-5xl mt-2 uppercase font-bold">{category.title}</h1>
+                  <Separator className="my-2 h-0.5 w-full bg-foreground" />
                 </div>
-                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground text-left ml-0">
                   {category.description}
                 </p>
               </div>
