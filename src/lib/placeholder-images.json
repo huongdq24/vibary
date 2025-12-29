@@ -1,3 +1,112 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "Elegant hero image of a layered entremet cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1509316893935-286992fd7ca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbnRyZW1ldCUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "entremet cake"
+    },
+    {
+      "id": "collection-special-occasion",
+      "description": "A beautiful cake for a special occasion.",
+      "imageUrl": "https://images.unsplash.com/photo-1656237825388-de2a5f3e8d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjZWxlYnJhdGlvbiUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "celebration cake"
+    },
+    {
+      "id": "collection-heart-shaped",
+      "description": "A heart-shaped cake, perfect for romantic events.",
+      "imageUrl": "https://images.unsplash.com/photo-1765150399819-ed5b9e13ff1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxoZWFydCUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "heart cake"
+    },
+    {
+      "id": "collection-half",
+      "description": "A half entremet for smaller gatherings.",
+      "imageUrl": "https://images.unsplash.com/photo-1763652420894-522c95ce0851?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxzbWFsbCUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "small cake"
+    },
+    {
+      "id": "collection-baby",
+      "description": "A small, cute cake from the baby collection.",
+      "imageUrl": "https://images.unsplash.com/photo-1601877346351-af65828f6d59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjdXRlJTIwY2FrZXxlbnwwfHx8fDE3NjY5NzY2NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cute cake"
+    },
+    {
+      "id": "product-1",
+      "description": "Lychee & Rose Delight cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1694496982785-11c52c0f60b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaW5rJTIwY2FrZXxlbnwwfHx8fDE3NjY5NzY2NjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pink cake"
+    },
+    {
+      "id": "product-2",
+      "description": "Passion Fruit Breeze cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1736568220217-10a973253ff4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5ZWxsb3clMjBjYWtlfGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yellow cake"
+    },
+    {
+      "id": "product-3",
+      "description": "Matcha & Yuzu Garden cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1518566585952-954bb14432d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxncmVlbiUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "green cake"
+    },
+    {
+      "id": "product-4",
+      "description": "Chocolate Hazelnut Dream cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjYWtlfGVufDB8fHx8MTc2NjkwMDM0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chocolate cake"
+    },
+    {
+      "id": "product-5",
+      "description": "Strawberry Love cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1593424718424-cf4d83f3def1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3RyYXdiZXJyeSUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "strawberry cake"
+    },
+    {
+      "id": "product-6",
+      "description": "Baby Mango Bliss cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1579246135369-ca8435a5cada?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuZ28lMjBjYWtlfGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mango cake"
+    },
+    {
+      "id": "product-7",
+      "description": "Raspberry & Pistachio Half cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1603379421571-f110a830382a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaXN0YWNoaW8lMjBjYWtlfGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pistachio cake"
+    },
+    {
+      "id": "product-8",
+      "description": "Summer Berry Cheesecake.",
+      "imageUrl": "https://images.unsplash.com/photo-1603959160031-5aff42c6ff5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxiZXJyeSUyMGNoZWVzZWNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "berry cheesecake"
+    },
+    {
+      "id": "blog-1",
+      "description": "Image for founder story article.",
+      "imageUrl": "https://images.unsplash.com/photo-1691052252990-4cd1fdda73dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYXN0cnklMjBjaGVmfGVufDB8fHx8MTc2Njg2MDY2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pastry chef"
+    },
+    {
+      "id": "blog-2",
+      "description": "Image for behind the scenes article.",
+      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cake decorating"
+    },
+    {
+      "id": "blog-3",
+      "description": "Image for shopping guide article.",
+      "imageUrl": "https://images.unsplash.com/photo-1606987482245-560456106cc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXB0b3AlMjBjYWtlfGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "laptop cake"
+    },
+    {
+      "id": "quiz-banner",
+      "description": "Banner image for the flavor quiz section.",
+      "imageUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY2OTY5NzkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cake slice"
+    },
+    {
+      "id": "about-banner",
+      "description": "Banner image for the about page.",
+      "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pastry kitchen"
+    }
+  ]
 }
