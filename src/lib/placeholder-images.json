@@ -3,37 +3,37 @@
     {
       "id": "hero-banner-1",
       "description": "Beautifully crafted entremet cake on a platter.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/cb1c045b-38d6-4e58-8d02-0e24b4231b99",
+      "imageUrl": "/images/banner/banner1.png",
       "imageHint": "entremet cake"
     },
     {
       "id": "hero-banner-2",
       "description": "Close up shot of a slice of layered mousse cake.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/2a13558c-859e-4a49-9856-f6f39dcb29d2",
+      "imageUrl": "/images/banner/banner2.png",
       "imageHint": "mousse cake"
     },
     {
       "id": "hero-banner-3",
       "description": "A variety of colorful French pastries on display.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/8bb3f7ea-43f1-4f81-a901-447551325a2a",
+      "imageUrl": "/images/banner/banner3.png",
       "imageHint": "french pastry"
     },
     {
       "id": "hero-banner-4",
       "description": "A baker decorating a modern cake with precision.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/59b20756-3c05-4d7a-a63e-2b7e19d7742d",
+      "imageUrl": "/images/banner/banner4.png",
       "imageHint": "cake decorating"
     },
     {
       "id": "hero-banner-5",
       "description": "Luxurious chocolate entremet with a glossy finish.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/f7b3a4a9-8a1a-4e2b-9e4a-4e897a2b6c1d",
+      "imageUrl": "/images/banner/banner5.png",
       "imageHint": "chocolate entremet"
     },
     {
       "id": "hero-banner-6",
       "description": "A vibrant fruit-topped cake, perfect for summer.",
-      "imageUrl": "https://storage.googleapis.com/altima-studio-public-images/59b20756-3c05-4d7a-a63e-2b7e19d7742d",
+      "imageUrl": "/images/banner/banner6.png",
       "imageHint": "fruit cake"
     },
     {
@@ -135,7 +135,7 @@
     {
       "id": "about-banner",
       "description": "Banner image for the about page.",
-      "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pastry kitchen"
     },
     {
