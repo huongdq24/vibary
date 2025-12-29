@@ -83,7 +83,7 @@ export const products: Product[] = [
     subtitle: 'CHANH DÂY & DỪA',
     description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
-      flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Bắc Ninh.',
+      flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè.',
       ingredients: 'Kem chanh dây, mousse dừa, bánh bông lan hạnh nhân, đế dừa giòn.',
       serving: 'Dành cho 6-8 người ăn',
       storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Không nên để bánh ở nhiệt độ phòng quá 30 phút (Bánh sẽ bị chảy). Sử dụng trong vòng 03 ngày.',

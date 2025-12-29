@@ -1,14 +1,22 @@
+
 "use client";
 
-import { products } from "@/lib/data";
+import { products, faqs } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useCart } from "@/hooks/use-cart";
 import { notFound } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const product = products.find((p) => p.slug === slug);
@@ -137,6 +145,28 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
             </ul>
           </div>
         </div>
+      </div>
+
+      <div className="mt-16 sm:mt-24 grid grid-cols-1 gap-12 sm:grid-cols-3">
+          <div className="sm:col-span-1">
+              <h2 className="font-headline text-3xl">Câu hỏi thường gặp</h2>
+              <p className="mt-4 text-muted-foreground">
+                  Một số câu hỏi thường gặp khi đặt bánh. Ngoài ra, bạn có thể xem chi tiết hơn tại mục{' '}
+                  <Link href="/faq" className="font-medium text-foreground underline hover:text-accent">
+                      Hỏi Đáp
+                  </Link>.
+              </p>
+          </div>
+          <div className="sm:col-span-2">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.slice(0, 5).map((faq) => ( // Show first 5 FAQs
+                  <AccordionItem key={faq.id} value={faq.id}>
+                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+             </Accordion>
+          </div>
       </div>
 
     </div>
