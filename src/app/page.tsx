@@ -42,18 +42,21 @@ const marqueeVariantsRL = {
 
 
 function AnnouncementBar() {
-  const announcements = ["GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35", "TRAO BÁNH TẬN TAY, TẠI BẮC NINH"];
-  const duplicatedAnnouncements = [...announcements, ...announcements, ...announcements, ...announcements];
+  const announcements = [
+    "TRAO BÁNH TẬN TAY, TẠI BẮC NINH",
+    "GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35",
+  ];
+  const duplicatedAnnouncements = Array(10).fill(announcements).flat();
 
   return (
      <div className="bg-gray-100 text-foreground border-b overflow-hidden">
         <motion.div
-          className="flex h-10 items-center justify-around whitespace-nowrap"
+          className="flex whitespace-nowrap"
           variants={marqueeVariantsRL}
           animate="animate"
         >
           {duplicatedAnnouncements.map((text, index) => (
-            <div key={index} className="flex-shrink-0 w-full flex justify-center px-4">
+            <div key={index} className="flex-shrink-0 flex items-center h-10 px-8">
               <p className="font-fraunces text-sm text-[#0A0A0A] text-center">
                 {text.includes("091 255 03 35") ? (
                   <>
