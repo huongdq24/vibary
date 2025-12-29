@@ -148,7 +148,7 @@ function CategorySection() {
           {categories.map((category) => {
             const image = PlaceHolderImages.find((p) => p.id === category.imageId);
             return (
-              <Link href={category.href} key={category.name} className="group relative block">
+              <Link href={category.href} key={category.name} className="group relative block overflow-hidden rounded-lg">
                 <Card className="overflow-hidden rounded-lg">
                   <div className="aspect-w-4 aspect-h-3">
                     {image ? (
@@ -164,7 +164,7 @@ function CategorySection() {
                     )}
                   </div>
                   <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute bottom-4 left-4">
+                  <div className="absolute bottom-4 left-4 right-4">
                     <div className="bg-white/90 p-4 rounded-lg shadow-lg backdrop-blur-sm">
                       <h3 className="font-headline text-xl text-black">{category.name}</h3>
                       <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
