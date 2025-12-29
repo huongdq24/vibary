@@ -157,7 +157,10 @@ export default function ProductsPage() {
         <>
         <Tabs defaultValue="all">
           <div className="flex items-center">
-            <div className="ml-auto flex items-center gap-2">
+             <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
+              Sản phẩm
+            </h1>
+            <div className="hidden items-center gap-2 md:ml-auto md:flex">
               <Button size="sm" variant="outline" className="h-8 gap-1">
                 <File className="h-3.5 w-3.5" />
                 <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -175,7 +178,7 @@ export default function ProductsPage() {
           <TabsContent value="all">
             <Card>
               <CardHeader>
-                <CardTitle>Sản phẩm</CardTitle>
+                <CardTitle>Danh sách sản phẩm</CardTitle>
                 <CardDescription>
                     Quản lý danh sách sản phẩm của tiệm.
                 </CardDescription>
