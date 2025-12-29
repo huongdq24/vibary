@@ -3,7 +3,7 @@ import type { Product } from '@/lib/types';
 export const products: Product[] = [
   {
     id: 'prod-001',
-    slug: 'be-in-blossom',
+    slug: 'lychee-rose-delight',
     name: 'BE IN BLOSSOM',
     description: 'Vũ điệu thơ mộng của hoa hồng thơm ngát và vải ngọt ngào.',
     detailedDescription: {
@@ -22,7 +22,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-002',
-    slug: 'beloved-darling',
+    slug: 'passion-fruit-breeze',
     name: 'BELOVED DARLING',
     description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
@@ -36,7 +36,7 @@ export const products: Product[] = [
       { name: '16cm (6-8 người)', price: 620000 },
       { name: '18cm (8-10 người)', price: 750000 },
     ],
-    imageId: 'product-4',
+    imageId: 'product-2',
     collection: 'special-occasions',
   },
   {
@@ -56,7 +56,7 @@ export const products: Product[] = [
   },
   {
     id: 'prod-004',
-    slug: 'summer-calling',
+    slug: 'chocolate-hazelnut-dream',
     name: 'SUMMER CALLING',
     description: 'Một món ăn xa hoa và sang trọng cho người thực sự yêu sô cô la.',
     detailedDescription: {
@@ -70,12 +70,12 @@ export const products: Product[] = [
       { name: '18cm (8-10 người)', price: 700000 },
       { name: '20cm (10-12 người)', price: 850000 },
     ],
-    imageId: 'product-2',
+    imageId: 'product-4',
     collection: 'special-occasions',
   },
   {
     id: 'prod-005',
-    slug: 'a-gentle-blend',
+    slug: 'strawberry-love',
     name: 'A GENTLE BLEND',
     description: 'Trái tim của dâu tây ngọt ngào và kem vani.',
     detailedDescription: {
@@ -134,5 +134,3 @@ export const products: Product[] = [
     collection: 'special-occasions',
   }
 ];
-
-    

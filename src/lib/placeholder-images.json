@@ -63,49 +63,49 @@
     {
       "id": "product-1",
       "description": "Lychee & Rose Delight cake.",
-      "imageUrl": "https://images.prismic.io/lf-web/ZqcFKB5LeNNTxjJn_SecretGarden2.png?auto=format%2Ccompress&width=640&height=640&q=80&fit=max&w=3840",
+      "imageUrl": "/images/product/lychee-rose-delight.png",
       "imageHint": "pink cake"
     },
     {
       "id": "product-2",
       "description": "Passion Fruit Breeze cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882811364_Summer-Calling-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-1-1.jpg",
+      "imageUrl": "/images/product/passion-fruit-breeze.png",
       "imageHint": "yellow cake"
     },
     {
       "id": "product-3",
       "description": "Matcha & Yuzu Garden cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722883015577_laf-A-Little-Grace-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-new-1-1.jpg",
+      "imageUrl": "/images/product/a-little-grace.png",
       "imageHint": "white cake"
     },
     {
       "id": "product-4",
       "description": "Chocolate Hazelnut Dream cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882741126_Beloved-Darling-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-1.jpg",
+      "imageUrl": "/images/product/chocolate-hazelnut-dream.png",
       "imageHint": "chocolate cake"
     },
     {
       "id": "product-5",
       "description": "Strawberry Love cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882897288_A-Gentle-Blend-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-1.jpg",
+      "imageUrl": "/images/product/strawberry-love.png",
       "imageHint": "strawberry cake"
     },
     {
       "id": "product-6",
       "description": "Baby Mango Bliss cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882811364_Summer-Calling-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-1-1.jpg",
+      "imageUrl": "/images/product/baby-mango-bliss.png",
       "imageHint": "mango cake"
     },
     {
       "id": "product-7",
       "description": "Raspberry & Pistachio Half cake.",
-      "imageUrl": "https://images.prismic.io/lf-web/ZqcJ0B5LeNNTxjJV_Be-in-blossom-entremet-cake-lafuong-pastry-shop-hanoi-1.jpg?auto=format%2Ccompress&width=640&height=640&q=80&fit=max&w=3840",
+      "imageUrl": "/images/product/raspberry-pistachio-half.png",
       "imageHint": "pistachio cake"
     },
     {
       "id": "product-8",
       "description": "Summer Berry Cheesecake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882897288_A-Gentle-Blend-Entremet-Cake-Lafuong-Pastry-Cakes-Shop-Hanoi-1.jpg",
+      "imageUrl": "/images/product/summer-berry-cheesecake.png",
       "imageHint": "berry cheesecake"
     },
     {
