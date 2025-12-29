@@ -144,34 +144,34 @@ function CategorySection() {
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => {
             const image = PlaceHolderImages.find((p) => p.id === category.imageId);
             return (
               <Link href={category.href} key={category.name} className="group relative block overflow-hidden rounded-lg">
-                <Card className="overflow-hidden rounded-lg">
-                  <div className="aspect-w-4 aspect-h-3">
-                    {image ? (
-                      <Image
-                        src={image.imageUrl}
-                        alt={category.name}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={image.imageHint}
-                      />
-                    ) : (
-                      <div className="bg-gray-200 w-full h-full"></div>
-                    )}
-                  </div>
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="bg-white/90 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-                      <h3 className="font-headline text-xl text-black">{category.name}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
-                      <ArrowRight className="h-5 w-5 text-black mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="aspect-w-4 aspect-h-3 relative overflow-hidden rounded-lg">
+                  {image ? (
+                    <Image
+                      src={image.imageUrl}
+                      alt={category.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={image.imageHint}
+                    />
+                  ) : (
+                    <div className="bg-gray-200 w-full h-full"></div>
+                  )}
+                  <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/20" />
+                </div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="bg-white/90 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                    <h3 className="font-headline text-xl text-black">{category.name}</h3>
+                    <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
+                    <div className="flex justify-end">
+                      <ArrowRight className="h-5 w-5 text-black mt-2 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:-rotate-45" />
                     </div>
                   </div>
-                </Card>
+                </div>
               </Link>
             );
           })}
@@ -296,3 +296,5 @@ export default function Home() {
     </>
   );
 }
+
+    
