@@ -322,8 +322,8 @@ function FeaturedProducts() {
                     <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                         VIBARY có mặt tại đây là để mang tới cho bạn trải nghiệm thưởng thức bánh ngọt Pháp hiện đại, dành cho người Việt.
                     </p>
-                    <Button asChild className="mt-8" variant="default" size="lg">
-                        <Link href="/products" className="bg-black text-white hover:bg-black/80 rounded-full font-bold">ĐẶT BÁNH NGAY</Link>
+                    <Button asChild className="mt-8 bg-black text-white hover:bg-black/80 rounded-full font-bold" variant="default" size="lg">
+                        <Link href="/products">ĐẶT BÁNH NGAY</Link>
                     </Button>
                 </div>
             </div>
