@@ -5,6 +5,9 @@
 import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import React from "react";
 
 const productCategories = [
     { 
@@ -50,6 +53,22 @@ export default function ProductsPage() {
 
   return (
     <div className="bg-background">
+        <nav className="sticky top-20 z-40 bg-background/80 backdrop-blur-lg border-b">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-center items-center h-16 space-x-6 overflow-x-auto">
+                    {productCategories.map(category => (
+                        <a
+                            key={category.slug}
+                            href={`#${category.slug}`}
+                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+                        >
+                            {category.title}
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </nav>
+
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {productCategories.map((category, index) => {
           const categoryProducts = products.filter(p => p.categorySlug === category.slug);
@@ -59,7 +78,7 @@ export default function ProductsPage() {
           }
 
           return (
-            <div key={category.slug}>
+            <section key={category.slug} id={category.slug} className="scroll-mt-24">
               <div className="mb-12 pt-12 text-center">
                 <p className="text-sm uppercase tracking-widest text-muted-foreground">{category.subtitle}</p>
                 <h1 className="font-headline text-4xl md:text-5xl mt-2">{category.title}</h1>
@@ -74,10 +93,10 @@ export default function ProductsPage() {
                 ))}
               </div>
 
-              {index < productCategories.length - 1 && (
+              {index < productCategories.filter(c => products.some(p => p.categorySlug === c.slug)).length - 1 && (
                 <Separator className="my-16 sm:my-24" />
               )}
-            </div>
+            </section>
           );
         })}
       </div>
