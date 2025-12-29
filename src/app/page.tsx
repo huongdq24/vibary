@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from 'next/image';
@@ -7,7 +8,7 @@ import { collections, products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardTitle } from '@/components/ui/card';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, PlayCircle } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -102,14 +103,14 @@ function AnnouncementBar() {
 }
 
 function CategorySection() {
-    const categories = [
-        { name: 'Bánh ngọt', description: 'Dành cho những tín đồ hảo ngọt', imageId: 'category-sweet-cake' },
-        { name: 'Bánh mặn', description: 'Hương vị đậm đà khó cưỡng', imageId: 'category-salty-cake' },
-        { name: 'Bánh sinh nhật', description: 'Dành cho từ 2-10 người', imageId: 'category-birthday-cake' },
-        { name: 'Đồ uống', description: 'Giải nhiệt và thư giãn', imageId: 'category-drinks' },
-        { name: 'Bánh khác', description: 'Khám phá những hương vị mới', imageId: 'category-other-cakes' },
-        { name: 'Đồ ăn khác', description: 'Nhiều lựa chọn hấp dẫn khác', imageId: 'category-other-food' },
-    ];
+  const categories = [
+      { name: 'Bánh ngọt', description: 'Dành cho những tín đồ hảo ngọt', imageId: 'category-sweet-cake' },
+      { name: 'Bánh mặn', description: 'Hương vị đậm đà khó cưỡng', imageId: 'category-salty-cake' },
+      { name: 'Bánh sinh nhật', description: 'Dành cho từ 2-10 người', imageId: 'category-birthday-cake' },
+      { name: 'Đồ uống', description: 'Giải nhiệt và thư giãn', imageId: 'category-drinks' },
+      { name: 'Bánh khác', description: 'Khám phá những hương vị mới', imageId: 'category-other-cakes' },
+      { name: 'Đồ ăn khác', description: 'Nhiều lựa chọn hấp dẫn khác', imageId: 'category-other-food' },
+  ];
 
   return (
     <section className="py-16 sm:py-24 bg-white">
@@ -152,6 +153,46 @@ function CategorySection() {
   );
 }
 
+function WorkshopSection() {
+  return (
+    <section className="bg-[#F9F7F5] py-16 sm:py-24">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <p className="font-body text-sm uppercase tracking-widest text-muted-foreground">
+              MỘT NGÀY TẠI XƯỞNG
+            </p>
+            <h2 className="mt-4 font-headline text-4xl md:text-5xl">
+              Công việc mà chúng tôi yêu thích mỗi ngày
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0">
+              Ghé thăm Tiktok của VIBARY để xem những tư liệu chân thực
+              nhất – về cách mà chúng tôi hoàn thiện một chiếc bánh thật tinh tế
+              gửi trao tới bạn.
+            </p>
+            <Button asChild className="mt-8 bg-black text-white hover:bg-black/80 rounded-full font-bold" size="lg">
+              <Link href="#">THEO DÕI NGAY</Link>
+            </Button>
+          </div>
+          <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
+             <video 
+                className="h-full w-full object-cover"
+                src="/videos/workshop-video.mp4" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+                <PlayCircle className="h-16 w-16 text-white/80" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function FeaturedProducts() {
     const featuredProducts = [...products, ...products];
@@ -178,7 +219,7 @@ function FeaturedProducts() {
                 dragConstraints={{ left: 0, right: 0 }}
              >
                 {featuredProducts.map((product, index) => (
-                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] xl:w-[30vw] px-4">
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[80vw] sm:w-[50vw] md:w-[40vw] lg:w-[30vw] xl:w-[25vw] px-4">
                         <ProductCard product={product} />
                     </div>
                 ))}
@@ -215,8 +256,9 @@ export default function Home() {
       <Hero />
       <AnnouncementBar />
       <FeaturedProducts />
-      <CategorySection />
       <NewArrivals />
+      <CategorySection />
+      <WorkshopSection />
     </>
   );
 }
