@@ -80,8 +80,8 @@ export const products: Product[] = [
   },
   {
     id: 'prod-003',
-    slug: 'matcha-yuzu-garden',
-    name: 'Matcha & Yuzu Garden',
+    slug: 'a-little-grace',
+    name: 'A LITTLE GRACE',
     description: 'Sự kết hợp thanh lịch giữa vị trà matcha đất và vị cam yuzu.',
     detailedDescription: {
       flavor: 'Mousse matcha Uji đậm đà cân bằng với sữa đông yuzu chua thanh, trên nền bánh bông lan mè đen. Một trải nghiệm tựa thiền.',
@@ -96,7 +96,7 @@ export const products: Product[] = [
   {
     id: 'prod-004',
     slug: 'chocolate-hazelnut-dream',
-    name: 'Chocolate Hazelnut Dream',
+    name: 'SUMMER CALLING',
     description: 'Một món ăn xa hoa và sang trọng cho người thực sự yêu sô cô la.',
     detailedDescription: {
       flavor: 'Mousse sô cô la đen 66% mịn mượt, nhân praline hạt phỉ kem, và bánh bông lan sô cô la ẩm, tất cả trên một lớp đế feuilletine giòn.',
@@ -115,7 +115,7 @@ export const products: Product[] = [
   {
     id: 'prod-005',
     slug: 'strawberry-love',
-    name: 'Strawberry Love',
+    name: 'A GENTLE BLEND',
     description: 'Trái tim của dâu tây ngọt ngào và kem vani.',
     detailedDescription: {
       flavor: 'Mứt dâu tây tươi và kem mascarpone vani nhẹ trên bánh bông lan vani mềm. Đơn giản là đáng yêu.',
