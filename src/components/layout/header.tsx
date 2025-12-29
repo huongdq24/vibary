@@ -18,7 +18,7 @@ import { Logo } from "@/components/icons";
 
 function AnnouncementBar() {
   return (
-     <div className="bg-background text-foreground border-y border-foreground/10">
+     <div className="bg-background text-foreground border-y">
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-fraunces text-foreground" style={{ fontSize: '22.8px' }}>
               <span className="flex items-center gap-2">TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
@@ -43,19 +43,19 @@ export function Header() {
         <nav className="hidden items-center gap-6 md:flex">
           <Link
             href="/products"
-            className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium uppercase tracking-wider text-foreground transition-colors hover:text-foreground/70"
           >
             Sản phẩm
           </Link>
           <Link
             href="/about"
-            className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium uppercase tracking-wider text-foreground transition-colors hover:text-foreground/70"
           >
             Về Vibary
           </Link>
           <Link
             href="/faq"
-            className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium uppercase tracking-wider text-foreground transition-colors hover:text-foreground/70"
           >
             Hỏi đáp
           </Link>
@@ -71,7 +71,7 @@ export function Header() {
           <nav className="hidden items-center gap-6 md:flex">
              <Link
                 href="/news"
-                className="text-sm font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm font-medium uppercase tracking-wider text-foreground transition-colors hover:text-foreground/70"
               >
                 Tin mới
               </Link>
