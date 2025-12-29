@@ -103,55 +103,55 @@ function AnnouncementBar() {
 }
 
 function CategorySection() {
-  const categories = [
-      { name: 'Bánh ngọt', description: 'Dành cho những tín đồ hảo ngọt', imageId: 'category-sweet-cake' },
-      { name: 'Bánh mặn', description: 'Hương vị đậm đà khó cưỡng', imageId: 'category-salty-cake' },
-      { name: 'Bánh sinh nhật', description: 'Dành cho từ 2-10 người', imageId: 'category-birthday-cake' },
-      { name: 'Đồ uống', description: 'Giải nhiệt và thư giãn', imageId: 'category-drinks' },
-      { name: 'Bánh khác', description: 'Khám phá những hương vị mới', imageId: 'category-other-cakes' },
-      { name: 'Đồ ăn khác', description: 'Nhiều lựa chọn hấp dẫn khác', imageId: 'category-other-food' },
-  ];
-
-  return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((category) => {
-            const image = PlaceHolderImages.find((p) => p.id === category.imageId);
-            return (
-                <Link
-                href="/products"
-                key={category.name}
-                className="group relative block h-96 overflow-hidden rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105"
-                >
-                {image && (
-                    <Image
-                        src={image.imageUrl}
-                        alt={category.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        priority={false}
-                        data-ai-hint={image.imageHint}
-                    />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                    <h3 className="text-3xl md:text-4xl font-bold tracking-wide">
-                    {category.name}
-                    </h3>
-                    <p className="mt-2 text-lg opacity-90">{category.description}</p>
-                    <span className="mt-4 inline-flex items-center text-2xl font-light">
-                    →<span className="ml-2 text-sm uppercase tracking-wider opacity-80">Khám phá</span>
-                    </span>
-                </div>
-                </Link>
-            )
-          })}
+    const categories = [
+        { name: 'Bánh ngọt', description: 'Dành cho những tín đồ hảo ngọt', imageId: 'category-sweet-cake' },
+        { name: 'Bánh mặn', description: 'Hương vị đậm đà khó cưỡng', imageId: 'category-salty-cake' },
+        { name: 'Bánh sinh nhật', description: 'Dành cho từ 2-10 người', imageId: 'category-birthday-cake' },
+        { name: 'Đồ uống', description: 'Giải nhiệt và thư giãn', imageId: 'category-drinks' },
+        { name: 'Bánh khác', description: 'Khám phá những hương vị mới', imageId: 'category-other-cakes' },
+        { name: 'Đồ ăn khác', description: 'Nhiều lựa chọn hấp dẫn khác', imageId: 'category-other-food' },
+    ];
+  
+    return (
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categories.map((category) => {
+              const image = PlaceHolderImages.find((p) => p.id === category.imageId);
+              return (
+                  <Link
+                  href="/products"
+                  key={category.name}
+                  className="group relative block h-96 overflow-hidden rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105"
+                  >
+                  {image && (
+                      <Image
+                          src={image.imageUrl}
+                          alt={category.name}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          priority={false}
+                          data-ai-hint={image.imageHint}
+                      />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                      <h3 className="text-3xl md:text-4xl font-bold tracking-wide">
+                      {category.name}
+                      </h3>
+                      <p className="mt-2 text-lg opacity-90">{category.description}</p>
+                      <span className="mt-4 inline-flex items-center text-2xl font-light">
+                      →<span className="ml-2 text-sm uppercase tracking-wider opacity-80">Khám phá</span>
+                      </span>
+                  </div>
+                  </Link>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }
 
 function WorkshopSection() {
   return (
@@ -177,7 +177,7 @@ function WorkshopSection() {
           <div className="relative aspect-video w-full overflow-hidden rounded-lg shadow-xl">
              <video 
                 className="h-full w-full object-cover"
-                src="/videos/workshop-video.mp4" 
+                src="https://firebasestorage.googleapis.com/v0/b/gen-lang-client-0850828234.firebasestorage.app/o/FOODIE_1762401489.mp4?alt=media&token=2d8a68ba-f209-4749-befa-e507624cc36d" 
                 autoPlay 
                 loop 
                 muted 
