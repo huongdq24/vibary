@@ -58,7 +58,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner1.png",
+    imageUrl: "/images/banner/1.png",
     description: "Beautifully crafted entremet cake on a platter.",
     imageHint: "entremet cake"
   },
@@ -68,7 +68,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner2.png",
+    imageUrl: "/images/banner/2.png",
     description: "Close up shot of a slice of layered mousse cake.",
     imageHint: "mousse cake"
   },
@@ -78,7 +78,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner3.png",
+    imageUrl: "/images/banner/3.png",
     description: "A variety of colorful French pastries on display.",
     imageHint: "french pastry"
   },
@@ -88,7 +88,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner4.png",
+    imageUrl: "/images/banner/4.png",
     description: "A baker decorating a modern cake with precision.",
     imageHint: "cake decorating"
   },
@@ -98,7 +98,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner5.png",
+    imageUrl: "/images/banner/5.png",
     description: "Luxurious chocolate entremet with a glossy finish.",
     imageHint: "chocolate entremet"
   },
@@ -108,7 +108,7 @@ const heroBanners = [
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
     buttonLink: "/products?collection=special-occasions",
-    imageUrl: "/images/banner/banner6.png",
+    imageUrl: "/images/banner/6.png",
     description: "A vibrant fruit-topped cake, perfect for summer.",
     imageHint: "fruit cake"
   }
@@ -128,33 +128,31 @@ function Hero() {
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
       >
-        <CarouselContent className="h-full">
-          {heroBanners.map((banner) => {
-            return (
-              <CarouselItem key={banner.id}>
-                <div className="relative w-full h-full">
-                  <Image
-                    src={banner.imageUrl}
-                    alt={banner.description}
-                    fill
-                    className="object-cover"
-                    priority={banner.id === 'hero-banner-1'}
-                    data-ai-hint={banner.imageHint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
-                  <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
-                    <h2 className="font-body text-xl tracking-widest uppercase">{banner.title}</h2>
-                    <h1 className="font-headline text-5xl leading-tight md:text-7xl mt-2">
-                      {banner.subtitle}
-                    </h1>
-                    <Button asChild size="lg" className="mt-8 rounded-full bg-white text-black hover:bg-white/90">
-                      <Link href={banner.buttonLink}>{banner.buttonText}</Link>
-                    </Button>
-                  </div>
+        <CarouselContent className="h-screen">
+          {heroBanners.map((banner, index) => (
+            <CarouselItem key={banner.id} className="h-full">
+              <div className="relative w-full h-full">
+                <Image
+                  src={banner.imageUrl}
+                  alt={banner.description}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                  data-ai-hint={banner.imageHint}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+                <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+                  <h2 className="font-body text-xl tracking-widest uppercase">{banner.title}</h2>
+                  <h1 className="font-headline text-5xl leading-tight md:text-7xl mt-2">
+                    {banner.subtitle}
+                  </h1>
+                  <Button asChild size="lg" className="mt-8 rounded-full bg-white text-black hover:bg-white/90">
+                    <Link href={banner.buttonLink}>{banner.buttonText}</Link>
+                  </Button>
                 </div>
-              </CarouselItem>
-            );
-          })}
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
         <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
         <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
