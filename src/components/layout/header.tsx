@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -79,18 +80,16 @@ export function Header() {
                 )
              })}
           </nav>
-          <Button variant="ghost" size="icon" asChild>
-            <Link href="/cart" className="relative flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="hidden md:inline">GIỎ</span>
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
-                  {cartCount}
-                </span>
-              )}
-              <span className="sr-only">Giỏ hàng</span>
-            </Link>
-          </Button>
+          <Link href="/cart" className="relative flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black transition-colors hover:text-black/70">
+            <ShoppingBag className="h-5 w-5" />
+            <span className="hidden md:inline">GIỎ</span>
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                {cartCount}
+              </span>
+            )}
+            <span className="sr-only">Giỏ hàng</span>
+          </Link>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
