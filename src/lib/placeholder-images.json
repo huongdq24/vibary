@@ -63,31 +63,31 @@
     {
       "id": "product-1",
       "description": "Lychee & Rose Delight cake.",
-      "imageUrl": "/images/product/ZrXB6UaF0TcGlzxt_BeinBlossom2.avif",
+      "imageUrl": "/images/product/BeinBlossom2.avif",
       "imageHint": "pink cake"
     },
     {
       "id": "product-2",
       "description": "Passion Fruit Breeze cake.",
-      "imageUrl": "/images/product/ZqZ-ER5LENNTxi9u_BelovedDarling2.avif",
+      "imageUrl": "/images/product/BelovedDarling2.avif",
       "imageHint": "yellow cake"
     },
     {
       "id": "product-3",
       "description": "Matcha & Yuzu Garden cake.",
-      "imageUrl": "/images/product/ZqcF9R5LeNNTxjJr_ALittleGrace2.avif",
+      "imageUrl": "/images/product/ALittleGrace2.avif",
       "imageHint": "white cake"
     },
     {
       "id": "product-4",
       "description": "Chocolate Hazelnut Dream cake.",
-      "imageUrl": "/images/product/chocolate-hazelnut-dream.png",
+      "imageUrl": "/images/product/OneSunnyDay2.avif",
       "imageHint": "chocolate cake"
     },
     {
       "id": "product-5",
       "description": "Strawberry Love cake.",
-      "imageUrl": "/images/product/strawberry-love.png",
+      "imageUrl": "/images/product/SecretGarden2.avif",
       "imageHint": "strawberry cake"
     },
     {
