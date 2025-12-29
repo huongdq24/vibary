@@ -1,39 +1,70 @@
+
+'use client';
+
+import { useState } from 'react';
 import { products, collections } from "@/lib/data";
-import type { Product } from "@/lib/types";
+import type { Product, Collection } from "@/lib/types";
 import { ProductCard } from "@/components/product-card";
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
-export default function ProductsPage({
-  searchParams,
-}: {
-  searchParams?: { collection?: string };
-}) {
-  const collectionSlug = searchParams?.collection;
-  
-  let filteredProducts: Product[] = products;
-  let pageTitle = "Tất Cả Sáng Tạo Của Chúng Tôi";
-  let pageDescription = "Khám phá bộ sưu tập đầy đủ của chúng tôi về các loại bánh ngọt Pháp hiện đại.";
+export default function ProductsPage() {
+  const searchParams = useSearchParams();
+  const collectionSlug = searchParams.get('collection');
 
-  if (collectionSlug) {
-    const collection = collections.find(c => c.slug === collectionSlug);
-    if (collection) {
-      filteredProducts = products.filter(p => p.collection === collection.slug);
-      pageTitle = collection.title;
-      pageDescription = collection.description;
+  const [activeCollection, setActiveCollection] = useState<string | null>(collectionSlug);
+
+  const getFilteredProducts = () => {
+    if (!activeCollection) {
+      return products;
     }
-  }
+    const collection = collections.find(c => c.slug === activeCollection);
+    if (collection) {
+      return products.filter(p => p.collection === collection.slug);
+    }
+    return products;
+  };
+  
+  const filteredProducts = getFilteredProducts();
 
+  const allCollections: Collection[] = [
+    { id: 'all', slug: 'all', title: 'Tất cả sản phẩm', description: '', imageId: '' },
+    ...collections
+  ];
+  
   return (
     <div className="bg-background">
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl">{pageTitle}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            {pageDescription}
-          </p>
+        <div className="mb-12">
+            <div className="flex justify-center border-b">
+                {allCollections.map(collection => (
+                     <Link
+                        key={collection.id}
+                        href={`/products?collection=${collection.slug}`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setActiveCollection(collection.slug === 'all' ? null : collection.slug);
+                            window.history.pushState({}, '', `/products?collection=${collection.slug}`);
+                        }}
+                     >
+                        <div
+                            className={cn(
+                                "cursor-pointer px-4 py-2 text-sm uppercase tracking-wider text-muted-foreground transition-colors",
+                                (!activeCollection && collection.slug === 'all') || activeCollection === collection.slug
+                                ? "border-b-2 border-foreground text-foreground font-semibold"
+                                : "hover:text-foreground"
+                            )}
+                        >
+                            {collection.title}
+                        </div>
+                    </Link>
+                ))}
+            </div>
         </div>
 
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
