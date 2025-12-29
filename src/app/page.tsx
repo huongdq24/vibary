@@ -6,43 +6,57 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, MessageSquareQuote } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
-function HeroSection() {
-  const heroProducts = products.slice(0, 3);
+function HeroCarousel() {
+  const heroBanners = PlaceHolderImages.filter(p => p.id.startsWith('hero-banner'));
+
   return (
-    <div className="w-full bg-white py-12">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-             <div className="text-center mb-12">
-                <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 rounded-none">
-                    <Link href="/products">ĐẶT BÁNH NGAY</Link>
-                </Button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {heroProducts.map(product => {
-                     const image = PlaceHolderImages.find((p) => p.id === product.imageId);
-                     return (
-                        <Link href={`/products/${product.slug}`} key={product.id} className="group relative text-center">
-                            {image && (
-                                <Image
-                                src={image.imageUrl}
-                                alt={product.name}
-                                width={600}
-                                height={600}
-                                className="object-cover w-full h-auto"
-                                data-ai-hint={image.imageHint}
-                                />
-                            )}
-                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
-                                <span className="bg-white/80 text-black px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
-                                    {product.name}
-                                </span>
-                            </div>
-                        </Link>
-                     )
-                })}
-            </div>
-        </div>
-    </div>
+    <section className="w-full">
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {heroBanners.map((banner) => (
+            <CarouselItem key={banner.id}>
+              <div className="relative h-[60vh] min-h-[400px] w-full">
+                <Image
+                  src={banner.imageUrl}
+                  alt={banner.description}
+                  fill
+                  className="object-cover"
+                  priority={heroBanners.indexOf(banner) === 0}
+                  data-ai-hint={banner.imageHint}
+                />
+                 <div className="absolute inset-0 bg-black/30" />
+                 <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8">
+                    <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl leading-tight">
+                        Nghệ Thuật Bánh Ngọt Pháp Hiện Đại
+                    </h1>
+                    <p className="mt-4 max-w-2xl text-lg md:text-xl">
+                        Chế tác từ những nguyên liệu tươi ngon nhất của Việt Nam.
+                    </p>
+                    <Button asChild size="lg" className="mt-8">
+                        <Link href="/products">Khám Phá Bộ Sưu Tập</Link>
+                    </Button>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 border-white hover:bg-white hover:text-black" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 border-white hover:bg-white hover:text-black" />
+      </Carousel>
+    </section>
   );
 }
 
@@ -118,7 +132,7 @@ function NewArrivals() {
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <HeroCarousel />
       <FeaturedCollections />
       <NewArrivals />
     </>
