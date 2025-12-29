@@ -103,69 +103,47 @@ function AnnouncementBar() {
 
 function CategorySection() {
     const categories = [
-      {
-        name: 'bánh ngọt',
-        href: '/products',
-        imageId: 'category-sweet-cake',
-        description: 'Dành cho những tín đồ hảo ngọt'
-      },
-      {
-        name: 'bánh mặn',
-        href: '/products',
-        imageId: 'category-salty-cake',
-        description: 'Hương vị đậm đà khó cưỡng'
-      },
-      {
-        name: 'bánh sinh nhật',
-        href: '/products',
-        imageId: 'category-birthday-cake',
-        description: 'Dành cho từ 2-10 người'
-      },
-      {
-        name: 'Đồ uống',
-        href: '/products',
-        imageId: 'category-drinks',
-        description: 'Giải nhiệt và thư giãn'
-      },
-      {
-        name: 'Bánh khác',
-        href: '/products',
-        imageId: 'category-other-cakes',
-        description: 'Khám phá những hương vị mới'
-      },
-      {
-        name: 'Đồ ăn khác',
-        href: '/products',
-        imageId: 'category-other-food',
-        description: 'Nhiều lựa chọn hấp dẫn khác'
-      },
+        { name: 'Bánh ngọt', description: 'Dành cho những tín đồ hảo ngọt', imageId: 'category-sweet-cake' },
+        { name: 'Bánh mặn', description: 'Hương vị đậm đà khó cưỡng', imageId: 'category-salty-cake' },
+        { name: 'Bánh sinh nhật', description: 'Dành cho từ 2-10 người', imageId: 'category-birthday-cake' },
+        { name: 'Đồ uống', description: 'Giải nhiệt và thư giãn', imageId: 'category-drinks' },
+        { name: 'Bánh khác', description: 'Khám phá những hương vị mới', imageId: 'category-other-cakes' },
+        { name: 'Đồ ăn khác', description: 'Nhiều lựa chọn hấp dẫn khác', imageId: 'category-other-food' },
     ];
 
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => {
             const image = PlaceHolderImages.find((p) => p.id === category.imageId);
             return (
-              <Link href={category.href} key={category.name} className="group relative block overflow-hidden rounded-lg">
-                <div className="aspect-w-4 aspect-h-3">
-                  {image && (
+                <Link
+                href="/products"
+                key={category.name}
+                className="group relative block h-96 overflow-hidden rounded-3xl shadow-xl transition-transform duration-300 hover:scale-105"
+                >
+                {image && (
                     <Image
-                      src={image.imageUrl}
-                      alt={category.description}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={image.imageHint}
+                        src={image.imageUrl}
+                        alt={category.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        priority={false}
+                        data-ai-hint={image.imageHint}
                     />
-                  )}
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
+                    <h3 className="text-3xl md:text-4xl font-bold tracking-wide">
+                    {category.name}
+                    </h3>
+                    <p className="mt-2 text-lg opacity-90">{category.description}</p>
+                    <span className="mt-4 inline-flex items-center text-2xl font-light">
+                    →<span className="ml-2 text-sm uppercase tracking-wider opacity-80">Khám phá</span>
+                    </span>
                 </div>
-                <div className="absolute inset-0 bg-black/30" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
-                  <h3 className="font-headline text-2xl uppercase tracking-wider">{category.name}</h3>
-                  <p className="mt-1 text-sm">{category.description}</p>
-                </div>
-              </Link>
+                </Link>
             )
           })}
         </div>
@@ -209,52 +187,6 @@ function FeaturedProducts() {
     );
 }
 
-function FeaturedCollections() {
-  return (
-    <section className="py-16 sm:py-24 bg-gray-50">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="font-headline text-3xl md:text-4xl">Bộ Sưu Tập Nổi Bật</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Mỗi bộ sưu tập kể một câu chuyện. Tìm bộ sưu tập phù hợp với bạn.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {collections.map((collection) => {
-            const image = PlaceHolderImages.find((p) => p.id === collection.imageId);
-            return (
-              <Link href={`/products?collection=${collection.slug}`} key={collection.id} className="group relative">
-                <Card className="overflow-hidden">
-                  <div className="aspect-w-3 aspect-h-4">
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={collection.title}
-                      width={800}
-                      height={600}
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={image.imageHint}
-                    />
-                  )}
-                  </div>
-                </Card>
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
-                  <h3 className="font-headline text-2xl">{collection.title}</h3>
-                  <p className="mt-2 text-sm">{collection.description}</p>
-                   <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
-                     Khám phá ngay
-                   </Button>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function NewArrivals() {
   const newProducts = products.slice(0, 4);
   return (
@@ -284,7 +216,6 @@ export default function Home() {
       <AnnouncementBar />
       <FeaturedProducts />
       <CategorySection />
-      <FeaturedCollections />
       <NewArrivals />
     </>
   );
