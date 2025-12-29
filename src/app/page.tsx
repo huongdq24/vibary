@@ -57,42 +57,60 @@ const heroBanners = [
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner1.png",
+    description: "Beautifully crafted entremet cake on a platter.",
+    imageHint: "entremet cake"
   },
   {
     id: "hero-banner-2",
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner2.png",
+    description: "Close up shot of a slice of layered mousse cake.",
+    imageHint: "mousse cake"
   },
   {
     id: "hero-banner-3",
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner3.png",
+    description: "A variety of colorful French pastries on display.",
+    imageHint: "french pastry"
   },
   {
     id: "hero-banner-4",
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner4.png",
+    description: "A baker decorating a modern cake with precision.",
+    imageHint: "cake decorating"
   },
   {
     id: "hero-banner-5",
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner5.png",
+    description: "Luxurious chocolate entremet with a glossy finish.",
+    imageHint: "chocolate entremet"
   },
   {
     id: "hero-banner-6",
     title: "BST BÁNH ENTREMET DÀNH CHO",
     subtitle: "Mọi dịp đặc biệt của bạn",
     buttonText: "KHÁM PHÁ NGAY",
-    buttonLink: "/products?collection=special-occasions"
+    buttonLink: "/products?collection=special-occasions",
+    imageUrl: "/images/banner/banner6.png",
+    description: "A vibrant fruit-topped cake, perfect for summer.",
+    imageHint: "fruit cake"
   }
 ];
 
@@ -112,20 +130,17 @@ function Hero() {
       >
         <CarouselContent className="h-full">
           {heroBanners.map((banner) => {
-            const image = PlaceHolderImages.find((p) => p.id === banner.id);
             return (
               <CarouselItem key={banner.id}>
                 <div className="relative w-full h-full">
-                  {image && (
-                    <Image
-                      src={image.imageUrl}
-                      alt={image.description}
-                      fill
-                      className="object-cover"
-                      priority={banner.id === 'hero-banner-1'}
-                      data-ai-hint={image.imageHint}
-                    />
-                  )}
+                  <Image
+                    src={banner.imageUrl}
+                    alt={banner.description}
+                    fill
+                    className="object-cover"
+                    priority={banner.id === 'hero-banner-1'}
+                    data-ai-hint={banner.imageHint}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
                   <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
                     <h2 className="font-body text-xl tracking-widest uppercase">{banner.title}</h2>
