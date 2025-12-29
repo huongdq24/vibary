@@ -21,12 +21,12 @@ function AnnouncementBar() {
      <div className="bg-primary text-primary-foreground">
         <div className="container mx-auto flex h-10 max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
-              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
-              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
-              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
-              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
-              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
-              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 091 255 03 35</span>
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 091 255 03 35</span>
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 091 255 03 35</span>
           </div>
         </div>
       </div>

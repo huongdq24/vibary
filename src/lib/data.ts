@@ -65,7 +65,7 @@ export const products: Product[] = [
     name: 'BELOVED DARLING',
     description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
-      flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Hà Nội.',
+      flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Bắc Ninh.',
       ingredients: 'Kem chanh dây, mousse dừa, bánh bông lan hạnh nhân, đế dừa giòn.',
       serving: 'Phục vụ 6-8 người.',
       storage: 'Bảo quản trong tủ lạnh. Lớp đế giòn ngon nhất khi thưởng thức trong ngày đầu tiên.'
@@ -179,11 +179,11 @@ export const articles: Article[] = [
     id: 'news-1',
     slug: 'our-founder-story',
     title: 'Hành Trình Ngọt Ngào Của Người Sáng Lập',
-    excerpt: 'Từ một căn bếp nhỏ ở Hà Nội đến một thương hiệu bánh ngọt nổi tiếng, hãy đọc câu chuyện của người sáng lập của chúng tôi, Lan.',
+    excerpt: 'Từ một căn bếp nhỏ ở Bắc Ninh đến một thương hiệu bánh ngọt nổi tiếng, hãy đọc câu chuyện của người sáng lập của chúng tôi, Lan.',
     date: 'Ngày 20 tháng 5, 2024',
     category: 'Câu chuyện người sáng lập',
     imageId: 'blog-1',
-    content: '<p>Câu chuyện của Vibary không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ đầy nắng ở trung tâm Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm học tập tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm. Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê hương, nhưng với một nét chấm phá độc đáo của Việt Nam.</p><p>Cô đã dành nhiều năm để hoàn thiện tay nghề, thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây, và xoài, và điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương. Tầm nhìn của cô là tạo ra những chiếc bánh ngọt Pháp hiện đại vừa sang trọng vừa quen thuộc. Vibary là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại.</p>'
+    content: '<p>Câu chuyện của Vibary không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ đầy nắng ở trung tâm Bắc Ninh. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm học tập tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm. Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê hương, nhưng với một nét chấm phá độc đáo của Việt Nam.</p><p>Cô đã dành nhiều năm để hoàn thiện tay nghề, thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây, và xoài, và điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương. Tầm nhìn của cô là tạo ra những chiếc bánh ngọt Pháp hiện đại vừa sang trọng vừa quen thuộc. Vibary là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại.</p>'
   },
   {
     id: 'news-2',
@@ -215,8 +215,8 @@ export const faqs: FaqItem[] = [
     },
     {
         id: 'faq-2',
-        question: 'Khu vực giao hàng của bạn ở Hà Nội là gì?',
-        answer: 'Chúng tôi hiện đang giao hàng tận nơi đến tất cả các quận nội thành Hà Nội. Đối với các huyện ngoại thành, vui lòng liên hệ hotline của chúng tôi để kiểm tra tình trạng sẵn có và các khoản phí phụ thêm có thể có.'
+        question: 'Khu vực giao hàng của bạn ở Bắc Ninh là gì?',
+        answer: 'Chúng tôi hiện đang giao hàng tận nơi đến tất cả các quận nội thành Bắc Ninh. Đối với các huyện ngoại thành, vui lòng liên hệ hotline của chúng tôi để kiểm tra tình trạng sẵn có và các khoản phí phụ thêm có thể có.'
     },
     {
         id: 'faq-3',

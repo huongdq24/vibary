@@ -50,7 +50,7 @@ export default function ContactPage() {
                     <div>
                         <h3 className="font-headline text-lg">Hotline</h3>
                         <p className="text-muted-foreground">Đối với các đơn hàng và yêu cầu khẩn cấp.</p>
-                        <a href="tel:0987654321" className="font-medium text-foreground hover:underline">098.765.4321</a>
+                        <a href="tel:0912550335" className="font-medium text-foreground hover:underline">091 255 03 35</a>
                     </div>
                 </div>
                  <div className="flex items-start gap-4">
@@ -64,7 +64,7 @@ export default function ContactPage() {
                     <div className="flex-shrink-0"><MapPin className="h-6 w-6 text-accent" /></div>
                     <div>
                         <h3 className="font-headline text-lg">Bếp Bánh Của Chúng Tôi</h3>
-                        <p className="text-muted-foreground">123 Phố Bánh, Hoàn Kiếm, Hà Nội</p>
+                        <p className="text-muted-foreground">123 Phố Bánh, Hoàn Kiếm, Bắc Ninh</p>
                         <p className="text-sm text-muted-foreground">(Chỉ nhận đơn hàng trực tuyến và giao hàng)</p>
                     </div>
                 </div>

@@ -24,7 +24,7 @@ import { useRouter } from "next/navigation";
 const checkoutSchema = z.object({
   name: z.string().min(2, { message: "Tên phải có ít nhất 2 ký tự." }),
   phone: z.string().min(10, { message: "Vui lòng nhập số điện thoại hợp lệ." }),
-  address: z.string().min(5, { message: "Vui lòng nhập địa chỉ hợp lệ tại Hà Nội." }),
+  address: z.string().min(5, { message: "Vui lòng nhập địa chỉ hợp lệ tại Bắc Ninh." }),
   deliveryDate: z.string().min(1, { message: "Vui lòng chọn ngày giao hàng." }),
   deliveryTime: z.string().min(1, { message: "Vui lòng chọn thời gian giao hàng." }),
   paymentMethod: z.enum(["momo", "zalopay", "bank", "cod"], { required_error: "Vui lòng chọn phương thức thanh toán." }),
@@ -93,13 +93,13 @@ export default function CheckoutPage() {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="font-headline">Chi Tiết Giao Hàng (chỉ ở Hà Nội)</CardTitle>
+                  <CardTitle className="font-headline">Chi Tiết Giao Hàng (chỉ ở Bắc Ninh)</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <FormField control={form.control} name="address" render={({ field }) => (
                       <FormItem>
                         <FormLabel>Địa chỉ</FormLabel>
-                        <FormControl><Input placeholder="123 Phố Example, Quận Hoàn Kiếm" {...field} /></FormControl>
+                        <FormControl><Input placeholder="123 Phố Example, TP Bắc Ninh" {...field} /></FormControl>
                         <FormMessage />
                       </FormItem>
                     )}

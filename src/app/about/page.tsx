@@ -29,14 +29,14 @@ export default function AboutPage() {
                 <div className="prose prose-lg mx-auto max-w-none prose-h2:font-headline prose-p:text-muted-foreground prose-blockquote:border-accent prose-blockquote:text-accent prose-blockquote:font-headline">
                     <h2>Giấc Mơ</h2>
                     <p>
-                        Câu chuyện của VIBARY không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ ngập nắng giữa lòng Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm du học tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm thử.
+                        Câu chuyện của VIBARY không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ ngập nắng giữa lòng Bắc Ninh. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm du học tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm thử.
                     </p>
                     <p>
                         Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê nhà, nhưng với một nét chấm phá độc đáo của Việt Nam. Cô muốn tạo ra những chiếc bánh vừa lạ vừa quen, vừa tinh tế vừa gần gũi.
                     </p>
 
                     <blockquote>
-                        "Tôi muốn nắm bắt sự thanh lịch của Paris và thổi vào đó linh hồn của Hà Nội."
+                        "Tôi muốn nắm bắt sự thanh lịch của Paris và thổi vào đó linh hồn của Bắc Ninh."
                     </blockquote>
 
                     <h2>Nghề thủ công</h2>
