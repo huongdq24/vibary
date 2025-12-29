@@ -159,7 +159,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
           </div>
           <div className="sm:col-span-2">
               <Accordion type="single" collapsible className="w-full">
-                {faqs.slice(0, 5).map((faq) => ( // Show first 5 FAQs
+                {faqs.map((faq) => (
                   <AccordionItem key={faq.id} value={faq.id}>
                     <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                     <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>

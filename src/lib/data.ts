@@ -339,32 +339,47 @@ export const articles: Article[] = [
 export const faqs: FaqItem[] = [
     {
         id: 'faq-1',
-        question: 'Làm cách nào để đặt hàng?',
-        answer: 'Bạn có thể dễ dàng đặt hàng qua trang web của chúng tôi. Chỉ cần duyệt qua các sản phẩm, thêm bánh bạn muốn vào giỏ hàng và tiến hành thanh toán. Bạn sẽ được yêu cầu cung cấp thông tin chi tiết giao hàng và thông tin thanh toán.'
+        question: 'Thời gian đặt bánh trước tối thiểu là bao lâu?',
+        answer: 'Để đảm bảo chất lượng tốt nhất, bạn vui lòng đặt bánh trước ít nhất 24 giờ. Đối với các đơn hàng đặc biệt hoặc số lượng lớn, chúng tôi khuyến khích bạn đặt trước 48-72 giờ.'
     },
     {
         id: 'faq-2',
-        question: 'Khu vực giao hàng của bạn ở Bắc Ninh là gì?',
-        answer: 'Chúng tôi hiện đang giao hàng tận nơi đến tất cả các quận nội thành Bắc Ninh. Đối với các huyện ngoại thành, vui lòng liên hệ hotline của chúng tôi để kiểm tra tình trạng sẵn có và các khoản phí phụ thêm có thể có.'
+        question: 'Phí giao hàng của VIBARY được tính như thế nào?',
+        answer: 'Phí giao hàng được tính dựa trên khoảng cách từ bếp của chúng tôi đến địa chỉ của bạn. Bạn có thể xem phí giao hàng chính xác sau khi nhập địa chỉ ở trang thanh toán.'
     },
     {
         id: 'faq-3',
-        question: 'Tôi nên bảo quản bánh Entremet như thế nào?',
-        answer: 'Bánh Entremet của chúng tôi được bảo quản tốt nhất trong tủ lạnh ở nhiệt độ 2-6°C. Để có hương vị và kết cấu tối ưu, chúng tôi khuyên bạn nên dùng trong vòng 2 ngày kể từ ngày mua. Vui lòng tham khảo trang sản phẩm cụ thể để biết bất kỳ mẹo bảo quản độc đáo nào.'
+        question: 'Tôi có thể đến mua bánh trực tiếp tại xưởng của VIBARY không?',
+        answer: 'Hiện tại, VIBARY hoạt động theo mô hình bếp trung tâm và chỉ bán hàng trực tuyến để đảm bảo chất lượng sản phẩm tốt nhất khi đến tay khách hàng. Chúng tôi không có cửa hàng bán lẻ trực tiếp.'
     },
     {
         id: 'faq-4',
-        question: 'Tôi có thể tùy chỉnh bánh không?',
-        answer: 'Do sự phức tạp của công thức Entremet của chúng tôi, chúng tôi không cung cấp tùy chỉnh hương vị. Tuy nhiên, chúng tôi có thể thêm các thông điệp đơn giản trên một thẻ sô cô la. Vui lòng ghi rõ thông điệp của bạn trong ghi chú đơn hàng khi thanh toán.'
+        question: 'VIBARY có các hình thức thanh toán nào?',
+        answer: 'Chúng tôi chấp nhận thanh toán qua Momo, ZaloPay, chuyển khoản ngân hàng và thanh toán tiền mặt khi nhận hàng (COD).'
     },
     {
         id: 'faq-5',
-        question: 'Bạn chấp nhận những phương thức thanh toán nào?',
-        answer: 'Chúng tôi chấp nhận nhiều phương thức thanh toán khác nhau để thuận tiện cho bạn, bao gồm Momo, ZaloPay, chuyển khoản ngân hàng và Giao hàng nhận tiền (COD).'
+        question: 'Tôi có thể chọn giờ giao hàng không?',
+        answer: 'Có, bạn có thể chọn ngày và khung giờ giao hàng mong muốn tại trang thanh toán. Chúng tôi sẽ cố gắng hết sức để giao hàng trong khoảng thời gian bạn đã chọn.'
     },
     {
         id: 'faq-6',
-        question: 'Tôi bị dị ứng. Làm cách nào để kiểm tra thành phần?',
-        answer: 'Mỗi trang sản phẩm đều có mô tả chi tiết bao gồm danh sách các thành phần chính. Nếu bạn bị dị ứng cụ thể, vui lòng liên hệ hotline của chúng tôi trước khi đặt hàng để chúng tôi có thể tư vấn cho bạn về các lựa chọn tốt nhất.'
+        question: 'Nếu bánh giao đến bị xô lệch/ hình thức không còn nguyên vẹn do lỗi của shipper thì tôi phải làm thế nào?',
+        answer: 'Chúng tôi rất tiếc về trải nghiệm này. Vui lòng kiểm tra kỹ bánh khi nhận hàng. Nếu có bất kỳ vấn đề gì về hình thức, bạn có quyền từ chối nhận hàng và liên hệ ngay với hotline của chúng tôi để được hỗ trợ giải quyết và sắp xếp một đơn hàng mới.'
     },
+     {
+        id: 'faq-7',
+        question: 'Sau khi tôi nhận bánh & shipper đã ra về thì mới phát hiện bánh bị xô lệch/ hình thức không nguyên vẹn thì tôi phải làm thế nào?',
+        answer: 'VIBARY rất tiếc nhưng chúng tôi không thể giải quyết các khiếu nại về hình thức bánh sau khi bạn đã nhận hàng và shipper đã rời đi. Việc đồng kiểm tra sản phẩm khi nhận là rất quan trọng. Mong bạn thông cảm.'
+    },
+     {
+        id: 'faq-8',
+        question: 'Tôi có thể đặt bánh theo mẫu riêng mà tôi muốn được không?',
+        answer: 'Do đặc thù của dòng bánh Entremet, chúng tôi hiện không nhận làm bánh theo mẫu riêng. Tuy nhiên, chúng tôi có thể hỗ trợ viết lời chúc theo yêu cầu trên một tấm thẻ sô cô la.'
+    },
+     {
+        id: 'faq-9',
+        question: 'Tôi muốn di chuyển bánh từ nơi này đến nơi khác bằng xe máy/ ô tô thì có sợ bánh bị chảy không?',
+        answer: 'Bánh của chúng tôi được giữ lạnh để đảm bảo kết cấu. Nếu bạn cần di chuyển, hãy đảm bảo bánh được giữ trong môi trường mát (tốt nhất là có đá khô hoặc trong thùng giữ nhiệt) và hạn chế di chuyển dưới trời nắng gắt quá 15-20 phút để tránh bánh bị chảy.'
+    }
 ];
