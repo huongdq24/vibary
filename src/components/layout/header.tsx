@@ -26,16 +26,23 @@ export function Header() {
   const { cartCount } = useCart();
   const pathname = usePathname();
 
+  const isLinkActive = (href: string) => {
+    if (href === '/products') {
+      return pathname.startsWith(href);
+    }
+    return pathname === href;
+  };
+
   return (
     <>
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
       <div className="container mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <nav className="hidden items-center gap-6 md:flex">
           {mainNavLinks.map(link => {
-            const isActive = pathname.startsWith(link.href);
+            const isActive = isLinkActive(link.href);
             return (
               <Link
-                  key={link.href}
+                  key={`${link.href}-${link.label}`}
                   href={link.href}
                   data-active={isActive}
                   className="text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full data-[active=true]:border data-[active=true]:border-black"
@@ -57,10 +64,10 @@ export function Header() {
         <div className="flex items-center gap-4">
           <nav className="hidden items-center gap-6 md:flex">
              {secondaryNavLinks.map(link => {
-                const isActive = pathname.startsWith(link.href);
+                const isActive = isLinkActive(link.href);
                 return (
                     <Link
-                        key={link.href}
+                        key={`${link.href}-${link.label}`}
                         href={link.href}
                         data-active={isActive}
                         className="text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full data-[active=true]:border data-[active=true]:border-black"
