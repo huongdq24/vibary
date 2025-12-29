@@ -16,6 +16,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import React from 'react';
+import Autoplay from "embla-carousel-autoplay"
 
 function HeroCarousel() {
   const heroBanners = PlaceHolderImages.filter(p => p.id.startsWith('hero-banner'));
@@ -110,7 +111,11 @@ function AnnouncementBar() {
 }
 
 function FeaturedProducts() {
-    const featuredProducts = products.slice(0, 4);
+    const featuredProducts = [...products, ...products]; // Duplicate products for continuous scroll
+    const plugin = React.useRef(
+      Autoplay({ delay: 2000, stopOnInteraction: true })
+    )
+
     return (
         <section className="py-16 sm:py-24 bg-white">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -124,15 +129,18 @@ function FeaturedProducts() {
                     </Button>
                 </div>
                 <Carousel
+                    plugins={[plugin.current]}
                     opts={{
                         align: "start",
                         loop: true,
                     }}
                     className="w-full"
+                    onMouseEnter={plugin.current.stop}
+                    onMouseLeave={plugin.current.reset}
                 >
                     <CarouselContent>
-                        {featuredProducts.map((product) => (
-                            <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+                        {featuredProducts.map((product, index) => (
+                            <CarouselItem key={`${product.id}-${index}`} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                                 <div className="p-1">
                                     <ProductCard product={product} />
                                 </div>
