@@ -1,3 +1,4 @@
+
 import type { Product, Collection, Article, FaqItem, NavLink } from './types';
 
 export const navLinks: NavLink[] = [
@@ -44,6 +45,7 @@ export const products: Product[] = [
     id: 'prod-001',
     slug: 'lychee-rose-delight',
     name: 'BE IN BLOSSOM',
+    subtitle: 'VẢI & HOA HỒNG',
     description: 'Vũ điệu thơ mộng của hoa hồng thơm ngát và vải ngọt ngào.',
     detailedDescription: {
       flavor: 'Mousse hoa hồng tinh tế kết hợp với thạch vải nhẹ và bánh bông lan hạnh nhân mềm mại. Một chút mâm xôi thêm vị chua nhẹ.',
@@ -59,11 +61,20 @@ export const products: Product[] = [
     imageId: 'product-1',
     collection: 'special-occasions',
     categorySlug: 'banh-sinh-nhat',
+    flavorProfile: ['Ngọt ngào', 'Thơm ngát', 'Tinh tế'],
+    structure: [
+        'Phun phủ bơ cacao',
+        'Mousse hoa hồng',
+        'Thạch vải & mứt mâm xôi',
+        'Bạt bánh hạnh nhân',
+        'Đế giòn'
+    ]
   },
   {
     id: 'prod-002',
     slug: 'passion-fruit-breeze',
     name: 'BELOVED DARLING',
+    subtitle: 'CHANH DÂY & DỪA',
     description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
       flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Bắc Ninh.',
@@ -79,11 +90,20 @@ export const products: Product[] = [
     imageId: 'product-2',
     collection: 'special-occasions',
     categorySlug: 'banh-sinh-nhat',
+    flavorProfile: ['Chua thanh', 'Nhiệt đới', 'Sảng khoái'],
+    structure: [
+        'Phun phủ bơ cacao',
+        'Mousse chanh dây',
+        'Mousse dừa',
+        'Bạt bánh hạnh nhân',
+        'Đế dừa giòn'
+    ]
   },
   {
     id: 'prod-003',
     slug: 'a-little-grace',
     name: 'A LITTLE GRACE',
+    subtitle: 'MATCHA & YUZU',
     description: 'Sự kết hợp thanh lịch giữa vị trà matcha đất và vị cam yuzu.',
     detailedDescription: {
       flavor: 'Mousse matcha Uji đậm đà cân bằng với sữa đông yuzu chua thanh, trên nền bánh bông lan mè đen. Một trải nghiệm tựa thiền.',
@@ -95,11 +115,20 @@ export const products: Product[] = [
     imageId: 'product-3',
     collection: 'half-entremet',
     categorySlug: 'banh-ngot',
+    flavorProfile: ['Đậm vị trà', 'Chua nhẹ', 'Thanh lịch'],
+     structure: [
+        'Phủ bột matcha',
+        'Mousse matcha Uji',
+        'Kem yuzu',
+        'Bạt bánh mè đen',
+        'Đế giòn'
+    ]
   },
   {
     id: 'prod-004',
     slug: 'chocolate-hazelnut-dream',
     name: 'SUMMER CALLING',
+    subtitle: 'SÔ CÔ LA & HẠT DẺ',
     description: 'Một món ăn xa hoa và sang trọng cho người thực sự yêu sô cô la.',
     detailedDescription: {
       flavor: 'Mousse sô cô la đen 66% mịn mượt, nhân praline hạt phỉ kem, và bánh bông lan sô cô la ẩm, tất cả trên một lớp đế feuilletine giòn.',
@@ -115,11 +144,20 @@ export const products: Product[] = [
     imageId: 'product-4',
     collection: 'special-occasions',
     categorySlug: 'banh-sinh-nhat',
+    flavorProfile: ['Đậm đà', 'Sang trọng', 'Giòn tan'],
+     structure: [
+        'Phủ sô cô la',
+        'Mousse sô cô la đen',
+        'Kem praline hạt dẻ',
+        'Bạt bánh sô cô la',
+        'Đế giòn feuilletine'
+    ]
   },
   {
     id: 'prod-005',
     slug: 'strawberry-love',
     name: 'A GENTLE BLEND',
+    subtitle: 'DÂU TÂY & VANI',
     description: 'Trái tim của dâu tây ngọt ngào và kem vani.',
     detailedDescription: {
       flavor: 'Mứt dâu tây tươi và kem mascarpone vani nhẹ trên bánh bông lan vani mềm. Đơn giản là đáng yêu.',
@@ -131,11 +169,20 @@ export const products: Product[] = [
     imageId: 'product-5',
     collection: 'heart-shaped',
     categorySlug: 'banh-ngot',
+     flavorProfile: ['Ngọt ngào', 'Kinh điển', 'Trái cây tươi'],
+     structure: [
+        'Trang trí dâu tươi',
+        'Kem mascarpone vani',
+        'Mứt dâu tây',
+        'Bạt bánh vani',
+        'Đế bánh quy'
+    ]
   },
   {
     id: 'prod-006',
     slug: 'baby-mango-bliss',
     name: 'Baby Mango Bliss',
+    subtitle: 'XOÀI & CHANH DÂY',
     description: 'Chiếc bánh nhỏ tràn ngập ánh nắng và hương vị xoài ngọt ngào.',
     detailedDescription: {
       flavor: 'Mousse xoài nhẹ với nhân thạch chanh dây. Kích thước hoàn hảo cho một khoảnh khắc hạnh phúc nhỏ.',
@@ -147,11 +194,20 @@ export const products: Product[] = [
     imageId: 'product-6',
     collection: 'baby-collection',
     categorySlug: 'banh-man',
+     flavorProfile: ['Nhiệt đới', 'Ngọt dịu', 'Dễ thương'],
+     structure: [
+        'Phun phủ màu vàng',
+        'Mousse xoài',
+        'Thạch chanh dây',
+        'Bạt bánh hạnh nhân',
+        'Đế giòn'
+    ]
   },
   {
     id: 'prod-007',
     slug: 'raspberry-pistachio-half',
     name: 'Raspberry & Pistachio Half',
+    subtitle: 'MÂM XÔI & HẠT DẺ CƯỜI',
     description: 'Sự kết hợp sống động của mâm xôi chua và hạt dẻ cười bùi.',
     detailedDescription: {
       flavor: 'Mousse hạt dẻ cười mịn màng với trái tim thạch mâm xôi chua, trên nền bánh dacquoise hạt dẻ cười tinh tế.',
@@ -163,11 +219,20 @@ export const products: Product[] = [
     imageId: 'product-7',
     collection: 'half-entremet',
     categorySlug: 'do-uong',
+    flavorProfile: ['Bùi', 'Chua thanh', 'Độc đáo'],
+    structure: [
+        'Phủ men trắng',
+        'Mousse hạt dẻ cười',
+        'Thạch mâm xôi',
+        'Bạt bánh hạt dẻ cười',
+        'Đế giòn'
+    ]
   },
   {
     id: 'prod-008',
     slug: 'summer-berry-cheesecake',
     name: 'Summer Berry Cheesecake',
+    subtitle: 'CHEESECAKE & DÂU RỪNG',
     description: 'Phiên bản hiện đại của một món kinh điển, tràn ngập các loại quả mọng.',
     detailedDescription: {
       flavor: 'Kem cheesecake không nướng nhẹ nhàng được trang trí bằng một hỗn hợp các loại quả mọng mùa hè tươi trên đế bánh quy bơ.',
@@ -179,6 +244,14 @@ export const products: Product[] = [
     imageId: 'product-8',
     collection: 'special-occasions',
     categorySlug: 'banh-khac',
+    flavorProfile: ['Béo ngậy', 'Tươi mát', 'Kinh điển'],
+    structure: [
+        'Trang trí dâu rừng tươi',
+        'Lớp cheesecake',
+        'Đế bánh quy bơ',
+        'N/A',
+        'N/A'
+    ]
   }
 ];
 

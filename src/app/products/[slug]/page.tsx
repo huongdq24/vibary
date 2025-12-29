@@ -1,26 +1,15 @@
+
 "use client";
 
 import { products } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useState } from "react";
 import { useCart } from "@/hooks/use-cart";
 import { notFound } from "next/navigation";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { ShoppingCart } from "lucide-react";
+import { Minus, Plus, ShoppingCart } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export default function ProductDetailPage({
   params,
@@ -29,16 +18,14 @@ export default function ProductDetailPage({
 }) {
   const product = products.find((p) => p.slug === params.slug);
   const { addToCart } = useCart();
-  const [selectedSize, setSelectedSize] = useState(
-    product?.sizes ? product.sizes[0] : undefined
-  );
+  const [quantity, setQuantity] = useState(1);
 
   if (!product) {
     notFound();
   }
 
   const image = PlaceHolderImages.find((p) => p.id === product.imageId);
-  const priceToShow = selectedSize ? selectedSize.price : product.price;
+  const priceToShow = product.price;
 
   const handleAddToCart = () => {
     addToCart({
@@ -47,14 +34,19 @@ export default function ProductDetailPage({
       price: priceToShow,
       imageId: product.imageId,
       slug: product.slug,
-      size: selectedSize?.name,
+      quantity: quantity,
     });
+    setQuantity(1); // Reset quantity after adding to cart
   };
+
+  const collectionTitle = product.collection === 'half-entremet' ? 'BÁNH NỬA ENTREMET' : 
+                          product.collection === 'baby-collection' ? 'BÁNH PETIT' :
+                          'BÁNH ENTREMET';
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div className="aspect-square w-full overflow-hidden rounded-lg shadow-lg">
+      <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
+        <div className="aspect-square w-full overflow-hidden rounded-lg">
           {image && (
             <Image
               src={image.imageUrl}
@@ -66,80 +58,62 @@ export default function ProductDetailPage({
             />
           )}
         </div>
-        <div className="flex flex-col justify-center">
-          <h1 className="font-headline text-4xl md:text-5xl">{product.name}</h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            {product.description}
-          </p>
-          <p className="mt-6 text-3xl font-bold text-foreground">
-            {new Intl.NumberFormat("vi-VN", {
+        <div className="flex flex-col pt-8">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground">{collectionTitle}</p>
+          <h1 className="font-headline text-6xl mt-2">{product.name}</h1>
+          
+          <div className="mt-8 flex items-center gap-4">
+            <div className="flex items-center border rounded-md">
+              <Button variant="ghost" size="icon" className="h-11 w-11" onClick={() => setQuantity(q => Math.max(1, q - 1))}>
+                  <Minus className="h-4 w-4" />
+              </Button>
+              <Input type="number" value={quantity} readOnly className="h-11 w-12 border-0 text-center bg-transparent" />
+              <Button variant="ghost" size="icon" className="h-11 w-11" onClick={() => setQuantity(q => q + 1)}>
+                  <Plus className="h-4 w-4" />
+              </Button>
+            </div>
+            <Button size="lg" onClick={handleAddToCart} className="flex-1 bg-black text-white hover:bg-black/80 rounded-md">
+              THÊM VÀO GIỎ • {new Intl.NumberFormat("vi-VN", {
               style: "currency",
               currency: "VND",
             }).format(priceToShow)}
-          </p>
-
-          <div className="mt-8 space-y-6">
-            {product.sizes && selectedSize && (
-              <div>
-                <label className="text-sm font-medium text-foreground">
-                  Kích thước
-                </label>
-                <Select
-                  defaultValue={selectedSize.name}
-                  onValueChange={(value) => {
-                    const newSize = product.sizes?.find(
-                      (s) => s.name === value
-                    );
-                    setSelectedSize(newSize);
-                  }}
-                >
-                  <SelectTrigger className="mt-2 w-full md:w-2/3">
-                    <SelectValue placeholder="Chọn một kích thước" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {product.sizes.map((size) => (
-                      <SelectItem key={size.name} value={size.name}>
-                        {size.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            )}
-
-            <Button size="lg" onClick={handleAddToCart} className="w-full md:w-2/3">
-              <ShoppingCart className="mr-2 h-5 w-5" /> Thêm vào giỏ hàng
             </Button>
           </div>
 
-          <div className="mt-10">
-            <Accordion type="single" collapsible defaultValue="item-1">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="font-headline text-lg">
-                  Hồ Sơ Hương Vị
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+          <div className="mt-10 space-y-6 border-t pt-8">
+             <div>
+                <h3 className="font-bold tracking-wider text-sm uppercase">{product.subtitle}</h3>
+                <p className="mt-2 text-muted-foreground leading-relaxed">
                   {product.detailedDescription.flavor}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="font-headline text-lg">
-                  Thành phần
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {product.detailedDescription.ingredients}
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="font-headline text-lg">
-                  Phục Vụ & Bảo Quản
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  <p>{product.detailedDescription.serving}</p>
-                  <p className="mt-2">{product.detailedDescription.storage}</p>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                </p>
+            </div>
+            
+            {product.flavorProfile && (
+                 <div>
+                    <h3 className="font-bold tracking-wider text-sm uppercase">CẢM GIÁC BÁNH</h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                        {product.flavorProfile.map(tag => (
+                            <div key={tag} className="px-4 py-1.5 rounded-full border text-sm">
+                                {tag}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {product.structure && (
+                 <div>
+                    <h3 className="font-bold tracking-wider text-sm uppercase">CẤU TRÚC VỊ BÁNH</h3>
+                    <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+                        {product.structure.map((layer, index) => (
+                           <div key={index} className="flex justify-between border-b pb-2">
+                               <span>Lớp {String(index + 1).padStart(2, '0')}</span>
+                               <span className="text-right text-foreground">{layer}</span>
+                           </div>
+                        ))}
+                    </div>
+                </div>
+            )}
           </div>
         </div>
       </div>

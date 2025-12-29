@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { CartItem } from "@/lib/types";
@@ -12,7 +13,7 @@ import { useToast } from "./use-toast";
 
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (item: Omit<CartItem, "quantity">) => void;
+  addToCart: (item: Omit<CartItem, "quantity"> & { quantity?: number }) => void;
   removeFromCart: (id: string, size?: string) => void;
   updateQuantity: (id: string, quantity: number, size?: string) => void;
   clearCart: () => void;
@@ -45,7 +46,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const addToCart = (item: Omit<CartItem, "quantity">) => {
+  const addToCart = (item: Omit<CartItem, "quantity"> & { quantity?: number }) => {
+    const quantityToAdd = item.quantity || 1;
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (i) => i.id === item.id && i.size === item.size
@@ -53,15 +55,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       if (existingItem) {
         return prevItems.map((i) =>
           i.id === item.id && i.size === item.size
-            ? { ...i, quantity: i.quantity + 1 }
+            ? { ...i, quantity: i.quantity + quantityToAdd }
             : i
         );
       }
-      return [...prevItems, { ...item, quantity: 1 }];
+      return [...prevItems, { ...item, quantity: quantityToAdd }];
     });
     toast({
       title: "Đã thêm vào giỏ hàng",
-      description: `${item.name} ${item.size ? `(${item.size})` : ''} đã được thêm vào giỏ hàng của bạn.`,
+      description: `${item.name} ${item.size ? `(${item.size})` : ''} (x${quantityToAdd}) đã được thêm vào giỏ hàng của bạn.`,
     });
   };
 

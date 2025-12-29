@@ -1,7 +1,9 @@
+
 export type Product = {
   id: string;
   slug: string;
   name: string;
+  subtitle?: string;
   description: string;
   detailedDescription: {
     flavor: string;
@@ -17,6 +19,8 @@ export type Product = {
   imageId: string;
   collection: string;
   categorySlug: string;
+  flavorProfile?: string[];
+  structure?: string[];
 };
 
 export type Collection = {

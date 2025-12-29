@@ -114,14 +114,7 @@ export default function HowToBuyPage() {
         </p>
         {faqIllustration && (
           <div className="mt-8 flex justify-center">
-            <Image
-                src={faqIllustration.imageUrl}
-                alt={faqIllustration.description}
-                width={300}
-                height={200}
-                className="object-contain"
-                data-ai-hint={faqIllustration.imageHint}
-            />
+            
           </div>
         )}
       </div>
