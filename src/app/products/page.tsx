@@ -7,7 +7,7 @@ import { ProductCard } from "@/components/product-card";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const productCategories = [
     { 
@@ -50,6 +50,38 @@ const productCategories = [
 
 
 export default function ProductsPage() {
+  const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveCategory(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -70% 0px', threshold: 0 }
+    );
+
+    productCategories.forEach((category) => {
+      const el = sectionRefs.current[category.slug];
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => {
+      productCategories.forEach((category) => {
+        const el = sectionRefs.current[category.slug];
+        if (el) {
+          observer.unobserve(el);
+        }
+      });
+    };
+  }, []);
+
 
   return (
     <div className="bg-background">
@@ -60,7 +92,11 @@ export default function ProductsPage() {
                         <a
                             key={category.slug}
                             href={`#${category.slug}`}
-                            className="text-sm font-bold uppercase text-[#0A0A0A] hover:opacity-70 transition-colors whitespace-nowrap"
+                            onClick={() => setActiveCategory(category.slug)}
+                            className={cn(
+                                "text-sm font-bold uppercase text-[#0A0A0A] hover:opacity-70 transition-all whitespace-nowrap pb-1",
+                                activeCategory === category.slug ? 'border-b-2 border-[#0A0A0A]' : 'border-b-2 border-transparent'
+                            )}
                         >
                             {category.title}
                         </a>
@@ -78,7 +114,12 @@ export default function ProductsPage() {
           }
 
           return (
-            <section key={category.slug} id={category.slug} className="scroll-mt-24">
+            <section 
+                key={category.slug} 
+                id={category.slug} 
+                ref={el => sectionRefs.current[category.slug] = el}
+                className="scroll-mt-24"
+            >
               <div className="mb-12 pt-12 text-center">
                 <p className="text-sm uppercase tracking-widest text-muted-foreground">{category.subtitle}</p>
                 <div className="inline-block text-left">
