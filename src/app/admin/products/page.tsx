@@ -42,9 +42,69 @@ import {
 import Image from 'next/image';
 import { products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { useState } from 'react';
+import type { Product } from '@/lib/types';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { ProductForm } from './product-form';
+import { useToast } from '@/hooks/use-toast';
 
 export default function ProductsPage() {
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(undefined);
+    const { toast } = useToast();
+    
+    const openForm = (product?: Product) => {
+        setSelectedProduct(product);
+        setIsFormOpen(true);
+    };
+
+    const closeForm = () => {
+        setIsFormOpen(false);
+        setSelectedProduct(undefined);
+    };
+    
+    const openDeleteConfirm = (product: Product) => {
+        setSelectedProduct(product);
+        setIsDeleteConfirmOpen(true);
+    }
+
+    const closeDeleteConfirm = () => {
+        setIsDeleteConfirmOpen(false);
+        setSelectedProduct(undefined);
+    }
+    
+    const handleDelete = () => {
+        if (!selectedProduct) return;
+        console.log(`Deleting product: ${selectedProduct.name}`);
+        toast({
+            title: "Xóa thành công",
+            description: `Sản phẩm "${selectedProduct.name}" đã được xóa.`,
+        });
+        closeDeleteConfirm();
+    }
+
+
     return (
+        <>
         <Tabs defaultValue="all">
           <div className="flex items-center">
             <TabsList>
@@ -61,7 +121,7 @@ export default function ProductsPage() {
                   Xuất File
                 </span>
               </Button>
-              <Button size="sm" className="h-8 gap-1">
+              <Button size="sm" className="h-8 gap-1" onClick={() => openForm()}>
                 <PlusCircle className="h-3.5 w-3.5" />
                 <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
                   Thêm sản phẩm
@@ -142,10 +202,10 @@ export default function ProductsPage() {
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end">
                                     <DropdownMenuLabel>Hành động</DropdownMenuLabel>
-                                    <DropdownMenuItem>Chỉnh sửa</DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => openForm(product)}>Chỉnh sửa</DropdownMenuItem>
                                     <DropdownMenuItem>Ẩn sản phẩm</DropdownMenuItem>
                                     <DropdownMenuSeparator />
-                                    <DropdownMenuItem className='text-destructive'>Xóa</DropdownMenuItem>
+                                    <DropdownMenuItem className='text-destructive' onClick={() => openDeleteConfirm(product)}>Xóa</DropdownMenuItem>
                                 </DropdownMenuContent>
                                 </DropdownMenu>
                             </TableCell>
@@ -162,5 +222,38 @@ export default function ProductsPage() {
               </CardFooter>
             </Card>
         </Tabs>
+
+        <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+            <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                    <DialogTitle>{selectedProduct ? 'Chỉnh sửa sản phẩm' : 'Thêm sản phẩm mới'}</DialogTitle>
+                    <DialogDescription>
+                        {selectedProduct ? 'Cập nhật thông tin chi tiết cho sản phẩm.' : 'Điền thông tin để tạo một sản phẩm mới.'}
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="py-4">
+                   <ProductForm product={selectedProduct} onSuccess={closeForm} />
+                </div>
+            </DialogContent>
+        </Dialog>
+        
+        <AlertDialog open={isDeleteConfirmOpen} onOpenChange={setIsDeleteConfirmOpen}>
+            <AlertDialogContent>
+                <AlertDialogHeader>
+                <AlertDialogTitle>Bạn có chắc chắn muốn xóa?</AlertDialogTitle>
+                <AlertDialogDescription>
+                    Hành động này không thể được hoàn tác. Thao tác này sẽ xóa vĩnh viễn sản phẩm
+                    <span className="font-semibold"> {selectedProduct?.name} </span>
+                    khỏi hệ thống.
+                </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                <AlertDialogCancel onClick={closeDeleteConfirm}>Hủy</AlertDialogCancel>
+                <AlertDialogAction onClick={handleDelete} className="bg-destructive hover:bg-destructive/90">Xóa</AlertDialogAction>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
+
+        </>
     )
 }
