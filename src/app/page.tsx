@@ -16,8 +16,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from '@/lib/utils';
@@ -116,13 +115,32 @@ const heroBanners = [
 
 
 function Hero() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
+  
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap())
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
+
 
   return (
     <section className="relative h-screen w-full text-white">
       <Carousel
+        setApi={setApi}
         plugins={[plugin.current]}
         className="w-full h-full"
         onMouseEnter={plugin.current.stop}
@@ -154,8 +172,18 @@ function Hero() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
-        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
+            {Array.from({ length: count }).map((_, index) => (
+                <button
+                    key={index}
+                    onClick={() => api?.scrollTo(index)}
+                    className={cn(
+                        "h-1.5 w-12 rounded-full transition-all duration-300",
+                        current === index ? "bg-white" : "bg-white/30"
+                    )}
+                />
+            ))}
+        </div>
       </Carousel>
     </section>
   );
