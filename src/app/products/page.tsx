@@ -10,9 +10,9 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 const productCategories = [
+    { slug: 'banh-sinh-nhat', title: 'Bánh sinh nhật' },
     { slug: 'banh-ngot', title: 'Bánh ngọt' },
     { slug: 'banh-man', title: 'Bánh mặn' },
-    { slug: 'banh-sinh-nhat', title: 'Bánh sinh nhật' },
     { slug: 'do-uong', title: 'Đồ uống' },
     { slug: 'banh-khac', title: 'Bánh khác' },
     { slug: 'do-an-khac', title: 'Đồ ăn khác' },
