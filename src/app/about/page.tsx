@@ -48,7 +48,7 @@ export default function AboutPage() {
                     {locationImage && (
                         <div className="my-8 rounded-lg overflow-hidden shadow-lg">
                             <Image
-                                src="/images/cong-ty-co-phan-vibary.jpg"
+                                src="/images/cong-ty-co-phan-vibary.png"
                                 alt={locationImage.description}
                                 width={1200}
                                 height={600}

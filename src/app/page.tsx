@@ -104,7 +104,7 @@ function AnnouncementBar() {
 const categories = [
   {
     name: 'bánh ngọt',
-    href: '/products?collection=special-occasions',
+    href: '/products',
     imageId: 'category-sweet-cake',
     description: 'Dành cho những tín đồ hảo ngọt'
   },
@@ -116,7 +116,7 @@ const categories = [
   },
   {
     name: 'bánh sinh nhật',
-    href: '/products?collection=special-occasions',
+    href: '/products',
     imageId: 'category-birthday-cake',
     description: 'Dành cho từ 2-10 người'
   },
@@ -145,24 +145,9 @@ function CategorySection() {
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => {
-            const image = PlaceHolderImages.find((p) => p.id === category.imageId);
-            return (
-              <Link href={category.href} key={category.name} className="group flex flex-col overflow-hidden rounded-lg shadow-md transition-shadow hover:shadow-xl">
-                  <div className="aspect-w-4 aspect-h-3 relative overflow-hidden">
-                    {image ? (
-                      <Image
-                        src={image.imageUrl}
-                        alt={category.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={image.imageHint}
-                      />
-                    ) : (
-                      <div className="bg-gray-200 w-full h-full"></div>
-                    )}
-                  </div>
-                  <div className="bg-white p-4">
+          {categories.map((category) => (
+              <Link href={category.href} key={category.name} className="group block rounded-lg border bg-card text-card-foreground shadow-sm transition-shadow hover:shadow-lg">
+                <div className="p-6">
                     <div className="flex items-center justify-between">
                         <div>
                             <h3 className="font-headline text-lg text-black">{category.name}</h3>
@@ -170,10 +155,9 @@ function CategorySection() {
                         </div>
                         <ArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
-                  </div>
+                </div>
               </Link>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
@@ -299,4 +283,5 @@ export default function Home() {
     
 
     
+
 
