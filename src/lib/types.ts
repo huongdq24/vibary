@@ -10,6 +10,8 @@ export type Product = {
     ingredients: string;
     serving: string;
     storage: string;
+    dimensions: string;
+    accessories: string[];
   };
   price: number;
   sizes?: {

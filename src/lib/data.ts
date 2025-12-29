@@ -50,8 +50,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mousse hoa hồng tinh tế kết hợp với thạch vải nhẹ và bánh bông lan hạnh nhân mềm mại. Một chút mâm xôi thêm vị chua nhẹ.',
       ingredients: 'Mousse hoa hồng, thạch vải, mứt mâm xôi, bánh dacquoise hạnh nhân, lớp phủ sô cô la trắng.',
-      serving: 'Phục vụ 6-8 người. Thưởng thức ngon nhất khi lạnh.',
-      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày để có độ tươi ngon tối ưu.'
+      serving: 'Dành cho 6-8 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Không nên để bánh ở nhiệt độ phòng quá 30 phút (Bánh sẽ bị chảy). Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 16cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 10 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 650000,
     sizes: [
@@ -79,8 +85,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Bắc Ninh.',
       ingredients: 'Kem chanh dây, mousse dừa, bánh bông lan hạnh nhân, đế dừa giòn.',
-      serving: 'Phục vụ 6-8 người.',
-      storage: 'Bảo quản trong tủ lạnh. Lớp đế giòn ngon nhất khi thưởng thức trong ngày đầu tiên.'
+      serving: 'Dành cho 6-8 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Không nên để bánh ở nhiệt độ phòng quá 30 phút (Bánh sẽ bị chảy). Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 16cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 10 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 620000,
      sizes: [
@@ -108,8 +120,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mousse matcha Uji đậm đà cân bằng với sữa đông yuzu chua thanh, trên nền bánh bông lan mè đen. Một trải nghiệm tựa thiền.',
       ingredients: 'Mousse matcha Uji, sữa đông yuzu, bánh joconde mè đen, sô cô la trắng.',
-      serving: 'Phục vụ 2-4 người (Half Entremet).',
-      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày.'
+      serving: 'Dành cho 2-4 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Không nên để bánh ở nhiệt độ phòng quá 30 phút (Bánh sẽ bị chảy). Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 12cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 4 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 380000,
     imageId: 'product-3',
@@ -133,8 +151,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mousse sô cô la đen 66% mịn mượt, nhân praline hạt phỉ kem, và bánh bông lan sô cô la ẩm, tất cả trên một lớp đế feuilletine giòn.',
       ingredients: 'Mousse sô cô la đen, praline hạt phỉ, bánh bông lan sô cô la, đế feuilletine giòn.',
-      serving: 'Phục vụ 8-10 người.',
-      storage: 'Ngon nhất khi để ở nhiệt độ phòng 15 phút trước khi dùng.'
+      serving: 'Dành cho 8-10 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Ngon nhất khi để ở nhiệt độ phòng 15 phút trước khi dùng. Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 18cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 10 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 700000,
     sizes: [
@@ -162,8 +186,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mứt dâu tây tươi và kem mascarpone vani nhẹ trên bánh bông lan vani mềm. Đơn giản là đáng yêu.',
       ingredients: 'Mứt dâu tây, kem mascarpone vani, bánh bông lan vani, dâu tây tươi.',
-      serving: 'Phục vụ 6-8 người.',
-      storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong ngày mua do có trái cây tươi.'
+      serving: 'Dành cho 6-8 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Ngon nhất khi dùng trong ngày mua do có trái cây tươi. Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 16cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 10 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 680000,
     imageId: 'product-5',
@@ -187,8 +217,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mousse xoài nhẹ với nhân thạch chanh dây. Kích thước hoàn hảo cho một khoảnh khắc hạnh phúc nhỏ.',
       ingredients: 'Mousse xoài, thạch chanh dây, bánh bông lan hạnh nhân.',
-      serving: 'Phục vụ 1-2 người.',
-      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày.'
+      serving: 'Dành cho 1-2 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Không nên để bánh ở nhiệt độ phòng quá 30 phút (Bánh sẽ bị chảy). Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 8cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 2 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 250000,
     imageId: 'product-6',
@@ -212,8 +248,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Mousse hạt dẻ cười mịn màng với trái tim thạch mâm xôi chua, trên nền bánh dacquoise hạt dẻ cười tinh tế.',
       ingredients: 'Mousse hạt dẻ cười, thạch mâm xôi, bánh dacquoise hạt dẻ cười.',
-      serving: 'Phục vụ 2-4 người (Half Entremet).',
-      storage: 'Bảo quản trong tủ lạnh. Màu sắc và hương vị ngon nhất trong ngày đầu tiên.'
+      serving: 'Dành cho 2-4 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Màu sắc và hương vị ngon nhất trong ngày đầu tiên. Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 12cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 4 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 420000,
     imageId: 'product-7',
@@ -237,8 +279,14 @@ export const products: Product[] = [
     detailedDescription: {
       flavor: 'Kem cheesecake không nướng nhẹ nhàng được trang trí bằng một hỗn hợp các loại quả mọng mùa hè tươi trên đế bánh quy bơ.',
       ingredients: 'Phô mai kem, kem tươi, hỗn hợp quả mọng (dâu tây, việt quất, mâm xôi), đế bánh quy digestive.',
-      serving: 'Phục vụ 6-8 người.',
-      storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong vòng 24 giờ.'
+      serving: 'Dành cho 6-8 người ăn',
+      storage: 'Luôn giữ bánh trong hộp kín & bảo quản trong ngăn mát tủ lạnh. Ngon nhất khi dùng trong vòng 24 giờ. Sử dụng trong vòng 03 ngày.',
+      dimensions: 'Đường kính: 16cm | Chiều cao: 5cm',
+      accessories: [
+        '01 Chiếc nến sinh nhật',
+        '01 Bộ đĩa và dĩa dành cho 10 người',
+        '01 Dao cắt bánh'
+      ]
     },
     price: 640000,
     imageId: 'product-8',
