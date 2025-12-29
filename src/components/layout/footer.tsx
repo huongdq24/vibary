@@ -1,62 +1,49 @@
 import Link from "next/link";
-import { Github, Instagram, Facebook, Twitter } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Instagram, Facebook, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M16 4h-2.5A3.5 3.5 0 0 0 10 7.5v8.5a4 4 0 1 1-4-4V8.5" />
+    </svg>
+)
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          <div className="flex flex-col gap-4">
-             <Link href="/" className="flex items-center gap-2">
-              <span className="font-headline text-2xl font-bold tracking-widest">
-                VIBARY
-              </span>
-            </Link>
-            <p className="text-sm text-muted-foreground">
-              Bánh ngọt Pháp hiện đại được chế tác cho khẩu vị Việt, sử dụng trái cây tươi theo mùa.
-            </p>
-            <div className="flex gap-4">
+    <footer className="bg-white text-center py-16 sm:py-24">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="space-y-4">
+            <p className="text-sm tracking-widest uppercase">GỌI NGAY NẾU CẦN ĐẶT BÁNH GẤP BẠN NHÉ!</p>
+            <Button asChild variant="outline" size="lg" className="rounded-none text-base tracking-wider">
+                <a href="tel:0912550335">
+                    <Phone className="mr-2 h-4 w-4" />
+                    HOTLINE 091 255 03 35
+                </a>
+            </Button>
+        </div>
+
+        <div className="mt-12 space-y-4">
+            <p className="text-sm tracking-widest uppercase">THEO DÕI VIBARY</p>
+            <div className="flex justify-center gap-4">
                 <Link href="#" aria-label="Facebook page">
                     <Facebook className="h-5 w-5 text-muted-foreground hover:text-foreground" />
                 </Link>
                 <Link href="#" aria-label="Instagram page">
                     <Instagram className="h-5 w-5 text-muted-foreground hover:text-foreground" />
                 </Link>
-                <Link href="#" aria-label="Twitter page">
-                    <Twitter className="h-5 w-5 text-muted-foreground hover:text-foreground" />
+                <Link href="#" aria-label="TikTok page">
+                   <TikTokIcon className="h-5 w-5 text-muted-foreground hover:text-foreground" />
                 </Link>
             </div>
-          </div>
-          <div>
-            <h3 className="font-headline text-sm font-semibold tracking-wider">Cửa Hàng</h3>
-            <ul className="mt-4 space-y-2">
-              <li><Link href="/products" className="text-sm text-muted-foreground hover:text-foreground">Tất Cả Sản Phẩm</Link></li>
-              <li><Link href="/products?collection=special-occasions" className="text-sm text-muted-foreground hover:text-foreground">Bánh Sinh Nhật</Link></li>
-              <li><Link href="/products?collection=half-entremet" className="text-sm text-muted-foreground hover:text-foreground">Half Entremet</Link></li>
-              <li><Link href="/quiz" className="text-sm text-muted-foreground hover:text-foreground">Trắc Nghiệm Hương Vị</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-headline text-sm font-semibold tracking-wider">Về Chúng Tôi</h3>
-            <ul className="mt-4 space-y-2">
-              <li><Link href="/about" className="text-sm text-muted-foreground hover:text-foreground">Câu Chuyện</Link></li>
-              <li><Link href="/news" className="text-sm text-muted-foreground hover:text-foreground">Tin Tức</Link></li>
-              <li><Link href="/faq" className="text-sm text-muted-foreground hover:text-foreground">FAQ</Link></li>
-              <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">Liên Hệ</Link></li>
-            </ul>
-          </div>
-          <div>
-             <h3 className="font-headline text-sm font-semibold tracking-wider">Bản Tin</h3>
-             <p className="mt-4 text-sm text-muted-foreground">Đăng ký để nhận tin tức ngọt ngào và ưu đãi đặc biệt.</p>
-             <form className="mt-4 flex gap-2">
-                <Input type="email" placeholder="Email của bạn" className="max-w-xs" />
-                <Button type="submit" variant="outline">Đăng Ký</Button>
-             </form>
-          </div>
         </div>
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+
+        <div className="mt-20">
+            <p className="font-headline text-4xl text-gray-400 italic">Crafted to be shared</p>
+            <h1 className="font-headline text-9xl md:text-[200px] font-bold text-gray-200 tracking-widest mt-4">VIBARY</h1>
+        </div>
+
+        <div className="mt-20 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} VIBARY. Đã đăng ký bản quyền.</p>
         </div>
       </div>
