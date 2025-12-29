@@ -283,9 +283,9 @@ export default function Home() {
       <Hero />
       <AnnouncementBar />
       <FeaturedProducts />
-      <CategorySection />
       <FeaturedCollections />
       <NewArrivals />
+      <CategorySection />
     </>
   );
 }
