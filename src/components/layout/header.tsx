@@ -37,10 +37,8 @@ export function Header() {
               <Link
                   key={link.href}
                   href={link.href}
-                  className={cn(
-                      "text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full",
-                      isActive ? "border border-black" : ""
-                  )}
+                  data-active={isActive}
+                  className="text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full data-[active=true]:border data-[active=true]:border-black"
               >
                   {link.label}
               </Link>
@@ -64,10 +62,8 @@ export function Header() {
                     <Link
                         key={link.href}
                         href={link.href}
-                        className={cn(
-                            "text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full",
-                            isActive ? "border border-black" : ""
-                        )}
+                        data-active={isActive}
+                        className="text-sm font-body uppercase tracking-wider text-black transition-all hover:text-black/70 py-2 px-3 rounded-full data-[active=true]:border data-[active=true]:border-black"
                     >
                         {link.label}
                     </Link>
