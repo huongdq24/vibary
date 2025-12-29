@@ -4,10 +4,10 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { collections, products } from '@/lib/data';
+import { collections, products, articles } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Card, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import React from 'react';
@@ -248,6 +248,44 @@ function NewArrivals() {
   );
 }
 
+function HotNews() {
+  const latestArticles = articles.slice(0, 4);
+  return (
+    <section className="py-16 sm:py-24 bg-white">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <h2 className="font-headline text-4xl md:text-5xl">Tin tức "nóng hổi"</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {latestArticles.map((article) => {
+            const image = PlaceHolderImages.find((p) => p.id === article.imageId);
+            return (
+              <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col gap-4">
+                {image && (
+                  <div className="aspect-h-9 aspect-w-16 w-full overflow-hidden rounded-lg">
+                    <Image
+                      src={image.imageUrl}
+                      alt={article.title}
+                      width={600}
+                      height={400}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={image.imageHint}
+                    />
+                  </div>
+                )}
+                <div>
+                  <h3 className="font-headline text-xl group-hover:underline">{article.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{article.excerpt}</p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 export default function Home() {
   return (
@@ -258,6 +296,7 @@ export default function Home() {
       <NewArrivals />
       <CategorySection />
       <WorkshopSection />
+      <HotNews />
     </>
   );
 }
