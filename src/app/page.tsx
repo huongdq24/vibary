@@ -10,8 +10,18 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { cn } from '@/lib/utils';
+
 
 const marqueeVariantsLR = {
   animate: {
@@ -41,32 +51,99 @@ const marqueeVariantsRL = {
   },
 };
 
+const heroBanners = [
+  {
+    id: "hero-banner-1",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  },
+  {
+    id: "hero-banner-2",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  },
+  {
+    id: "hero-banner-3",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  },
+  {
+    id: "hero-banner-4",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  },
+  {
+    id: "hero-banner-5",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  },
+  {
+    id: "hero-banner-6",
+    title: "BST BÁNH ENTREMET DÀNH CHO",
+    subtitle: "Mọi dịp đặc biệt của bạn",
+    buttonText: "KHÁM PHÁ NGAY",
+    buttonLink: "/products?collection=special-occasions"
+  }
+];
+
+
 function Hero() {
-  const heroImage = PlaceHolderImages.find((p) => p.id === 'hero-banner-1');
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
-    <section className="relative h-[80vh] min-h-[400px] w-full bg-cover bg-center text-white">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
-      <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
-        <h1 className="font-headline text-5xl leading-tight md:text-7xl">
-          Nghệ Thuật Bánh Ngọt Pháp Hiện Đại
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg md:text-xl">
-          Trải nghiệm sự cân bằng tinh tế giữa kỹ thuật Pháp và hương vị trái cây theo mùa của Việt Nam. Được làm thủ công tại Bắc Ninh.
-        </p>
-        <Button asChild size="lg" className="mt-8">
-          <Link href="/products">Khám Phá Bộ Sưu Tập</Link>
-        </Button>
-      </div>
+    <section className="relative h-screen w-full text-white">
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full h-full"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent className="h-full">
+          {heroBanners.map((banner) => {
+            const image = PlaceHolderImages.find((p) => p.id === banner.id);
+            return (
+              <CarouselItem key={banner.id}>
+                <div className="relative w-full h-full">
+                  {image && (
+                    <Image
+                      src={image.imageUrl}
+                      alt={image.description}
+                      fill
+                      className="object-cover"
+                      priority={banner.id === 'hero-banner-1'}
+                      data-ai-hint={image.imageHint}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+                  <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+                    <h2 className="font-body text-xl tracking-widest uppercase">{banner.title}</h2>
+                    <h1 className="font-headline text-5xl leading-tight md:text-7xl mt-2">
+                      {banner.subtitle}
+                    </h1>
+                    <Button asChild size="lg" className="mt-8 rounded-full bg-white text-black hover:bg-white/90">
+                      <Link href={banner.buttonLink}>{banner.buttonText}</Link>
+                    </Button>
+                  </div>
+                </div>
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+      </Carousel>
     </section>
   );
 }
@@ -290,10 +367,43 @@ function HotNews() {
 
 
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isSticky, setIsSticky] = useState(false);
+  // The header has a height of 80px (h-20)
+  const headerHeight = 80;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        if (heroBottom <= headerHeight) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
-      <Hero />
-      <AnnouncementBar />
+      <div ref={heroRef}>
+        <Hero />
+      </div>
+      <div
+        className={cn(
+          "transition-all duration-300",
+          isSticky ? "fixed top-20 z-40 w-full" : "relative"
+        )}
+      >
+        <AnnouncementBar />
+      </div>
       <FeaturedProducts />
       <CategorySection />
       <NewArrivals />
