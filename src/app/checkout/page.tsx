@@ -89,6 +89,7 @@ export default function CheckoutPage() {
                         <FormMessage />
                       </FormItem>
                     )}
+                  />
                 </CardContent>
               </Card>
 
