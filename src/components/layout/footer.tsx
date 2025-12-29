@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Facebook, Phone } from "lucide-react";
+import { Instagram, Facebook, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -21,6 +21,10 @@ export function Footer() {
                     HOTLINE 091 255 03 35
                 </a>
             </Button>
+            <div className="flex justify-center items-center gap-2 text-muted-foreground mt-4">
+              <MapPin className="h-4 w-4" />
+              <span>số 3 Nguyễn Văn Trỗi, P.Ninh Xá, Bắc Ninh, Việt Nam</span>
+            </div>
         </div>
 
         <div className="mt-12 space-y-4">
