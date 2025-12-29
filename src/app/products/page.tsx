@@ -1,13 +1,10 @@
 
+
 'use client';
 
-import { useState, useMemo } from 'react';
 import { products } from "@/lib/data";
-import type { Product } from "@/lib/types";
 import { ProductCard } from "@/components/product-card";
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { Separator } from "@/components/ui/separator";
 
 const productCategories = [
     { 
@@ -50,71 +47,39 @@ const productCategories = [
 
 
 export default function ProductsPage() {
-  const searchParams = useSearchParams();
-  const collectionSlug = searchParams.get('collection');
-
-  const [activeCategory, setActiveCategory] = useState<string>(collectionSlug ?? 'banh-sinh-nhat');
-
-  const activeCategoryData = useMemo(() => {
-    return productCategories.find(c => c.slug === activeCategory);
-  }, [activeCategory]);
-  
-  const getFilteredProducts = () => {
-    if (!activeCategory) {
-      return products;
-    }
-    return products.filter(p => p.categorySlug === activeCategory);
-  };
-  
-  const filteredProducts = getFilteredProducts();
 
   return (
     <div className="bg-background">
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        
-        {activeCategoryData && (
-          <div className="mb-12 text-center">
-            <p className="text-sm uppercase tracking-widest text-muted-foreground">{activeCategoryData.subtitle}</p>
-            <h1 className="font-headline text-4xl md:text-5xl mt-2">{activeCategoryData.title}</h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-              {activeCategoryData.description}
-            </p>
-          </div>
-        )}
+        {productCategories.map((category, index) => {
+          const categoryProducts = products.filter(p => p.categorySlug === category.slug);
 
-        <div className="mb-12">
-            <div className="flex justify-center border-b flex-wrap">
-                {productCategories.map(category => (
-                     <div
-                        key={category.slug}
-                        onClick={() => {
-                            setActiveCategory(category.slug);
-                            window.history.pushState({}, '', `/products?collection=${category.slug}`);
-                        }}
-                        className={cn(
-                            "cursor-pointer px-4 py-2 text-sm uppercase tracking-wider text-muted-foreground transition-colors",
-                            activeCategory === category.slug
-                            ? "border-b-2 border-foreground text-foreground font-semibold"
-                            : "hover:text-foreground"
-                        )}
-                     >
-                        {category.title}
-                    </div>
+          if (categoryProducts.length === 0) {
+            return null;
+          }
+
+          return (
+            <div key={category.slug}>
+              <div className="mb-12 pt-12 text-center">
+                <p className="text-sm uppercase tracking-widest text-muted-foreground">{category.subtitle}</p>
+                <h1 className="font-headline text-4xl md:text-5xl mt-2">{category.title}</h1>
+                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                  {category.description}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+                {categoryProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
                 ))}
-            </div>
-        </div>
+              </div>
 
-        {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground">Không tìm thấy sản phẩm nào trong danh mục này.</p>
-          </div>
-        )}
+              {index < productCategories.length - 1 && (
+                <Separator className="my-16 sm:my-24" />
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
