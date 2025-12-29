@@ -1,40 +1,40 @@
 import type { Product, Collection, Article, FaqItem, NavLink } from './types';
 
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Home' },
-  { href: '/products', label: 'Products' },
-  { href: '/quiz', label: 'Quiz' },
-  { href: '/news', label: 'News' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Trang Chủ' },
+  { href: '/products', label: 'Sản Phẩm' },
+  { href: '/quiz', label: 'Trắc Nghiệm' },
+  { href: '/news', label: 'Tin Tức' },
+  { href: '/contact', label: 'Liên Hệ' },
 ];
 
 export const collections: Collection[] = [
   {
     id: '1',
     slug: 'special-occasions',
-    title: 'Entremet for Special Occasions',
-    description: 'Elevate your celebrations with cakes that are as memorable as the moments.',
+    title: 'Entremet cho Dịp Đặc Biệt',
+    description: 'Nâng tầm lễ kỷ niệm của bạn với những chiếc bánh đáng nhớ như chính khoảnh khắc.',
     imageId: 'collection-special-occasion',
   },
   {
     id: '2',
     slug: 'heart-shaped',
-    title: 'Heart-Shaped Cakes',
-    description: 'A gesture of love, crafted with passion and the finest ingredients.',
+    title: 'Bánh Hình Trái Tim',
+    description: 'Một cử chỉ yêu thương, được chế tác bằng niềm đam mê và những nguyên liệu tốt nhất.',
     imageId: 'collection-heart-shaped',
   },
   {
     id: '3',
     slug: 'half-entremet',
-    title: 'Half Entremet for Everyday Indulgence',
-    description: 'Savor a moment of pure bliss, perfectly portioned for two to five.',
+    title: 'Half Entremet cho Ngày Thường',
+    description: 'Thưởng thức một khoảnh khắc hạnh phúc thuần khiết, khẩu phần hoàn hảo cho hai đến năm người.',
     imageId: 'collection-half',
   },
   {
     id: '4',
     slug: 'baby-collection',
-    title: 'Pretty Little Baby Collection',
-    description: 'Delicate creations for the little joys and milestones in life.',
+    title: 'Bộ Sưu Tập Bé Xinh',
+    description: 'Những sáng tạo tinh tế cho những niềm vui và cột mốc nhỏ trong đời.',
     imageId: 'collection-baby',
   },
 ];
@@ -44,17 +44,17 @@ export const products: Product[] = [
     id: 'prod-001',
     slug: 'lychee-rose-delight',
     name: 'Lychee & Rose Delight',
-    description: 'A poetic dance of fragrant rose and sweet lychee.',
+    description: 'Vũ điệu thơ mộng của hoa hồng thơm ngát và vải ngọt ngào.',
     detailedDescription: {
-      flavor: 'Delicate notes of rose mousse paired with a light lychee jelly and a soft almond sponge. A hint of raspberry adds a gentle tartness.',
-      ingredients: 'Rose mousse, lychee jelly, raspberry confit, almond dacquoise, white chocolate glaze.',
-      serving: 'Serves 6-8 people. Best enjoyed chilled.',
-      storage: 'Keep refrigerated. Consume within 2 days for optimal freshness.'
+      flavor: 'Mousse hoa hồng tinh tế kết hợp với thạch vải nhẹ và bánh bông lan hạnh nhân mềm mại. Một chút mâm xôi thêm vị chua nhẹ.',
+      ingredients: 'Mousse hoa hồng, thạch vải, mứt mâm xôi, bánh dacquoise hạnh nhân, lớp phủ sô cô la trắng.',
+      serving: 'Phục vụ 6-8 người. Thưởng thức ngon nhất khi lạnh.',
+      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày để có độ tươi ngon tối ưu.'
     },
     price: 650000,
     sizes: [
-      { name: '16cm (6-8 people)', price: 650000 },
-      { name: '18cm (8-10 people)', price: 780000 },
+      { name: '16cm (6-8 người)', price: 650000 },
+      { name: '18cm (8-10 người)', price: 780000 },
     ],
     imageId: 'product-1',
     collection: 'special-occasions',
@@ -63,17 +63,17 @@ export const products: Product[] = [
     id: 'prod-002',
     slug: 'passion-fruit-breeze',
     name: 'Passion Fruit Breeze',
-    description: 'A tropical escape in every bite, vibrant and refreshing.',
+    description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
-      flavor: 'A bright passion fruit cream, layered with coconut mousse and a crunchy coconut base. A taste of summer in Hanoi.',
-      ingredients: 'Passion fruit cream, coconut mousse, almond sponge, crispy coconut crunch.',
-      serving: 'Serves 6-8 people.',
-      storage: 'Keep refrigerated. The crunch layer is best enjoyed on the first day.'
+      flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Hà Nội.',
+      ingredients: 'Kem chanh dây, mousse dừa, bánh bông lan hạnh nhân, đế dừa giòn.',
+      serving: 'Phục vụ 6-8 người.',
+      storage: 'Bảo quản trong tủ lạnh. Lớp đế giòn ngon nhất khi thưởng thức trong ngày đầu tiên.'
     },
     price: 620000,
      sizes: [
-      { name: '16cm (6-8 people)', price: 620000 },
-      { name: '18cm (8-10 people)', price: 750000 },
+      { name: '16cm (6-8 người)', price: 620000 },
+      { name: '18cm (8-10 người)', price: 750000 },
     ],
     imageId: 'product-2',
     collection: 'special-occasions',
@@ -82,12 +82,12 @@ export const products: Product[] = [
     id: 'prod-003',
     slug: 'matcha-yuzu-garden',
     name: 'Matcha & Yuzu Garden',
-    description: 'An elegant fusion of earthy matcha and citrusy yuzu.',
+    description: 'Sự kết hợp thanh lịch giữa vị trà matcha đất và vị cam yuzu.',
     detailedDescription: {
-      flavor: 'Rich Uji matcha mousse balanced with a tangy yuzu curd, on a black sesame sponge. A zen-like experience.',
-      ingredients: 'Uji matcha mousse, yuzu curd, black sesame joconde, white chocolate.',
-      serving: 'Serves 2-4 people (Half Entremet).',
-      storage: 'Keep refrigerated. Consume within 2 days.'
+      flavor: 'Mousse matcha Uji đậm đà cân bằng với sữa đông yuzu chua thanh, trên nền bánh bông lan mè đen. Một trải nghiệm tựa thiền.',
+      ingredients: 'Mousse matcha Uji, sữa đông yuzu, bánh joconde mè đen, sô cô la trắng.',
+      serving: 'Phục vụ 2-4 người (Half Entremet).',
+      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày.'
     },
     price: 380000,
     imageId: 'product-3',
@@ -97,17 +97,17 @@ export const products: Product[] = [
     id: 'prod-004',
     slug: 'chocolate-hazelnut-dream',
     name: 'Chocolate Hazelnut Dream',
-    description: 'A decadent and luxurious treat for the true chocolate lover.',
+    description: 'Một món ăn xa hoa và sang trọng cho người thực sự yêu sô cô la.',
     detailedDescription: {
-      flavor: 'Velvety 66% dark chocolate mousse, a creamy hazelnut praline center, and a moist chocolate sponge, all on a crunchy feuilletine base.',
-      ingredients: 'Dark chocolate mousse, hazelnut praline, chocolate sponge, crunchy feuilletine.',
-      serving: 'Serves 8-10 people.',
-      storage: 'Best served at room temperature for 15 minutes before consumption.'
+      flavor: 'Mousse sô cô la đen 66% mịn mượt, nhân praline hạt phỉ kem, và bánh bông lan sô cô la ẩm, tất cả trên một lớp đế feuilletine giòn.',
+      ingredients: 'Mousse sô cô la đen, praline hạt phỉ, bánh bông lan sô cô la, đế feuilletine giòn.',
+      serving: 'Phục vụ 8-10 người.',
+      storage: 'Ngon nhất khi để ở nhiệt độ phòng 15 phút trước khi dùng.'
     },
     price: 700000,
     sizes: [
-      { name: '18cm (8-10 people)', price: 700000 },
-      { name: '20cm (10-12 people)', price: 850000 },
+      { name: '18cm (8-10 người)', price: 700000 },
+      { name: '20cm (10-12 người)', price: 850000 },
     ],
     imageId: 'product-4',
     collection: 'special-occasions',
@@ -116,12 +116,12 @@ export const products: Product[] = [
     id: 'prod-005',
     slug: 'strawberry-love',
     name: 'Strawberry Love',
-    description: 'A heart of sweet strawberries and vanilla cream.',
+    description: 'Trái tim của dâu tây ngọt ngào và kem vani.',
     detailedDescription: {
-      flavor: 'Fresh strawberry compote and light vanilla mascarpone cream on a soft vanilla sponge. Simply lovely.',
-      ingredients: 'Strawberry compote, vanilla mascarpone cream, vanilla sponge, fresh strawberries.',
-      serving: 'Serves 6-8 people.',
-      storage: 'Keep refrigerated. Best consumed on the day of purchase due to fresh fruit.'
+      flavor: 'Mứt dâu tây tươi và kem mascarpone vani nhẹ trên bánh bông lan vani mềm. Đơn giản là đáng yêu.',
+      ingredients: 'Mứt dâu tây, kem mascarpone vani, bánh bông lan vani, dâu tây tươi.',
+      serving: 'Phục vụ 6-8 người.',
+      storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong ngày mua do có trái cây tươi.'
     },
     price: 680000,
     imageId: 'product-5',
@@ -131,12 +131,12 @@ export const products: Product[] = [
     id: 'prod-006',
     slug: 'baby-mango-bliss',
     name: 'Baby Mango Bliss',
-    description: 'A small cake full of sunshine and sweet mango flavor.',
+    description: 'Chiếc bánh nhỏ tràn ngập ánh nắng và hương vị xoài ngọt ngào.',
     detailedDescription: {
-      flavor: 'A light mango mousse with a passion fruit jelly center. Perfectly sized for a small, happy moment.',
-      ingredients: 'Mango mousse, passion fruit jelly, almond sponge.',
-      serving: 'Serves 1-2 people.',
-      storage: 'Keep refrigerated. Consume within 2 days.'
+      flavor: 'Mousse xoài nhẹ với nhân thạch chanh dây. Kích thước hoàn hảo cho một khoảnh khắc hạnh phúc nhỏ.',
+      ingredients: 'Mousse xoài, thạch chanh dây, bánh bông lan hạnh nhân.',
+      serving: 'Phục vụ 1-2 người.',
+      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày.'
     },
     price: 250000,
     imageId: 'product-6',
@@ -146,12 +146,12 @@ export const products: Product[] = [
     id: 'prod-007',
     slug: 'raspberry-pistachio-half',
     name: 'Raspberry & Pistachio Half',
-    description: 'A vibrant pairing of tart raspberry and nutty pistachio.',
+    description: 'Sự kết hợp sống động của mâm xôi chua và hạt dẻ cười bùi.',
     detailedDescription: {
-      flavor: 'Smooth pistachio mousse with a heart of tangy raspberry jelly, on a delicate pistachio dacquoise.',
-      ingredients: 'Pistachio mousse, raspberry jelly, pistachio dacquoise.',
-      serving: 'Serves 2-4 people (Half Entremet).',
-      storage: 'Keep refrigerated. The colors and flavors are best on the first day.'
+      flavor: 'Mousse hạt dẻ cười mịn màng với trái tim thạch mâm xôi chua, trên nền bánh dacquoise hạt dẻ cười tinh tế.',
+      ingredients: 'Mousse hạt dẻ cười, thạch mâm xôi, bánh dacquoise hạt dẻ cười.',
+      serving: 'Phục vụ 2-4 người (Half Entremet).',
+      storage: 'Bảo quản trong tủ lạnh. Màu sắc và hương vị ngon nhất trong ngày đầu tiên.'
     },
     price: 420000,
     imageId: 'product-7',
@@ -161,12 +161,12 @@ export const products: Product[] = [
     id: 'prod-008',
     slug: 'summer-berry-cheesecake',
     name: 'Summer Berry Cheesecake',
-    description: 'Our modern take on a classic, bursting with berries.',
+    description: 'Phiên bản hiện đại của một món kinh điển, tràn ngập các loại quả mọng.',
     detailedDescription: {
-      flavor: 'A light, no-bake cheesecake cream adorned with a medley of fresh summer berries on a buttery biscuit base.',
-      ingredients: 'Cream cheese, fresh cream, mixed berries (strawberries, blueberries, raspberries), digestive biscuit base.',
-      serving: 'Serves 6-8 people.',
-      storage: 'Keep refrigerated. Best consumed within 24 hours.'
+      flavor: 'Kem cheesecake không nướng nhẹ nhàng được trang trí bằng một hỗn hợp các loại quả mọng mùa hè tươi trên đế bánh quy bơ.',
+      ingredients: 'Phô mai kem, kem tươi, hỗn hợp quả mọng (dâu tây, việt quất, mâm xôi), đế bánh quy digestive.',
+      serving: 'Phục vụ 6-8 người.',
+      storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong vòng 24 giờ.'
     },
     price: 640000,
     imageId: 'product-8',
@@ -178,64 +178,64 @@ export const articles: Article[] = [
   {
     id: 'news-1',
     slug: 'our-founder-story',
-    title: 'The Sweet Journey of Our Founder',
-    excerpt: 'From a small kitchen in Hanoi to a celebrated pastry brand, read the story of our founder, Lan.',
-    date: 'May 20, 2024',
-    category: 'Founder Stories',
+    title: 'Hành Trình Ngọt Ngào Của Người Sáng Lập',
+    excerpt: 'Từ một căn bếp nhỏ ở Hà Nội đến một thương hiệu bánh ngọt nổi tiếng, hãy đọc câu chuyện của người sáng lập của chúng tôi, Lan.',
+    date: 'Ngày 20 tháng 5, 2024',
+    category: 'Câu chuyện người sáng lập',
     imageId: 'blog-1',
-    content: '<p>The story of Entremet Hanoi begins not in a grand patisserie, but in a small, sunlit kitchen in the heart of Hanoi. Our founder, Lan, discovered her passion for French pastry during a year spent studying in Paris. She was mesmerized by the artistry, the precision, and the delicate balance of flavors in every entremet she tasted. Upon returning to Vietnam, she dreamt of bringing that magic home, but with a unique Vietnamese twist.</p><p>She spent years perfecting her craft, experimenting with local, seasonal fruits like lychee, passion fruit, and mango, and adjusting sweetness levels to suit the local palate. Her vision was to create modern French pastries that felt both luxurious and familiar. Entremet Hanoi is the culmination of that dream—a celebration of technique, creativity, and the freshest ingredients our beautiful country has to offer.</p>'
+    content: '<p>Câu chuyện của Entremet Hanoi không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ đầy nắng ở trung tâm Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm học tập tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm. Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê hương, nhưng với một nét chấm phá độc đáo của Việt Nam.</p><p>Cô đã dành nhiều năm để hoàn thiện tay nghề, thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây, và xoài, và điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương. Tầm nhìn của cô là tạo ra những chiếc bánh ngọt Pháp hiện đại vừa sang trọng vừa quen thuộc. Entremet Hanoi là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại.</p>'
   },
   {
     id: 'news-2',
     slug: 'behind-the-scenes-cake-creation',
-    title: 'Behind the Scenes: Crafting the Perfect Cake',
-    excerpt: 'A glimpse into the meticulous process and passion that goes into every single one of our cakes.',
-    date: 'May 15, 2024',
-    category: 'Behind-the-scenes',
+    title: 'Hậu Trường: Tạo Ra Chiếc Bánh Hoàn Hảo',
+    excerpt: 'Một cái nhìn thoáng qua về quy trình tỉ mỉ và niềm đam mê trong mỗi chiếc bánh của chúng tôi.',
+    date: 'Ngày 15 tháng 5, 2024',
+    category: 'Hậu trường',
     imageId: 'blog-2',
-    content: '<p>What does it take to create an Entremet Hanoi cake? It starts with inspiration—often from a seasonal fruit or a memory of a particular scent. Our pastry chefs then begin a meticulous process of sketching, flavor pairing, and testing. Each layer is crafted and frozen separately before being assembled into a perfect whole. The final touch, the glaze or "glaçage," is a moment of pure focus, requiring a steady hand and precise temperature control to achieve that signature mirror-like shine. It\'s a labor of love, a dance of science and art that we are proud to share with you.</p>'
+    content: '<p>Cần những gì để tạo ra một chiếc bánh Entremet Hanoi? Nó bắt đầu từ cảm hứng—thường là từ một loại trái cây theo mùa hoặc một ký ức về một mùi hương đặc biệt. Các đầu bếp bánh của chúng tôi sau đó bắt đầu một quy trình tỉ mỉ gồm phác thảo, kết hợp hương vị và thử nghiệm. Mỗi lớp được chế tác và đông lạnh riêng biệt trước khi được lắp ráp thành một tổng thể hoàn hảo. Nét chấm phá cuối cùng, lớp men hay "glaçage", là một khoảnh khắc tập trung tuyệt đối, đòi hỏi một bàn tay vững vàng và nhiệt độ chính xác để đạt được độ bóng như gương đặc trưng. Đó là một công việc của tình yêu, một vũ điệu của khoa học và nghệ thuật mà chúng tôi tự hào chia sẻ với bạn.</p>'
   },
   {
     id: 'news-3',
     slug: 'shopping-guide-for-introverts',
-    title: 'A Shopping Guide for Introverts',
-    excerpt: 'Hate making phone calls? We get it. Here’s how to order your perfect cake, peacefully and online.',
-    date: 'May 10, 2024',
-    category: 'Shopping Guides',
+    title: 'Hướng Dẫn Mua Sắm Cho Người Hướng Nội',
+    excerpt: 'Ghét gọi điện thoại? Chúng tôi hiểu. Đây là cách đặt chiếc bánh hoàn hảo của bạn, một cách yên bình và trực tuyến.',
+    date: 'Ngày 10 tháng 5, 2024',
+    category: 'Hướng dẫn mua sắm',
     imageId: 'blog-3',
-    content: '<p>We believe that the joy of enjoying a beautiful cake should be accessible to everyone, even those who prefer quiet contemplation over conversation. That\'s why we\'ve designed our website to be a peaceful and seamless experience. You can browse our full collection, find your perfect match with our flavor quiz, and place your order without ever needing to pick up the phone. Simply choose your cake, select your delivery time, and let us handle the rest. It\'s your moment of indulgence, on your terms.</p>'
+    content: '<p>Chúng tôi tin rằng niềm vui thưởng thức một chiếc bánh đẹp nên dành cho tất cả mọi người, ngay cả những người thích sự yên tĩnh hơn là trò chuyện. Đó là lý do tại sao chúng tôi đã thiết kế trang web của mình để trở thành một trải nghiệm yên bình và liền mạch. Bạn có thể duyệt qua toàn bộ bộ sưu tập của chúng tôi, tìm thấy sự kết hợp hoàn hảo của bạn với bài trắc nghiệm hương vị của chúng tôi và đặt hàng mà không cần phải nhấc điện thoại. Chỉ cần chọn bánh của bạn, chọn thời gian giao hàng và để chúng tôi lo phần còn lại. Đó là khoảnh khắc nuông chiều của bạn, theo cách của bạn.</p>'
   },
 ];
 
 export const faqs: FaqItem[] = [
     {
         id: 'faq-1',
-        question: 'How do I place an order?',
-        answer: 'You can easily place an order through our website. Simply browse our products, add your desired cake to the cart, and proceed to checkout. You will be asked for delivery details and payment information.'
+        question: 'Làm cách nào để đặt hàng?',
+        answer: 'Bạn có thể dễ dàng đặt hàng qua trang web của chúng tôi. Chỉ cần duyệt qua các sản phẩm, thêm bánh bạn muốn vào giỏ hàng và tiến hành thanh toán. Bạn sẽ được yêu cầu cung cấp thông tin chi tiết giao hàng và thông tin thanh toán.'
     },
     {
         id: 'faq-2',
-        question: 'What are your delivery areas in Hanoi?',
-        answer: 'We currently offer hand-delivery to all urban districts within Hanoi. For suburban districts, please contact our hotline to check for availability and potential extra fees.'
+        question: 'Khu vực giao hàng của bạn ở Hà Nội là gì?',
+        answer: 'Chúng tôi hiện đang giao hàng tận nơi đến tất cả các quận nội thành Hà Nội. Đối với các huyện ngoại thành, vui lòng liên hệ hotline của chúng tôi để kiểm tra tình trạng sẵn có và các khoản phí phụ thêm có thể có.'
     },
     {
         id: 'faq-3',
-        question: 'How should I store my Entremet cake?',
-        answer: 'Our Entremet cakes are best stored in the refrigerator at 2-6°C. For optimal taste and texture, we recommend consuming them within 2 days of purchase. Please refer to the specific product page for any unique storage tips.'
+        question: 'Tôi nên bảo quản bánh Entremet như thế nào?',
+        answer: 'Bánh Entremet của chúng tôi được bảo quản tốt nhất trong tủ lạnh ở nhiệt độ 2-6°C. Để có hương vị và kết cấu tối ưu, chúng tôi khuyên bạn nên dùng trong vòng 2 ngày kể từ ngày mua. Vui lòng tham khảo trang sản phẩm cụ thể để biết bất kỳ mẹo bảo quản độc đáo nào.'
     },
     {
         id: 'faq-4',
-        question: 'Can I customize a cake?',
-        answer: 'Due to the complexity of our Entremet recipes, we do not offer flavor customizations. However, we can add simple messages on a chocolate tag. Please specify your message in the order notes during checkout.'
+        question: 'Tôi có thể tùy chỉnh bánh không?',
+        answer: 'Do sự phức tạp của công thức Entremet của chúng tôi, chúng tôi không cung cấp tùy chỉnh hương vị. Tuy nhiên, chúng tôi có thể thêm các thông điệp đơn giản trên một thẻ sô cô la. Vui lòng ghi rõ thông điệp của bạn trong ghi chú đơn hàng khi thanh toán.'
     },
     {
         id: 'faq-5',
-        question: 'What payment methods do you accept?',
-        answer: 'We accept various payment methods for your convenience, including Momo, ZaloPay, bank transfer (chuyển khoản), and Cash on Delivery (COD).'
+        question: 'Bạn chấp nhận những phương thức thanh toán nào?',
+        answer: 'Chúng tôi chấp nhận nhiều phương thức thanh toán khác nhau để thuận tiện cho bạn, bao gồm Momo, ZaloPay, chuyển khoản ngân hàng và Giao hàng nhận tiền (COD).'
     },
     {
         id: 'faq-6',
-        question: 'I have allergies. How can I check the ingredients?',
-        answer: 'Each product page has a detailed description including a list of main ingredients. If you have a specific allergy, please contact our hotline before ordering so we can advise you on the best options.'
+        question: 'Tôi bị dị ứng. Làm cách nào để kiểm tra thành phần?',
+        answer: 'Mỗi trang sản phẩm đều có mô tả chi tiết bao gồm danh sách các thành phần chính. Nếu bạn bị dị ứng cụ thể, vui lòng liên hệ hotline của chúng tôi trước khi đặt hàng để chúng tôi có thể tư vấn cho bạn về các lựa chọn tốt nhất.'
     },
 ];

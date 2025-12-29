@@ -82,7 +82,7 @@ export default function ProductDetailPage({
             {product.sizes && selectedSize && (
               <div>
                 <label className="text-sm font-medium text-foreground">
-                  Size
+                  Kích thước
                 </label>
                 <Select
                   defaultValue={selectedSize.name}
@@ -94,7 +94,7 @@ export default function ProductDetailPage({
                   }}
                 >
                   <SelectTrigger className="mt-2 w-full md:w-2/3">
-                    <SelectValue placeholder="Select a size" />
+                    <SelectValue placeholder="Chọn một kích thước" />
                   </SelectTrigger>
                   <SelectContent>
                     {product.sizes.map((size) => (
@@ -108,7 +108,7 @@ export default function ProductDetailPage({
             )}
 
             <Button size="lg" onClick={handleAddToCart} className="w-full md:w-2/3">
-              <ShoppingCart className="mr-2 h-5 w-5" /> Add to Cart
+              <ShoppingCart className="mr-2 h-5 w-5" /> Thêm vào giỏ hàng
             </Button>
           </div>
 
@@ -116,7 +116,7 @@ export default function ProductDetailPage({
             <Accordion type="single" collapsible defaultValue="item-1">
               <AccordionItem value="item-1">
                 <AccordionTrigger className="font-headline text-lg">
-                  Flavor Profile
+                  Hồ Sơ Hương Vị
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   {product.detailedDescription.flavor}
@@ -124,7 +124,7 @@ export default function ProductDetailPage({
               </AccordionItem>
               <AccordionItem value="item-2">
                 <AccordionTrigger className="font-headline text-lg">
-                  Ingredients
+                  Thành phần
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   {product.detailedDescription.ingredients}
@@ -132,7 +132,7 @@ export default function ProductDetailPage({
               </AccordionItem>
               <AccordionItem value="item-3">
                 <AccordionTrigger className="font-headline text-lg">
-                  Serving & Storage
+                  Phục Vụ & Bảo Quản
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
                   <p>{product.detailedDescription.serving}</p>

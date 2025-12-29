@@ -10,9 +10,9 @@ export default function FaqPage() {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
-        <h1 className="font-headline text-4xl md:text-5xl">Frequently Asked Questions</h1>
+        <h1 className="font-headline text-4xl md:text-5xl">Câu Hỏi Thường Gặp</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Have questions? We've got answers. Find information about ordering, delivery, and more.
+          Có câu hỏi? Chúng tôi có câu trả lời. Tìm thông tin về đặt hàng, giao hàng, và nhiều hơn nữa.
         </p>
       </div>
 

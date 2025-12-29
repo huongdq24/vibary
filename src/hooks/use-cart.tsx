@@ -25,7 +25,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
-    throw new Error("useCart must be used within a CartProvider");
+    throw new Error("useCart phải được sử dụng trong một CartProvider");
   }
   return context;
 };
@@ -60,8 +60,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       return [...prevItems, { ...item, quantity: 1 }];
     });
     toast({
-      title: "Added to cart",
-      description: `${item.name} ${item.size ? `(${item.size})` : ''} has been added to your cart.`,
+      title: "Đã thêm vào giỏ hàng",
+      description: `${item.name} ${item.size ? `(${item.size})` : ''} đã được thêm vào giỏ hàng của bạn.`,
     });
   };
 
@@ -70,8 +70,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       prevItems.filter((item) => !(item.id === id && item.size === size))
     );
      toast({
-      title: "Removed from cart",
-      description: `Item has been removed from your cart.`,
+      title: "Đã xóa khỏi giỏ hàng",
+      description: `Sản phẩm đã được xóa khỏi giỏ hàng của bạn.`,
     });
   };
 

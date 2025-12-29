@@ -30,14 +30,14 @@ import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 
 const formSchema = z.object({
-  preferredFruits: z.string().min(1, "Please enter at least one fruit."),
+  preferredFruits: z.string().min(1, "Vui lòng nhập ít nhất một loại trái cây."),
   sweetnessLevel: z.enum(["not_too_sweet", "moderately_sweet", "very_sweet"], {
-    required_error: "Please select your preferred sweetness level.",
+    required_error: "Vui lòng chọn mức độ ngọt ưa thích của bạn.",
   }),
   occasion: z.enum(["birthday", "anniversary", "casual", "gift"], {
-    required_error: "Please select an occasion.",
+    required_error: "Vui lòng chọn một dịp.",
   }),
-  personalityTraits: z.string().min(1, "Please describe your personality."),
+  personalityTraits: z.string().min(1, "Vui lòng mô tả tính cách của bạn."),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -74,7 +74,7 @@ export function FlavorQuiz() {
       const recommendedProductName = result.cakeRecommendation.split('(')[0].trim();
       setRecommendation({ cakeName: recommendedProductName, reason: result.addCartLink });
     } catch (error) {
-      console.error("Error getting recommendation:", error);
+      console.error("Lỗi khi nhận đề xuất:", error);
       // Handle error state in UI
     } finally {
       setIsLoading(false);
@@ -106,7 +106,7 @@ export function FlavorQuiz() {
     return (
       <div className="flex flex-col items-center justify-center text-center p-8 min-h-[400px]">
         <Loader2 className="h-12 w-12 animate-spin text-primary" />
-        <p className="mt-4 text-lg text-muted-foreground font-headline">Finding your perfect cake...</p>
+        <p className="mt-4 text-lg text-muted-foreground font-headline">Đang tìm chiếc bánh hoàn hảo cho bạn...</p>
       </div>
     );
   }
@@ -115,19 +115,19 @@ export function FlavorQuiz() {
     return (
       <Card className="w-full max-w-2xl mx-auto">
         <CardHeader className="text-center">
-          <CardTitle className="font-headline text-3xl">We found your perfect match!</CardTitle>
+          <CardTitle className="font-headline text-3xl">Chúng tôi đã tìm thấy chiếc bánh hoàn hảo cho bạn!</CardTitle>
           <CardDescription>{recommendation.reason}</CardDescription>
         </CardHeader>
         <CardContent>
             {recommendedProduct ? (
                 <ProductCard product={recommendedProduct} />
             ) : (
-                <p className="text-center text-muted-foreground">Could not find the recommended product. But we think you'll love our selection!</p>
+                <p className="text-center text-muted-foreground">Không tìm thấy sản phẩm được đề xuất. Nhưng chúng tôi nghĩ bạn sẽ thích lựa chọn của chúng tôi!</p>
             )}
         </CardContent>
         <CardFooter className="flex justify-center">
             <Button onClick={() => { setRecommendation(null); setCurrentStep(0); form.reset(); }}>
-                Take the Quiz Again
+                Làm lại trắc nghiệm
             </Button>
         </CardFooter>
       </Card>
@@ -138,10 +138,10 @@ export function FlavorQuiz() {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="font-headline text-center text-3xl">
-          Find Your Perfect Flavor
+          Tìm Hương Vị Hoàn Hảo Của Bạn
         </CardTitle>
         <CardDescription className="text-center">
-          Answer a few questions and we'll recommend the perfect Entremet for you.
+          Trả lời một vài câu hỏi và chúng tôi sẽ giới thiệu chiếc bánh Entremet hoàn hảo cho bạn.
         </CardDescription>
         <Progress value={(currentStep + 1) * 25} className="mt-4" />
       </CardHeader>
@@ -154,9 +154,9 @@ export function FlavorQuiz() {
                 name="preferredFruits"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg">What are your favorite fruits? (e.g., strawberry, mango, passion fruit)</FormLabel>
+                    <FormLabel className="text-lg">Loại trái cây yêu thích của bạn là gì? (ví dụ: dâu, xoài, chanh dây)</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your favorite fruits..." {...field} />
+                      <Input placeholder="Nhập loại trái cây yêu thích của bạn..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -169,7 +169,7 @@ export function FlavorQuiz() {
                 name="sweetnessLevel"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
-                    <FormLabel className="text-lg">How sweet do you like your desserts?</FormLabel>
+                    <FormLabel className="text-lg">Bạn thích món tráng miệng ngọt đến mức nào?</FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
@@ -180,19 +180,19 @@ export function FlavorQuiz() {
                           <FormControl>
                             <RadioGroupItem value="not_too_sweet" />
                           </FormControl>
-                          <FormLabel className="font-normal">Not too sweet, I prefer a hint of tartness.</FormLabel>
+                          <FormLabel className="font-normal">Không quá ngọt, tôi thích có vị chua nhẹ.</FormLabel>
                         </FormItem>
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="moderately_sweet" />
                           </FormControl>
-                          <FormLabel className="font-normal">Balanced and moderately sweet.</FormLabel>
+                          <FormLabel className="font-normal">Cân bằng và ngọt vừa phải.</FormLabel>
                         </FormItem>
                          <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="very_sweet" />
                           </FormControl>
-                          <FormLabel className="font-normal">I have a sweet tooth, bring it on!</FormLabel>
+                          <FormLabel className="font-normal">Tôi là người hảo ngọt, cứ mang ra đây!</FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
@@ -207,7 +207,7 @@ export function FlavorQuiz() {
                 name="occasion"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
-                    <FormLabel className="text-lg">What's the occasion?</FormLabel>
+                    <FormLabel className="text-lg">Dịp này là gì?</FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
@@ -218,25 +218,25 @@ export function FlavorQuiz() {
                           <FormControl>
                             <RadioGroupItem value="birthday" />
                           </FormControl>
-                          <FormLabel className="font-normal">A festive birthday celebration</FormLabel>
+                          <FormLabel className="font-normal">Một bữa tiệc sinh nhật</FormLabel>
                         </FormItem>
                         <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="anniversary" />
                           </FormControl>
-                          <FormLabel className="font-normal">A romantic anniversary or date night</FormLabel>
+                          <FormLabel className="font-normal">Một ngày kỷ niệm lãng mạn hoặc buổi hẹn hò</FormLabel>
                         </FormItem>
                          <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="casual" />
                           </FormControl>
-                          <FormLabel className="font-normal">A casual treat for myself or with friends</FormLabel>
+                          <FormLabel className="font-normal">Một món ăn vặt cho bản thân hoặc với bạn bè</FormLabel>
                         </FormItem>
                          <FormItem className="flex items-center space-x-3 space-y-0">
                           <FormControl>
                             <RadioGroupItem value="gift" />
                           </FormControl>
-                          <FormLabel className="font-normal">An elegant gift for someone special</FormLabel>
+                          <FormLabel className="font-normal">Một món quà thanh lịch cho người đặc biệt</FormLabel>
                         </FormItem>
                       </RadioGroup>
                     </FormControl>
@@ -251,9 +251,9 @@ export function FlavorQuiz() {
                     name="personalityTraits"
                     render={({ field }) => (
                     <FormItem>
-                        <FormLabel className="text-lg">Describe your personality in a few words. (e.g., adventurous, classic, sophisticated)</FormLabel>
+                        <FormLabel className="text-lg">Mô tả tính cách của bạn bằng một vài từ. (ví dụ: thích phiêu lưu, cổ điển, tinh tế)</FormLabel>
                         <FormControl>
-                        <Input placeholder="Enter some personality traits..." {...field} />
+                        <Input placeholder="Nhập một vài đặc điểm tính cách..." {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
@@ -265,10 +265,10 @@ export function FlavorQuiz() {
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline" onClick={handlePrev} disabled={currentStep === 0}>
-          Previous
+          Trước
         </Button>
         <Button onClick={handleNext}>
-          {currentStep === steps.length - 1 ? "Get Recommendation" : "Next"}
+          {currentStep === steps.length - 1 ? "Nhận Đề Xuất" : "Tiếp theo"}
         </Button>
       </CardFooter>
     </Card>

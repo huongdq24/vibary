@@ -23,12 +23,12 @@ export function Header() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Phone className="h-3 w-3" />
-              <span>Urgent orders call 📞 098.765.4321</span>
+              <span>Đơn hàng gấp gọi 📞 098.765.4321</span>
             </div>
           </div>
           <div className="flex items-center gap-1">
             <Truck className="h-3 w-3" />
-            <span>Hand-delivered in Hanoi</span>
+            <span>Giao hàng tận tay tại Hà Nội</span>
           </div>
         </div>
       </div>
@@ -61,14 +61,14 @@ export function Header() {
                   {cartCount}
                 </span>
               )}
-              <span className="sr-only">Shopping Cart</span>
+              <span className="sr-only">Giỏ hàng</span>
             </Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="md:hidden">
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle navigation menu</span>
+                <span className="sr-only">Chuyển đổi menu điều hướng</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">

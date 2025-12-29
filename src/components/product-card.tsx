@@ -42,7 +42,7 @@ export function ProductCard({ product }: ProductCardProps) {
               {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}
             </p>
             <Button variant="ghost" size="sm" className="text-accent-foreground">
-              View Details <ArrowRight className="ml-2 h-4 w-4" />
+              Xem chi tiết <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
         </CardFooter>

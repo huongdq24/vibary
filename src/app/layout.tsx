@@ -19,8 +19,8 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Entremet Hanoi - Modern French Pastries",
-  description: "Elegant Entremet cakes in Hanoi, crafted with seasonal Vietnamese fruits.",
+  title: "Entremet Hanoi - Bánh ngọt Pháp hiện đại",
+  description: "Bánh Entremet thanh lịch tại Hà Nội, làm từ trái cây Việt Nam theo mùa.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
        <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -18,9 +18,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Phone, Clock, MapPin } from "lucide-react";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name is too short"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message should be at least 10 characters"),
+  name: z.string().min(2, "Tên quá ngắn"),
+  email: z.string().email("Địa chỉ email không hợp lệ"),
+  message: z.string().min(10, "Tin nhắn phải có ít nhất 10 ký tự"),
 });
 
 export default function ContactPage() {
@@ -30,16 +30,16 @@ export default function ContactPage() {
 
   function onSubmit(values: z.infer<typeof contactSchema>) {
     console.log(values);
-    alert("Thank you for your message! We will get back to you shortly.");
+    alert("Cảm ơn bạn đã gửi tin nhắn! Chúng tôi sẽ liên hệ lại với bạn sớm.");
     form.reset({ name: "", email: "", message: ""});
   }
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-            <h1 className="font-headline text-4xl md:text-5xl">Get in Touch</h1>
+            <h1 className="font-headline text-4xl md:text-5xl">Liên Hệ</h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                We'd love to hear from you. Whether it's a question about our cakes or a special request, we're here to help.
+                Chúng tôi rất muốn nghe từ bạn. Dù là một câu hỏi về bánh của chúng tôi hay một yêu cầu đặc biệt, chúng tôi ở đây để giúp đỡ.
             </p>
         </div>
 
@@ -49,57 +49,58 @@ export default function ContactPage() {
                     <div className="flex-shrink-0"><Phone className="h-6 w-6 text-accent" /></div>
                     <div>
                         <h3 className="font-headline text-lg">Hotline</h3>
-                        <p className="text-muted-foreground">For urgent orders and inquiries.</p>
+                        <p className="text-muted-foreground">Đối với các đơn hàng và yêu cầu khẩn cấp.</p>
                         <a href="tel:0987654321" className="font-medium text-foreground hover:underline">098.765.4321</a>
                     </div>
                 </div>
                  <div className="flex items-start gap-4">
                     <div className="flex-shrink-0"><Clock className="h-6 w-6 text-accent" /></div>
                     <div>
-                        <h3 className="font-headline text-lg">Business Hours</h3>
-                        <p className="text-muted-foreground">Monday - Sunday: 9:00 AM - 9:00 PM</p>
+                        <h3 className="font-headline text-lg">Giờ Làm Việc</h3>
+                        <p className="text-muted-foreground">Thứ Hai - Chủ Nhật: 9:00 - 21:00</p>
                     </div>
                 </div>
                  <div className="flex items-start gap-4">
                     <div className="flex-shrink-0"><MapPin className="h-6 w-6 text-accent" /></div>
                     <div>
-                        <h3 className="font-headline text-lg">Our Kitchen</h3>
-                        <p className="text-muted-foreground">123 Cake Avenue, Hoan Kiem, Hanoi</p>
-                        <p className="text-sm text-muted-foreground">(Online orders and delivery only)</p>
+                        <h3 className="font-headline text-lg">Bếp Bánh Của Chúng Tôi</h3>
+                        <p className="text-muted-foreground">123 Phố Bánh, Hoàn Kiếm, Hà Nội</p>
+                        <p className="text-sm text-muted-foreground">(Chỉ nhận đơn hàng trực tuyến và giao hàng)</p>
                     </div>
                 </div>
             </div>
             <div className="lg:col-span-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle className="font-headline">Send us a Message</CardTitle>
-                        <CardDescription>We typically respond within a few hours.</CardDescription>
+                        <CardTitle className="font-headline">Gửi Tin Nhắn Cho Chúng Tôi</CardTitle>
+                        <CardDescription>Chúng tôi thường trả lời trong vòng vài giờ.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                                 <FormField control={form.control} name="name" render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Name</FormLabel>
-                                        <FormControl><Input placeholder="Your Name" {...field} /></FormControl>
+                                        <FormLabel>Tên</FormLabel>
+                                        <FormControl><Input placeholder="Tên của bạn" {...field} /></FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )} />
                                 <FormField control={form.control} name="email" render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Email</FormLabel>
-                                        <FormControl><Input type="email" placeholder="your@email.com" {...field} /></FormControl>
+
+                                        <FormControl><Input type="email" placeholder="email@cuaban.com" {...field} /></FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )} />
                                 <FormField control={form.control} name="message" render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Message</FormLabel>
-                                        <FormControl><Textarea placeholder="How can we help you?" {...field} rows={5} /></FormControl>
+                                        <FormLabel>Tin nhắn</FormLabel>
+                                        <FormControl><Textarea placeholder="Chúng tôi có thể giúp gì cho bạn?" {...field} rows={5} /></FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )} />
-                                <Button type="submit">Send Message</Button>
+                                <Button type="submit">Gửi Tin Nhắn</Button>
                             </form>
                         </Form>
                     </CardContent>

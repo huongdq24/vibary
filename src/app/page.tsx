@@ -24,14 +24,13 @@ function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
       <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-start justify-end px-4 pb-12 text-white sm:px-6 lg:px-8">
         <h1 className="font-headline text-4xl leading-tight md:text-6xl lg:w-2/3">
-          Modern French pastries, crafted for the Vietnamese palate.
+          Bánh ngọt Pháp hiện đại, dành cho khẩu vị Việt.
         </h1>
         <p className="mt-4 max-w-xl text-lg text-gray-200">
-          Discover the art of Entremet, where seasonal fruits and elegant designs
-          come together in a symphony of flavor and texture.
+          Khám phá nghệ thuật Entremet, nơi trái cây theo mùa và thiết kế thanh lịch hòa quyện thành một bản giao hưởng của hương vị và kết cấu.
         </p>
         <Button asChild size="lg" className="mt-6 bg-white text-black hover:bg-gray-200">
-          <Link href="/products">Explore Collections</Link>
+          <Link href="/products">Khám phá Bộ sưu tập</Link>
         </Button>
       </div>
     </div>
@@ -43,9 +42,9 @@ function FeaturedCollections() {
     <section className="py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-headline text-3xl md:text-4xl">Featured Collections</h2>
+          <h2 className="font-headline text-3xl md:text-4xl">Bộ Sưu Tập Nổi Bật</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Each collection tells a story. Find the one that speaks to you.
+            Mỗi bộ sưu tập kể một câu chuyện. Tìm bộ sưu tập phù hợp với bạn.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +71,7 @@ function FeaturedCollections() {
                   <h3 className="font-headline text-2xl">{collection.title}</h3>
                   <p className="mt-2 text-sm">{collection.description}</p>
                    <Button variant="outline" className="mt-4 bg-transparent text-white border-white hover:bg-white hover:text-black">
-                     Explore Now
+                     Khám phá ngay
                    </Button>
                 </div>
               </Link>
@@ -90,9 +89,9 @@ function NewArrivals() {
     <section className="bg-primary/20 py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-headline text-3xl md:text-4xl">New Arrivals</h2>
+          <h2 className="font-headline text-3xl md:text-4xl">Sản Phẩm Mới</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Fresh from our pastry kitchen, discover our latest creations.
+            Tươi mới từ bếp bánh của chúng tôi, hãy khám phá những sáng tạo mới nhất.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -124,13 +123,13 @@ function QuizCta() {
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-12">
             <MessageSquareQuote className="h-10 w-10 text-accent" />
-            <h2 className="mt-4 font-headline text-3xl">Lost in sweetness?</h2>
+            <h2 className="mt-4 font-headline text-3xl">Lạc lối trong vị ngọt?</h2>
             <p className="mt-2 text-lg text-muted-foreground">
-              Let us guide you. Take our quick flavor quiz to find the Entremet that's destined for you.
+              Hãy để chúng tôi dẫn lối. Làm bài trắc nghiệm nhanh để tìm ra chiếc bánh Entremet dành cho bạn.
             </p>
             <div className="mt-6">
               <Button asChild size="lg">
-                <Link href="/quiz">Start the Quiz <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link href="/quiz">Bắt đầu Trắc nghiệm <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
           </div>
@@ -146,9 +145,9 @@ function NewsSection() {
         <section className="bg-primary/20 py-16 sm:py-24">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center">
-                    <h2 className="font-headline text-3xl md:text-4xl">Hot News</h2>
+                    <h2 className="font-headline text-3xl md:text-4xl">Tin Tức Nóng Hổi</h2>
                     <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                        Stories from our kitchen, shopping tips, and sweet announcements.
+                        Những câu chuyện từ bếp bánh, mẹo mua sắm và những thông báo ngọt ngào.
                     </p>
                 </div>
                 <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -183,7 +182,7 @@ function NewsSection() {
                 </div>
                 <div className="mt-12 text-center">
                     <Button asChild variant="outline">
-                        <Link href="/news">Read More Stories</Link>
+                        <Link href="/news">Đọc thêm</Link>
                     </Button>
                 </div>
             </div>

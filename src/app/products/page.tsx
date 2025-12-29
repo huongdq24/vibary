@@ -10,8 +10,8 @@ export default function ProductsPage({
   const collectionSlug = searchParams?.collection;
   
   let filteredProducts: Product[] = products;
-  let pageTitle = "All Our Creations";
-  let pageDescription = "Explore our complete collection of modern French pastries.";
+  let pageTitle = "Tất Cả Sáng Tạo Của Chúng Tôi";
+  let pageDescription = "Khám phá bộ sưu tập đầy đủ của chúng tôi về các loại bánh ngọt Pháp hiện đại.";
 
   if (collectionSlug) {
     const collection = collections.find(c => c.slug === collectionSlug);
@@ -40,7 +40,7 @@ export default function ProductsPage({
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-muted-foreground">No products found in this collection.</p>
+            <p className="text-muted-foreground">Không tìm thấy sản phẩm nào trong bộ sưu tập này.</p>
           </div>
         )}
       </div>

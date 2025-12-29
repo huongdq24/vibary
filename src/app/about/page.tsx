@@ -20,31 +20,31 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
                 <div className="container relative mx-auto flex h-full max-w-4xl flex-col justify-center text-center text-white px-4 sm:px-6 lg:px-8">
                     <h1 className="font-headline text-4xl leading-tight md:text-6xl">
-                        A Love Letter to Pastry
+                        Một Bức Thư Tình Gửi Tới Bánh Ngọt
                     </h1>
                 </div>
             </header>
 
             <div className="container mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
                 <div className="prose prose-lg mx-auto max-w-none prose-h2:font-headline prose-p:text-muted-foreground prose-blockquote:border-accent prose-blockquote:text-accent prose-blockquote:font-headline">
-                    <h2>The Dream</h2>
+                    <h2>Giấc Mơ</h2>
                     <p>
-                        The story of Entremet Hanoi begins not in a grand patisserie, but in a small, sunlit kitchen in the heart of Hanoi. Our founder, Lan, discovered her passion for French pastry during a year spent studying in Paris. She was mesmerized by the artistry, the precision, and the delicate balance of flavors in every entremet she tasted.
+                        Câu chuyện của Entremet Hà Nội không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ ngập nắng giữa lòng Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm du học tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm thử.
                     </p>
                     <p>
-                        Upon returning to Vietnam, she dreamt of bringing that magic home, but with a unique Vietnamese twist. She wanted to create cakes that felt both foreign and familiar, sophisticated and comforting.
+                        Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê nhà, nhưng với một nét chấm phá độc đáo của Việt Nam. Cô muốn tạo ra những chiếc bánh vừa lạ vừa quen, vừa tinh tế vừa gần gũi.
                     </p>
 
                     <blockquote>
-                        "I wanted to capture the elegance of Paris and infuse it with the soul of Hanoi."
+                        "Tôi muốn nắm bắt sự thanh lịch của Paris và thổi vào đó linh hồn của Hà Nội."
                     </blockquote>
 
-                    <h2>The Craft</h2>
+                    <h2>Nghề thủ công</h2>
                     <p>
-                        Lan spent years perfecting her craft, tirelessly experimenting with local, seasonal fruits like lychee, passion fruit, and mango. She meticulously adjusted sweetness levels to suit the local palate, finding the perfect harmony between French technique and Vietnamese ingredients.
+                        Lan đã dành nhiều năm để hoàn thiện tay nghề, không mệt mỏi thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây và xoài. Cô đã tỉ mỉ điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương, tìm ra sự hòa hợp hoàn hảo giữa kỹ thuật Pháp và nguyên liệu Việt Nam.
                     </p>
                     <p>
-                        Entremet Hanoi is the culmination of that dream—a celebration of technique, creativity, and the freshest ingredients our beautiful country has to offer. Each cake is a testament to patience, a labor of love, and a piece of our story, shared with you.
+                        Entremet Hà Nội là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại. Mỗi chiếc bánh là một minh chứng cho sự kiên nhẫn, một công trình của tình yêu, và một phần câu chuyện của chúng tôi, được chia sẻ cùng bạn.
                     </p>
                 </div>
             </div>

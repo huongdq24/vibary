@@ -8,9 +8,9 @@ export default function NewsPage() {
   return (
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
-        <h1 className="font-headline text-4xl md:text-5xl">News & Stories</h1>
+        <h1 className="font-headline text-4xl md:text-5xl">Tin Tức & Câu Chuyện</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          From our founder's journey to behind-the-scenes glimpses, dive into the world of Entremet Hanoi.
+          Từ hành trình của người sáng lập đến những góc nhìn hậu trường, hãy lặn sâu vào thế giới của Entremet Hà Nội.
         </p>
       </div>
 
