@@ -4,6 +4,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function AboutPage() {
     const bannerImage = PlaceHolderImages.find(p => p.id === 'about-banner');
+    const locationImage = PlaceHolderImages.find(p => p.id === 'about-location');
 
     return (
         <div>
@@ -44,6 +45,19 @@ export default function AboutPage() {
                         Chúng tôi có trụ sở chính tại số 3 Nguyễn Văn Trỗi Phường Ninh Xá Thành Phố Bắc Ninh, nơi chúng tôi đã xây dựng một không gian sáng tạo và hiện đại để sản xuất các loại bánh tinh tế. Địa chỉ của chúng tôi là một điểm gặp gỡ của nghệ thuật ẩm thực và sự sáng tạo.
                     </p>
                     
+                    {locationImage && (
+                        <div className="my-8 rounded-lg overflow-hidden shadow-lg">
+                            <Image
+                                src={locationImage.imageUrl}
+                                alt={locationImage.description}
+                                width={1200}
+                                height={600}
+                                className="w-full object-cover"
+                                data-ai-hint={locationImage.imageHint}
+                            />
+                        </div>
+                    )}
+
                     <h2>Dịch vụ của chúng tôi</h2>
                     
                     <h3>Bánh Sinh Nhật</h3>
@@ -69,3 +83,5 @@ export default function AboutPage() {
         </div>
     );
 }
+
+    
