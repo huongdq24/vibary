@@ -40,6 +40,36 @@ const marqueeVariantsRL = {
   },
 };
 
+function Hero() {
+  const heroImage = PlaceHolderImages.find((p) => p.id === 'hero-banner-1');
+  return (
+    <section className="relative h-[80vh] min-h-[400px] w-full bg-cover bg-center text-white">
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt={heroImage.description}
+          fill
+          className="object-cover"
+          priority
+          data-ai-hint={heroImage.imageHint}
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+      <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+        <h1 className="font-headline text-5xl leading-tight md:text-7xl">
+          Nghệ Thuật Bánh Ngọt Pháp Hiện Đại
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg md:text-xl">
+          Trải nghiệm sự cân bằng tinh tế giữa kỹ thuật Pháp và hương vị trái cây theo mùa của Việt Nam. Được làm thủ công tại Bắc Ninh.
+        </p>
+        <Button asChild size="lg" className="mt-8">
+          <Link href="/products">Khám Phá Bộ Sưu Tập</Link>
+        </Button>
+      </div>
+    </section>
+  );
+}
+
 
 function AnnouncementBar() {
   const announcements = [
@@ -258,6 +288,7 @@ export default function Home() {
   return (
     <>
       <AnnouncementBar />
+      <Hero />
       <FeaturedProducts />
       <CategorySection />
       <FeaturedCollections />
