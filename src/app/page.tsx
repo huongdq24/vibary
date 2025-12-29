@@ -109,6 +109,42 @@ function AnnouncementBar() {
   )
 }
 
+function FeaturedProducts() {
+    const featuredProducts = products.slice(0, 4);
+    return (
+        <section className="py-16 sm:py-24 bg-white">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl">Mang tới trải nghiệm<br/>đặt bánh Pháp cao cấp trực tuyến</h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        VIBARY có mặt tại đây là để mang tới cho bạn trải nghiệm thưởng thức bánh ngọt Pháp hiện đại, dành cho người Việt.
+                    </p>
+                    <Button asChild className="mt-6" variant="outline">
+                        <Link href="/products">ĐẶT BÁNH NGAY</Link>
+                    </Button>
+                </div>
+                <Carousel
+                    opts={{
+                        align: "start",
+                        loop: true,
+                    }}
+                    className="w-full"
+                >
+                    <CarouselContent>
+                        {featuredProducts.map((product) => (
+                            <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
+                                <div className="p-1">
+                                    <ProductCard product={product} />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                </Carousel>
+            </div>
+        </section>
+    );
+}
+
 function FeaturedCollections() {
   return (
     <section className="py-16 sm:py-24 bg-gray-50">
@@ -182,8 +218,11 @@ export default function Home() {
     <>
       <HeroCarousel />
       <AnnouncementBar />
+      <FeaturedProducts />
       <FeaturedCollections />
       <NewArrivals />
     </>
   );
 }
+
+    

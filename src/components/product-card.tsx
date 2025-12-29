@@ -14,8 +14,8 @@ export function ProductCard({ product }: ProductCardProps) {
   const placeholder = PlaceHolderImages.find((p) => p.id === product.imageId);
 
   return (
-    <Card className="flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg">
-      <Link href={`/products/${product.slug}`} className="flex flex-col h-full">
+    <Card className="flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg border-0 shadow-none">
+      <Link href={`/products/${product.slug}`} className="flex flex-col h-full text-center">
         <CardHeader className="p-0">
           <div className="aspect-square w-full overflow-hidden">
             {placeholder && (
@@ -31,22 +31,13 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         </CardHeader>
         <CardContent className="flex-grow p-4">
-          <CardTitle className="font-headline text-xl leading-tight">
+          <CardTitle className="font-headline text-lg leading-tight uppercase tracking-widest">
             {product.name}
           </CardTitle>
-          <p className="mt-2 text-sm text-muted-foreground">{product.description}</p>
         </CardContent>
-        <CardFooter className="p-4 pt-0">
-          <div className="flex w-full items-center justify-between">
-            <p className="text-lg font-semibold text-foreground">
-              {new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}
-            </p>
-            <Button variant="ghost" size="sm" className="text-accent-foreground">
-              Xem chi tiết <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </CardFooter>
       </Link>
     </Card>
   );
 }
+
+    
