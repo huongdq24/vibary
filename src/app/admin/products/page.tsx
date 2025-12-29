@@ -2,7 +2,6 @@
 'use client';
 import {
   File,
-  ListFilter,
   MoreHorizontal,
   PlusCircle,
 } from 'lucide-react';
@@ -18,7 +17,6 @@ import {
 } from '@/components/ui/card';
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
@@ -36,8 +34,6 @@ import {
 import {
   Tabs,
   TabsContent,
-  TabsList,
-  TabsTrigger,
 } from '@/components/ui/tabs';
 import Image from 'next/image';
 import { products as initialProducts } from '@/lib/data';
@@ -50,8 +46,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
-  DialogClose,
 } from "@/components/ui/dialog";
 import {
   AlertDialog,
@@ -101,14 +95,31 @@ export default function ProductsPage() {
         toast({
             title: "Xóa thành công",
             description: `Sản phẩm "${selectedProduct.name}" đã được xóa.`,
+            variant: 'destructive',
         });
         closeDeleteConfirm();
     }
     
-    const handleFormSuccess = (data: ProductFormValues, product?: Product) => {
-        if (product) {
+    const handleFormSubmit = (data: ProductFormValues) => {
+        if (selectedProduct) {
             // Update existing product
-            setProductList(prevList => prevList.map(p => p.id === product.id ? { ...p, ...data, price: Number(data.price), stock: Number(data.stock), slug: data.name.toLowerCase().replace(/ /g, '-') } : p));
+            setProductList(prevList => 
+                prevList.map(p => 
+                    p.id === selectedProduct.id 
+                    ? { 
+                        ...p, 
+                        ...data, 
+                        price: Number(data.price), 
+                        stock: Number(data.stock),
+                        slug: data.name.toLowerCase().replace(/ /g, '-') 
+                      } 
+                    : p
+                )
+            );
+            toast({
+                title: "Cập nhật thành công!",
+                description: `Sản phẩm "${data.name}" đã được cập nhật.`,
+            });
         } else {
             // Add new product
             const newProduct: Product = {
@@ -132,6 +143,10 @@ export default function ProductsPage() {
                 categorySlug: data.categorySlug,
             };
             setProductList(prevList => [newProduct, ...prevList]);
+            toast({
+                title: "Thêm thành công!",
+                description: `Sản phẩm "${data.name}" đã được thêm vào hệ thống.`,
+            });
         }
         closeForm();
     };
@@ -141,13 +156,6 @@ export default function ProductsPage() {
         <>
         <Tabs defaultValue="all">
           <div className="flex items-center">
-            <TabsList>
-              <TabsTrigger value="all">Tất cả</TabsTrigger>
-              <TabsTrigger value="banh-sinh-nhat">Bánh sinh nhật</TabsTrigger>
-              <TabsTrigger value="banh-ngot">Bánh ngọt</TabsTrigger>
-              <TabsTrigger value="active">Còn hàng</TabsTrigger>
-              <TabsTrigger value="draft" className="hidden sm:flex">Hết hàng</TabsTrigger>
-            </TabsList>
             <div className="ml-auto flex items-center gap-2">
               <Button size="sm" variant="outline" className="h-8 gap-1">
                 <File className="h-3.5 w-3.5" />
@@ -163,6 +171,7 @@ export default function ProductsPage() {
               </Button>
             </div>
           </div>
+          <TabsContent value="all">
             <Card>
               <CardHeader>
                 <CardTitle>Sản phẩm</CardTitle>
@@ -237,7 +246,6 @@ export default function ProductsPage() {
                                 <DropdownMenuContent align="end">
                                     <DropdownMenuLabel>Hành động</DropdownMenuLabel>
                                     <DropdownMenuItem onClick={() => openForm(product)}>Chỉnh sửa</DropdownMenuItem>
-                                    <DropdownMenuItem>Ẩn sản phẩm</DropdownMenuItem>
                                     <DropdownMenuSeparator />
                                     <DropdownMenuItem className='text-destructive' onClick={() => openDeleteConfirm(product)}>Xóa</DropdownMenuItem>
                                 </DropdownMenuContent>
@@ -255,6 +263,7 @@ export default function ProductsPage() {
                 </div>
               </CardFooter>
             </Card>
+          </TabsContent>
         </Tabs>
 
         <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
@@ -266,7 +275,11 @@ export default function ProductsPage() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="py-4">
-                   <ProductForm product={selectedProduct} onSuccess={handleFormSuccess} />
+                   <ProductForm 
+                        key={selectedProduct ? selectedProduct.id : 'new'}
+                        product={selectedProduct} 
+                        onSubmit={handleFormSubmit} 
+                    />
                 </div>
             </DialogContent>
         </Dialog>
@@ -291,3 +304,5 @@ export default function ProductsPage() {
         </>
     )
 }
+
+    

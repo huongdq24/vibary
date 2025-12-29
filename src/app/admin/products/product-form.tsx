@@ -17,7 +17,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import type { Product } from "@/lib/types";
-import { useToast } from "@/hooks/use-toast";
 import {
   Select,
   SelectContent,
@@ -29,7 +28,7 @@ import {
 const productSchema = z.object({
     name: z.string().min(3, { message: "Tên sản phẩm phải có ít nhất 3 ký tự." }),
     price: z.coerce.number().min(0, { message: "Giá không được là số âm." }),
-    stock: z.coerce.number().min(0, { message: "Tồn kho không được là số âm." }),
+    stock: z.coerce.number().int().min(0, { message: "Tồn kho phải là số nguyên dương." }),
     categorySlug: z.string({ required_error: "Vui lòng chọn danh mục." }),
     description: z.string().min(10, { message: "Mô tả phải có ít nhất 10 ký tự." }),
 });
@@ -47,38 +46,26 @@ const productCategories = [
 
 interface ProductFormProps {
   product?: Product;
-  onSuccess: (data: ProductFormValues, product?: Product) => void;
+  onSubmit: (data: ProductFormValues) => void;
 }
 
-export function ProductForm({ product, onSuccess }: ProductFormProps) {
-  const { toast } = useToast();
-  const defaultValues = product ? {
-      name: product.name,
-      price: product.price,
-      stock: product.stock,
-      categorySlug: product.categorySlug,
-      description: product.description,
-  } : {
-      name: "",
-      price: 0,
-      stock: 0,
-      categorySlug: "",
-      description: "",
-  }
-
+export function ProductForm({ product, onSubmit }: ProductFormProps) {
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(productSchema),
-    defaultValues,
+    defaultValues: product ? {
+        name: product.name,
+        price: product.price,
+        stock: product.stock,
+        categorySlug: product.categorySlug,
+        description: product.description,
+    } : {
+        name: "",
+        price: 0,
+        stock: 0,
+        categorySlug: "",
+        description: "",
+    },
   });
-
-  const onSubmit = (data: ProductFormValues) => {
-    toast({
-        title: product ? "Cập nhật thành công!" : "Thêm thành công!",
-        description: `Sản phẩm "${data.name}" đã được ${product ? 'cập nhật' : 'thêm'}.`,
-    });
-
-    onSuccess(data, product);
-  };
 
   return (
     <Form {...form}>
@@ -168,3 +155,5 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
     </Form>
   );
 }
+
+    
