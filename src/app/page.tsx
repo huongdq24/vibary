@@ -206,10 +206,10 @@ function AnnouncementBar() {
         >
           {duplicatedAnnouncements.map((text, index) => (
             <div key={index} className="flex-shrink-0 flex items-center h-10 px-8">
-              <p className="font-fraunces text-sm text-[#0A0A0A] text-center">
+              <p className="font-body text-sm text-[#0A0A0A] text-center tracking-wider">
                 {text.includes("091 255 03 35") ? (
                   <>
-                    GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a>
+                    GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335">091 255 03 35</a>
                   </>
                 ) : text}
               </p>
