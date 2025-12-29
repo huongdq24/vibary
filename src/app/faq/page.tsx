@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const howToSteps = [
   {
@@ -49,45 +49,77 @@ const howToSteps = [
   },
 ];
 
-
 function HowToOrder() {
   return (
     <div className="py-16 sm:py-24">
-      <div className="space-y-16">
-        {howToSteps.map((item, index) => {
-           const image = item.imageId ? PlaceHolderImages.find(p => p.id === item.imageId) : null;
+      <div className="relative">
+        <div
+          className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-border"
+          aria-hidden="true"
+        />
+        <div className="relative space-y-16">
+          {howToSteps.map((item) => {
+            const image = item.imageId
+              ? PlaceHolderImages.find((p) => p.id === item.imageId)
+              : null;
+            const isOdd = item.step % 2 !== 0;
 
-          return (
-            <div key={item.step} className="relative flex flex-col items-center text-center">
-              {image && (
-                <Image 
+            const imageContent = image ? (
+              <div className="flex items-center justify-center px-8">
+                <Image
                   src={image.imageUrl}
                   alt={image.description}
-                  width={200}
-                  height={200}
-                  className="object-contain mb-6"
+                  width={300}
+                  height={250}
+                  className="object-contain"
                   data-ai-hint={image.imageHint}
                 />
-              )}
-              <div className="flex items-center gap-4">
-                <h3 className="font-headline text-4xl">{item.title}</h3>
-                <div className="h-8 w-8 rounded-full border flex items-center justify-center font-headline text-lg flex-shrink-0">
-                  {item.step}
+              </div>
+            ) : <div />;
+
+            const textContent = (
+              <div className="relative flex items-center">
+                 <div className="absolute left-1/2 -translate-x-1/2 bg-background z-10">
+                    <div className="h-8 w-8 rounded-full border bg-background flex items-center justify-center font-headline text-lg">
+                        {item.step}
+                    </div>
+                </div>
+                <div className={cn(
+                    "flex-1",
+                    isOdd ? "text-left pl-12" : "text-right pr-12"
+                )}>
+                  <h3 className="font-headline text-4xl">{item.title}</h3>
+                  <p className="mt-2 text-muted-foreground max-w-sm mx-auto">
+                    {item.description}
+                  </p>
                 </div>
               </div>
-              <p className="mt-2 text-muted-foreground max-w-sm mx-auto">{item.description}</p>
-              
-              {index < howToSteps.length - 1 && (
-                <Separator className="mt-16 w-20" />
-              )}
-            </div>
-          )
-        })}
+            );
+
+            return (
+              <div
+                key={item.step}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+              >
+                {isOdd ? (
+                  <>
+                    {textContent}
+                    {imageContent}
+                  </>
+                ) : (
+                  <>
+                    {imageContent}
+                    {textContent}
+                  </>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
-  )
+  );
 }
-
 
 export default function FaqPage() {
   const faqIllustration = PlaceHolderImages.find(p => p.id === "faq-illustration");
