@@ -3,37 +3,37 @@
     {
       "id": "hero-banner-1",
       "description": "Beautifully crafted entremet cake on a platter.",
-      "imageUrl": "/images/banner/banner1.png",
+      "imageUrl": "/images/banner/1.png",
       "imageHint": "entremet cake"
     },
     {
       "id": "hero-banner-2",
       "description": "Close up shot of a slice of layered mousse cake.",
-      "imageUrl": "/images/banner/banner2.png",
+      "imageUrl": "/images/banner/2.png",
       "imageHint": "mousse cake"
     },
     {
       "id": "hero-banner-3",
       "description": "A variety of colorful French pastries on display.",
-      "imageUrl": "/images/banner/banner3.png",
+      "imageUrl": "/images/banner/3.png",
       "imageHint": "french pastry"
     },
     {
       "id": "hero-banner-4",
       "description": "A baker decorating a modern cake with precision.",
-      "imageUrl": "/images/banner/banner4.png",
+      "imageUrl": "/images/banner/4.png",
       "imageHint": "cake decorating"
     },
     {
       "id": "hero-banner-5",
       "description": "Luxurious chocolate entremet with a glossy finish.",
-      "imageUrl": "/images/banner/banner5.png",
+      "imageUrl": "/images/banner/5.png",
       "imageHint": "chocolate entremet"
     },
     {
       "id": "hero-banner-6",
       "description": "A vibrant fruit-topped cake, perfect for summer.",
-      "imageUrl": "/images/banner/banner6.png",
+      "imageUrl": "/images/banner/6.png",
       "imageHint": "fruit cake"
     },
     {
@@ -117,7 +117,7 @@
     {
       "id": "blog-2",
       "description": "Image for behind the scenes article.",
-      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cake decorating"
     },
     {
