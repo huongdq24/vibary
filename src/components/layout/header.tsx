@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 const mainNavLinks = [
     { href: '/products', label: 'SẢN PHẨM' },
-    { href: '/faq', label: 'CÁCH MUA' },
+    { href: '/how-to-buy', label: 'CÁCH MUA' },
     { href: '/about', label: 'VỀ VIBARY' },
 ]
 
@@ -27,9 +27,11 @@ export function Header() {
   const pathname = usePathname();
 
   const isLinkActive = (href: string) => {
+    // For `/products`, we want to match sub-paths as well.
     if (href === '/products') {
       return pathname.startsWith(href);
     }
+    // For all other links, we want an exact match.
     return pathname === href;
   };
 
