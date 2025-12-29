@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import type { CartItem, Product } from "@/lib/types";
@@ -46,13 +45,20 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
+    if (storedCart && storedCart.length > 0) { // Check if storedCart is not null and not an empty string
       try {
-        setCartItems(JSON.parse(storedCart));
+        const parsedCart = JSON.parse(storedCart);
+        if (Array.isArray(parsedCart)) { // Ensure parsed data is an array
+          setCartItems(parsedCart);
+        } else {
+          setCartItems([]);
+        }
       } catch (e) {
         console.error("Failed to parse cart from localStorage", e);
         setCartItems([]);
       }
+    } else {
+        setCartItems([]);
     }
   }, []);
 
