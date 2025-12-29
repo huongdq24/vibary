@@ -179,6 +179,12 @@
       "description": "Other types of food.",
       "imageUrl": "/images/product/anhbia.jpg",
       "imageHint": "food platter"
+    },
+    {
+      "id": "faq-illustration",
+      "description": "Illustration for the how-to-buy page.",
+      "imageUrl": "/images/how-to-buy-illustration.png",
+      "imageHint": "line art drawing"
     }
   ]
 }
