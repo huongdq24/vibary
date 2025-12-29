@@ -207,7 +207,7 @@ function FeaturedProducts() {
                 dragConstraints={{ left: 0, right: 0 }}
              >
                 {featuredProducts.map((product, index) => (
-                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[40vw] sm:w-[30vw] md:w-[22vw] lg:w-[18vw] -ml-12 first:ml-0">
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[50vw] sm:w-[40vw] md:w-[30vw] lg:w-[25vw] -ml-16 first:ml-0 px-4">
                         <ProductCard product={product} />
                     </div>
                 ))}
@@ -296,5 +296,7 @@ export default function Home() {
     </>
   );
 }
+
+    
 
     
