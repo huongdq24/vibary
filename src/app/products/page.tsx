@@ -81,7 +81,10 @@ export default function ProductsPage() {
             <section key={category.slug} id={category.slug} className="scroll-mt-24">
               <div className="mb-12 pt-12 text-center">
                 <p className="text-sm uppercase tracking-widest text-muted-foreground">{category.subtitle}</p>
-                <h1 className="font-headline text-4xl md:text-5xl mt-2">{category.title}</h1>
+                <div className="inline-block">
+                  <h1 className="font-headline text-4xl md:text-5xl mt-2">{category.title}</h1>
+                  <Separator className="my-2 h-0.5 w-2/3 mx-auto bg-foreground" />
+                </div>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                   {category.description}
                 </p>
