@@ -114,7 +114,7 @@ function CategorySection() {
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {categories.map((category) => {
             const image = PlaceHolderImages.find((p) => p.id === category.imageId);
             return (
@@ -265,5 +265,3 @@ export default function Home() {
     </>
   );
 }
-
-    
