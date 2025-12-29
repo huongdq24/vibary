@@ -73,15 +73,15 @@ function HeroCarousel() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="absolute bottom-8 left-0 right-0">
-         <div className="container mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 sm:px-6 lg:px-8">
+      <div className="absolute bottom-8 right-8">
+         <div className="flex items-center justify-center gap-2">
             {Array.from({ length: count }).map((_, i) => (
                 <button
                     key={i}
                     onClick={() => api?.scrollTo(i)}
-                    className="h-1 w-full rounded-full"
+                    className="h-1 w-10 rounded-full"
                 >
-                    <div className={`h-1 w-full rounded-full ${current === i + 1 ? 'bg-white' : 'bg-white/50'}`} />
+                    <div className={`h-1 w-full rounded-full transition-colors ${current === i + 1 ? 'bg-white' : 'bg-white/50'}`} />
                 </button>
             ))}
         </div>
