@@ -67,7 +67,7 @@ export function Header() {
         
         <div className="flex items-center justify-center flex-1 md:flex-none">
           <Link href="/" className="flex items-center gap-3">
-             <Image src="/logo.png" alt="Vibary Logo" width={28} height={28} />
+             <Image src="/logo.png" alt="Vibary Logo" width={36} height={36} />
             <span className="font-headline text-3xl font-bold tracking-widest text-foreground">
               VIBARY
             </span>
@@ -110,7 +110,7 @@ export function Header() {
             <SheetContent side="left">
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2">
-                   <Image src="/logo.png" alt="Vibary Logo" width={28} height={28} />
+                   <Image src="/logo.png" alt="Vibary Logo" width={36} height={36} />
                    <span className="font-headline text-2xl font-bold tracking-widest">
                     VIBARY
                   </span>
