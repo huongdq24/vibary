@@ -75,7 +75,7 @@ export const products: Product[] = [
       { name: '16cm (6-8 người)', price: 620000 },
       { name: '18cm (8-10 người)', price: 750000 },
     ],
-    imageId: 'product-5',
+    imageId: 'product-2',
     collection: 'special-occasions',
   },
   {
@@ -124,7 +124,7 @@ export const products: Product[] = [
       storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong ngày mua do có trái cây tươi.'
     },
     price: 680000,
-    imageId: 'product-2',
+    imageId: 'product-5',
     collection: 'heart-shaped',
   },
   {
