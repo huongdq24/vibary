@@ -24,12 +24,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
 
 const productSchema = z.object({
     name: z.string().min(3, { message: "Tên sản phẩm phải có ít nhất 3 ký tự." }),
     price: z.coerce.number().min(0, { message: "Giá không được là số âm." }),
     stock: z.coerce.number().int().min(0, { message: "Tồn kho phải là số nguyên dương." }),
     categorySlug: z.string({ required_error: "Vui lòng chọn danh mục." }),
+    imageId: z.string({ required_error: "Vui lòng chọn ảnh cho sản phẩm." }),
     description: z.string().min(10, { message: "Mô tả phải có ít nhất 10 ký tự." }),
 });
 
@@ -57,12 +60,14 @@ export function ProductForm({ product, onSubmit }: ProductFormProps) {
         price: product.price,
         stock: product.stock,
         categorySlug: product.categorySlug,
+        imageId: product.imageIds[0],
         description: product.description,
     } : {
         name: "",
         price: 0,
         stock: 0,
         categorySlug: "",
+        imageId: "",
         description: "",
     },
   });
@@ -126,6 +131,33 @@ export function ProductForm({ product, onSubmit }: ProductFormProps) {
                     <SelectContent>
                     {productCategories.map(cat => (
                         <SelectItem key={cat.slug} value={cat.slug}>{cat.title}</SelectItem>
+                    ))}
+                    </SelectContent>
+                </Select>
+                <FormMessage />
+                </FormItem>
+            )}
+        />
+         <FormField
+            control={form.control}
+            name="imageId"
+            render={({ field }) => (
+                <FormItem>
+                <FormLabel>Ảnh sản phẩm</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                    <SelectTrigger>
+                        <SelectValue placeholder="Chọn ảnh đại diện" />
+                    </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                    {PlaceHolderImages.filter(img => img.id.startsWith('product-')).map(image => (
+                        <SelectItem key={image.id} value={image.id}>
+                            <div className="flex items-center gap-3">
+                                <Image src={image.imageUrl} alt={image.description} width={24} height={24} className="rounded-sm object-cover" />
+                                <span>{image.description}</span>
+                            </div>
+                        </SelectItem>
                     ))}
                     </SelectContent>
                 </Select>

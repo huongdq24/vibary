@@ -111,7 +111,8 @@ export default function ProductsPage() {
                         ...data, 
                         price: Number(data.price), 
                         stock: Number(data.stock),
-                        slug: data.name.toLowerCase().replace(/ /g, '-') 
+                        slug: data.name.toLowerCase().replace(/ /g, '-'),
+                        imageIds: [data.imageId] 
                       } 
                     : p
                 )
@@ -138,7 +139,7 @@ export default function ProductsPage() {
                 },
                 price: Number(data.price),
                 stock: Number(data.stock),
-                imageIds: ['product-1'],
+                imageIds: [data.imageId],
                 collection: 'special-occasions',
                 categorySlug: data.categorySlug,
             };
