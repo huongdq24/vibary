@@ -263,7 +263,7 @@ function FeaturedCollections() {
 }
 
 function NewArrivals() {
-  const newProducts = products.slice(4, 8);
+  const newProducts = products.slice(0, 4);
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -287,8 +287,8 @@ function NewArrivals() {
 export default function Home() {
   return (
     <>
-      <AnnouncementBar />
       <Hero />
+      <AnnouncementBar />
       <FeaturedProducts />
       <CategorySection />
       <FeaturedCollections />
