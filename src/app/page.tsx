@@ -145,19 +145,29 @@ function CategorySection() {
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
-              <Link href={category.href} key={category.name} className="group block rounded-lg border bg-card text-card-foreground shadow-sm transition-shadow hover:shadow-lg">
-                <div className="p-6">
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <h3 className="font-headline text-lg text-black">{category.name}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
-                        </div>
-                        <ArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
+          {categories.map((category) => {
+            const image = PlaceHolderImages.find((p) => p.id === category.imageId);
+            return (
+              <Link href={category.href} key={category.name} className="group relative block overflow-hidden rounded-lg">
+                <div className="aspect-w-4 aspect-h-3">
+                  {image && (
+                    <Image
+                      src={image.imageUrl}
+                      alt={category.description}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={image.imageHint}
+                    />
+                  )}
+                </div>
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white">
+                  <h3 className="font-headline text-2xl uppercase tracking-wider">{category.name}</h3>
+                  <p className="mt-1 text-sm">{category.description}</p>
                 </div>
               </Link>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
@@ -190,7 +200,7 @@ function FeaturedProducts() {
                 dragConstraints={{ left: 0, right: 0 }}
              >
                 {featuredProducts.map((product, index) => (
-                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] xl:w-[30vw] -ml-16 first:ml-0 px-4">
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] xl:w-[30vw] px-4">
                         <ProductCard product={product} />
                     </div>
                 ))}
@@ -281,7 +291,3 @@ export default function Home() {
 }
 
     
-
-    
-
-
