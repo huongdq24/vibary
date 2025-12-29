@@ -9,87 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel"
 import React from 'react';
 import { motion } from 'framer-motion';
-
-function HeroCarousel() {
-  const heroBanners = PlaceHolderImages.filter(p => p.id.startsWith('hero-banner'));
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
-
-  React.useEffect(() => {
-    if (!api) {
-      return
-    }
-
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
-
-
-  return (
-    <section className="relative w-full">
-      <Carousel
-        setApi={setApi}
-        opts={{
-          loop: true,
-        }}
-        className="w-full"
-      >
-        <CarouselContent>
-          {heroBanners.map((banner, index) => (
-            <CarouselItem key={banner.id}>
-              <div className="relative h-[60vh] min-h-[400px] md:h-[calc(100vh-80px)] w-full">
-                <Image
-                  src={banner.imageUrl}
-                  alt={banner.description}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  data-ai-hint={banner.imageHint}
-                />
-                 <div className="absolute inset-0 bg-black/30" />
-                 <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-start justify-center text-left text-white px-4 sm:px-6 lg:px-8">
-                    <p className="text-lg uppercase tracking-widest font-body">BST BÁNH TRÁI TIM</p>
-                    <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl leading-tight max-w-2xl mt-4">
-                        Cùng một tình yêu dịu dàng.
-                    </h1>
-                    <Button asChild variant="outline" size="lg" className="mt-8 bg-transparent text-white border-white hover:bg-white hover:text-black">
-                        <Link href="/products">KHÁM PHÁ NGAY</Link>
-                    </Button>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-      <div className="absolute bottom-8 right-8">
-         <div className="flex items-center justify-center gap-2">
-            {Array.from({ length: count }).map((_, i) => (
-                <button
-                    key={i}
-                    onClick={() => api?.scrollTo(i)}
-                    className="h-1 w-10 rounded-full"
-                >
-                    <div className={`h-1 w-full rounded-full transition-colors ${current === i + 1 ? 'bg-white' : 'bg-white/50'}`} />
-                </button>
-            ))}
-        </div>
-    </div>
-    </section>
-  );
-}
 
 const marqueeVariantsLR = {
   animate: {
@@ -122,17 +43,17 @@ const marqueeVariantsRL = {
 
 function AnnouncementBar() {
   const announcements = ["GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35", "TRAO BÁNH TẬN TAY, TẠI BẮC NINH"];
-  const duplicatedAnnouncements = [...announcements, ...announcements];
+  const duplicatedAnnouncements = [...announcements, ...announcements, ...announcements, ...announcements];
 
   return (
-     <div className="bg-background text-foreground border-y overflow-hidden">
+     <div className="bg-gray-100 text-foreground border-b overflow-hidden">
         <motion.div
           className="flex h-10 items-center justify-around whitespace-nowrap"
           variants={marqueeVariantsRL}
           animate="animate"
         >
           {duplicatedAnnouncements.map((text, index) => (
-            <div key={index} className="flex-shrink-0 w-full flex justify-center">
+            <div key={index} className="flex-shrink-0 w-full flex justify-center px-4">
               <p className="font-fraunces text-sm text-[#0A0A0A] text-center">
                 {text.includes("091 255 03 35") ? (
                   <>
@@ -152,15 +73,15 @@ function FeaturedProducts() {
     const featuredProducts = [...products, ...products];
 
     return (
-        <section className="py-16 sm:py-24 bg-white overflow-hidden">
+        <section className="py-12 sm:py-20 bg-white overflow-hidden">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl">Mang tới trải nghiệm<br/>đặt bánh Pháp cao cấp trực tuyến</h2>
                     <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                         VIBARY có mặt tại đây là để mang tới cho bạn trải nghiệm thưởng thức bánh ngọt Pháp hiện đại, dành cho người Việt.
                     </p>
-                    <Button asChild className="mt-6" variant="outline">
-                        <Link href="/products">ĐẶT BÁNH NGAY</Link>
+                    <Button asChild className="mt-8" variant="default" size="lg">
+                        <Link href="/products" className="bg-black text-white hover:bg-black/80 rounded-full font-bold">ĐẶT BÁNH NGAY</Link>
                     </Button>
                 </div>
             </div>
@@ -173,7 +94,7 @@ function FeaturedProducts() {
                 dragConstraints={{ left: 0, right: 0 }}
              >
                 {featuredProducts.map((product, index) => (
-                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/5 px-2">
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-[40vw] sm:w-[30vw] md:w-[22vw] lg:w-[18vw] -ml-12 first:ml-0">
                         <ProductCard product={product} />
                     </div>
                 ))}
@@ -253,7 +174,6 @@ function NewArrivals() {
 export default function Home() {
   return (
     <>
-      <HeroCarousel />
       <AnnouncementBar />
       <FeaturedProducts />
       <FeaturedCollections />
@@ -261,5 +181,3 @@ export default function Home() {
     </>
   );
 }
-
-    
