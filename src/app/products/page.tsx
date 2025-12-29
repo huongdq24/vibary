@@ -60,7 +60,7 @@ export default function ProductsPage() {
                         <a
                             key={category.slug}
                             href={`#${category.slug}`}
-                            className="text-sm font-bold uppercase text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+                            className="text-sm font-bold uppercase text-[#0A0A0A] hover:opacity-70 transition-colors whitespace-nowrap"
                         >
                             {category.title}
                         </a>
