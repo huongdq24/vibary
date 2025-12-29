@@ -184,7 +184,6 @@ function WorkshopSection() {
                 playsInline
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                <PlayCircle className="h-16 w-16 text-white/80" />
             </div>
           </div>
         </div>
