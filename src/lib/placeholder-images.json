@@ -99,7 +99,7 @@
     {
       "id": "product-7",
       "description": "Raspberry & Pistachio Half cake.",
-      "imageUrl": "https://storage.googleapis.com/gemini-studio-assets/lafuong/1722882670233_Be-in-blossom-entremet-cake-lafuong-pastry-shop-hanoi-1.jpg",
+      "imageUrl": "https://images.prismic.io/lf-web/ZqcJ0B5LeNNTxjJV_Be-in-blossom-entremet-cake-lafuong-pastry-shop-hanoi-1.jpg?auto=format%2Ccompress&width=640&height=640&q=80&fit=max&w=3840",
       "imageHint": "pistachio cake"
     },
     {
@@ -129,7 +129,7 @@
     {
       "id": "quiz-banner",
       "description": "Banner image for the flavor quiz section.",
-      "imageUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY2OTY5NzkxfDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY2OTY5NzkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cake slice"
     },
     {
@@ -137,6 +137,42 @@
       "description": "Banner image for the about page.",
       "imageUrl": "https://images.unsplash.com/photo-1634610814993-880e4d3e8810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "pastry kitchen"
+    },
+    {
+      "id": "category-sweet-cake",
+      "description": "A variety of sweet cakes.",
+      "imageUrl": "https://images.unsplash.com/photo-1567877849899-d5e88b882078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzd2VldCUyMGNha2V8ZW58MHx8fHwxNzY2OTgwMDEwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sweet cake"
+    },
+    {
+      "id": "category-salty-cake",
+      "description": "A variety of salty cakes.",
+      "imageUrl": "https://images.unsplash.com/photo-1720724658751-efd69c99a892?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzYWx0eSUyMHBhc3RyeXxlbnwwfHx8fDE3NjY5ODAwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "salty pastry"
+    },
+    {
+      "id": "category-birthday-cake",
+      "description": "A birthday cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMGNha2V8ZW58MHx8fHwxNzY2OTI4NjMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "birthday cake"
+    },
+    {
+      "id": "category-drinks",
+      "description": "A variety of drinks.",
+      "imageUrl": "https://images.unsplash.com/photo-1582105665457-18da8351dbb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb2xvcmZ1bCUyMGRyaW5rc3xlbnwwfHx8fDE3NjY5MjY3Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "colorful drinks"
+    },
+    {
+      "id": "category-other-cakes",
+      "description": "Other types of cakes.",
+      "imageUrl": "https://images.unsplash.com/photo-1581344797783-b6f505d6300e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhc3NvcnRlZCUyMGNha2VzfGVufDB8fHx8MTc2Njk4MDAxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "assorted cakes"
+    },
+    {
+      "id": "category-other-food",
+      "description": "Other types of food.",
+      "imageUrl": "https://images.unsplash.com/photo-1567496295302-b8dbcd2913b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxmb29kJTIwcGxhdHRlcnxlbnwwfHx8fDE3NjY5ODAwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food platter"
     }
   ]
 }
