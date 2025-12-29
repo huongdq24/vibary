@@ -8,15 +8,10 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useCart } from "@/hooks/use-cart";
 import { notFound } from "next/navigation";
-import { Minus, Plus, ShoppingCart } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
-export default function ProductDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const slug = params.slug;
+function ProductDetailClient({ slug }: { slug: string }) {
   const product = products.find((p) => p.slug === slug);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
@@ -68,7 +63,7 @@ export default function ProductDetailPage({
               <Button variant="ghost" size="icon" className="h-11 w-11" onClick={() => setQuantity(q => Math.max(1, q - 1))}>
                   <Minus className="h-4 w-4" />
               </Button>
-              <Input type="number" value={quantity} readOnly className="h-11 w-12 border-0 text-center bg-transparent" />
+              <Input type="number" value={quantity} readOnly className="h-11 w-11 border-0 text-center bg-transparent" />
               <Button variant="ghost" size="icon" className="h-11 w-11" onClick={() => setQuantity(q => q + 1)}>
                   <Plus className="h-4 w-4" />
               </Button>
@@ -147,4 +142,18 @@ export default function ProductDetailPage({
 
     </div>
   );
+}
+
+
+// Server component to fetch slug and pass to client component
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+    const slug = params.slug;
+    return <ProductDetailClient slug={slug} />;
+}
+
+// Re-generate static paths
+export async function generateStaticParams() {
+    return products.map(product => ({
+        slug: product.slug
+    }))
 }
