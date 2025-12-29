@@ -16,7 +16,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel"
 import React from 'react';
-import Autoplay from "embla-carousel-autoplay"
+import { motion } from 'framer-motion';
 
 function HeroCarousel() {
   const heroBanners = PlaceHolderImages.filter(p => p.id.startsWith('hero-banner'));
@@ -95,13 +95,7 @@ function AnnouncementBar() {
   return (
      <div className="bg-background text-foreground border-y">
         <div className="container mx-auto flex h-10 max-w-full items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-fraunces text-sm text-black">
-              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
-              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
-              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
-              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
-              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
-              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
+          <div className="whitespace-nowrap flex items-center gap-12 font-fraunces text-sm text-[#0A0A0A]">
               <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
               <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
           </div>
@@ -110,14 +104,25 @@ function AnnouncementBar() {
   )
 }
 
+const marqueeVariants = {
+  animate: {
+    x: [0, '-100%'],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 40,
+        ease: "linear",
+      },
+    },
+  },
+};
+
 function FeaturedProducts() {
-    const featuredProducts = [...products, ...products, ...products, ...products]; // Duplicate products for continuous scroll
-    const plugin = React.useRef(
-      Autoplay({ delay: 2000, stopOnInteraction: true })
-    )
+    const featuredProducts = [...products, ...products];
 
     return (
-        <section className="py-16 sm:py-24 bg-white">
+        <section className="py-16 sm:py-24 bg-white overflow-hidden">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl">Mang tới trải nghiệm<br/>đặt bánh Pháp cao cấp trực tuyến</h2>
@@ -128,25 +133,21 @@ function FeaturedProducts() {
                         <Link href="/products">ĐẶT BÁNH NGAY</Link>
                     </Button>
                 </div>
-                <Carousel
-                    plugins={[plugin.current]}
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    className="w-full"
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent className="-ml-0">
-                        {featuredProducts.map((product, index) => (
-                            <CarouselItem key={`${product.id}-${index}`} className="basis-1/2 md:basis-1/3 lg:basis-1/5 pl-0">
-                                <ProductCard product={product} />
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
             </div>
+             <motion.div 
+                className="flex"
+                variants={marqueeVariants}
+                animate="animate"
+                whileHover={{ animationPlayState: 'paused' }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+             >
+                {featuredProducts.map((product, index) => (
+                    <div key={`${product.id}-${index}`} className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/5">
+                        <ProductCard product={product} />
+                    </div>
+                ))}
+            </motion.div>
         </section>
     );
 }
