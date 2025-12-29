@@ -29,7 +29,7 @@ export default function AboutPage() {
                 <div className="prose prose-lg mx-auto max-w-none prose-h2:font-headline prose-p:text-muted-foreground prose-blockquote:border-accent prose-blockquote:text-accent prose-blockquote:font-headline">
                     <h2>Giấc Mơ</h2>
                     <p>
-                        Câu chuyện của Entremet Hà Nội không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ ngập nắng giữa lòng Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm du học tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm thử.
+                        Câu chuyện của VIBARY không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ ngập nắng giữa lòng Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm du học tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm thử.
                     </p>
                     <p>
                         Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê nhà, nhưng với một nét chấm phá độc đáo của Việt Nam. Cô muốn tạo ra những chiếc bánh vừa lạ vừa quen, vừa tinh tế vừa gần gũi.
@@ -44,7 +44,7 @@ export default function AboutPage() {
                         Lan đã dành nhiều năm để hoàn thiện tay nghề, không mệt mỏi thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây và xoài. Cô đã tỉ mỉ điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương, tìm ra sự hòa hợp hoàn hảo giữa kỹ thuật Pháp và nguyên liệu Việt Nam.
                     </p>
                     <p>
-                        Entremet Hà Nội là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại. Mỗi chiếc bánh là một minh chứng cho sự kiên nhẫn, một công trình của tình yêu, và một phần câu chuyện của chúng tôi, được chia sẻ cùng bạn.
+                        VIBARY là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại. Mỗi chiếc bánh là một minh chứng cho sự kiên nhẫn, một công trình của tình yêu, và một phần câu chuyện của chúng tôi, được chia sẻ cùng bạn.
                     </p>
                 </div>
             </div>

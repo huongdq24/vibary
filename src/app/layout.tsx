@@ -19,7 +19,7 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Entremet Hanoi - Bánh ngọt Pháp hiện đại",
+  title: "VIBARY - Bánh ngọt Pháp hiện đại",
   description: "Bánh Entremet thanh lịch tại Hà Nội, làm từ trái cây Việt Nam theo mùa.",
 };
 

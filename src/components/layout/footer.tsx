@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Github, Instagram, Facebook, Twitter } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/icons";
 
 export function Footer() {
   return (
@@ -11,9 +10,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="flex flex-col gap-4">
              <Link href="/" className="flex items-center gap-2">
-              <Logo className="h-8 w-8 text-foreground" />
-              <span className="font-headline text-xl font-semibold">
-                Entremet Hanoi
+              <span className="font-headline text-2xl font-bold tracking-widest">
+                VIBARY
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -59,7 +57,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Entremet Hanoi. Đã đăng ký bản quyền.</p>
+          <p>&copy; {new Date().getFullYear()} VIBARY. Đã đăng ký bản quyền.</p>
         </div>
       </div>
     </footer>

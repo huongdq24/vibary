@@ -10,7 +10,7 @@ export default function NewsPage() {
       <div className="mb-12 text-center">
         <h1 className="font-headline text-4xl md:text-5xl">Tin Tức & Câu Chuyện</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Từ hành trình của người sáng lập đến những góc nhìn hậu trường, hãy lặn sâu vào thế giới của Entremet Hà Nội.
+          Từ hành trình của người sáng lập đến những góc nhìn hậu trường, hãy lặn sâu vào thế giới của VIBARY.
         </p>
       </div>
 

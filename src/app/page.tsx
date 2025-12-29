@@ -8,38 +8,48 @@ import { ArrowRight, MessageSquareQuote } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 
 function HeroSection() {
-  const heroImage = PlaceHolderImages.find((p) => p.id === 'hero-1');
+  const heroProducts = products.slice(0, 3);
   return (
-    <div className="relative h-[60vh] min-h-[400px] w-full bg-primary/20">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-      <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-start justify-end px-4 pb-12 text-white sm:px-6 lg:px-8">
-        <h1 className="font-headline text-4xl leading-tight md:text-6xl lg:w-2/3">
-          Bánh ngọt Pháp hiện đại, dành cho khẩu vị Việt.
-        </h1>
-        <p className="mt-4 max-w-xl text-lg text-gray-200">
-          Khám phá nghệ thuật Entremet, nơi trái cây theo mùa và thiết kế thanh lịch hòa quyện thành một bản giao hưởng của hương vị và kết cấu.
-        </p>
-        <Button asChild size="lg" className="mt-6 bg-white text-black hover:bg-gray-200">
-          <Link href="/products">Khám phá Bộ sưu tập</Link>
-        </Button>
-      </div>
+    <div className="w-full bg-white py-12">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+             <div className="text-center mb-12">
+                <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 rounded-none">
+                    <Link href="/products">ĐẶT BÁNH NGAY</Link>
+                </Button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {heroProducts.map(product => {
+                     const image = PlaceHolderImages.find((p) => p.id === product.imageId);
+                     return (
+                        <Link href={`/products/${product.slug}`} key={product.id} className="group relative text-center">
+                            {image && (
+                                <Image
+                                src={image.imageUrl}
+                                alt={product.name}
+                                width={600}
+                                height={600}
+                                className="object-cover w-full h-auto"
+                                data-ai-hint={image.imageHint}
+                                />
+                            )}
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                                <span className="bg-white/80 text-black px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+                                    {product.name}
+                                </span>
+                            </div>
+                        </Link>
+                     )
+                })}
+            </div>
+        </div>
     </div>
   );
 }
 
+
 function FeaturedCollections() {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-3xl md:text-4xl">Bộ Sưu Tập Nổi Bật</h2>
@@ -84,9 +94,9 @@ function FeaturedCollections() {
 }
 
 function NewArrivals() {
-  const newProducts = products.slice(0, 4);
+  const newProducts = products.slice(4, 8);
   return (
-    <section className="bg-primary/20 py-16 sm:py-24">
+    <section className="bg-white py-16 sm:py-24">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-3xl md:text-4xl">Sản Phẩm Mới</h2>
@@ -104,91 +114,6 @@ function NewArrivals() {
   );
 }
 
-function QuizCta() {
-    const quizImage = PlaceHolderImages.find(p => p.id === 'quiz-banner');
-  return (
-    <section className="py-16 sm:py-24">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Card className="overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4">
-          <div className="relative hidden aspect-video lg:block">
-            {quizImage && (
-                <Image 
-                    src={quizImage.imageUrl}
-                    alt={quizImage.description}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={quizImage.imageHint}
-                />
-            )}
-          </div>
-          <div className="flex flex-col justify-center p-8 sm:p-12">
-            <MessageSquareQuote className="h-10 w-10 text-accent" />
-            <h2 className="mt-4 font-headline text-3xl">Lạc lối trong vị ngọt?</h2>
-            <p className="mt-2 text-lg text-muted-foreground">
-              Hãy để chúng tôi dẫn lối. Làm bài trắc nghiệm nhanh để tìm ra chiếc bánh Entremet dành cho bạn.
-            </p>
-            <div className="mt-6">
-              <Button asChild size="lg">
-                <Link href="/quiz">Bắt đầu Trắc nghiệm <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              </Button>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </section>
-  );
-}
-
-function NewsSection() {
-    const latestArticles = articles.slice(0, 3);
-    return (
-        <section className="bg-primary/20 py-16 sm:py-24">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="text-center">
-                    <h2 className="font-headline text-3xl md:text-4xl">Tin Tức Nóng Hổi</h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                        Những câu chuyện từ bếp bánh, mẹo mua sắm và những thông báo ngọt ngào.
-                    </p>
-                </div>
-                <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-                    {latestArticles.map((article) => {
-                        const image = PlaceHolderImages.find(p => p.id === article.imageId);
-                        return (
-                           <Link href={`/news/${article.slug}`} key={article.id}>
-                                <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl">
-                                    {image && (
-                                        <div className="aspect-w-16 aspect-h-9">
-                                            <Image 
-                                                src={image.imageUrl}
-                                                alt={article.title}
-                                                width={600}
-                                                height={400}
-                                                className="object-cover"
-                                                data-ai-hint={image.imageHint}
-                                            />
-                                        </div>
-                                    )}
-                                    <CardHeader>
-                                        <p className="text-sm text-muted-foreground">{article.date}</p>
-                                        <CardTitle className="font-headline text-xl">{article.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-sm text-muted-foreground">{article.excerpt}</p>
-                                    </CardContent>
-                                </Card>
-                            </Link>
-                        );
-                    })}
-                </div>
-                <div className="mt-12 text-center">
-                    <Button asChild variant="outline">
-                        <Link href="/news">Đọc thêm</Link>
-                    </Button>
-                </div>
-            </div>
-        </section>
-    );
-}
 
 export default function Home() {
   return (
@@ -196,8 +121,6 @@ export default function Home() {
       <HeroSection />
       <FeaturedCollections />
       <NewArrivals />
-      <QuizCta />
-      <NewsSection />
     </>
   );
 }

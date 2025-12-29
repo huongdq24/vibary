@@ -1,9 +1,9 @@
 import type { Product, Collection, Article, FaqItem, NavLink } from './types';
 
 export const navLinks: NavLink[] = [
-  { href: '/', label: 'Trang Chủ' },
   { href: '/products', label: 'Sản Phẩm' },
-  { href: '/quiz', label: 'Trắc Nghiệm' },
+  { href: '/about', label: 'Về Vibary' },
+  { href: '/faq', label: 'Hỏi đáp' },
   { href: '/news', label: 'Tin Tức' },
   { href: '/contact', label: 'Liên Hệ' },
 ];
@@ -43,7 +43,7 @@ export const products: Product[] = [
   {
     id: 'prod-001',
     slug: 'lychee-rose-delight',
-    name: 'Lychee & Rose Delight',
+    name: 'BE IN BLOSSOM',
     description: 'Vũ điệu thơ mộng của hoa hồng thơm ngát và vải ngọt ngào.',
     detailedDescription: {
       flavor: 'Mousse hoa hồng tinh tế kết hợp với thạch vải nhẹ và bánh bông lan hạnh nhân mềm mại. Một chút mâm xôi thêm vị chua nhẹ.',
@@ -62,7 +62,7 @@ export const products: Product[] = [
   {
     id: 'prod-002',
     slug: 'passion-fruit-breeze',
-    name: 'Passion Fruit Breeze',
+    name: 'BELOVED DARLING',
     description: 'Một cuộc trốn chạy đến miền nhiệt đới trong mỗi miếng bánh, sống động và sảng khoái.',
     detailedDescription: {
       flavor: 'Kem chanh dây tươi sáng, xếp lớp với mousse dừa và đế dừa giòn. Một hương vị của mùa hè Hà Nội.',
@@ -75,7 +75,7 @@ export const products: Product[] = [
       { name: '16cm (6-8 người)', price: 620000 },
       { name: '18cm (8-10 người)', price: 750000 },
     ],
-    imageId: 'product-2',
+    imageId: 'product-5',
     collection: 'special-occasions',
   },
   {
@@ -124,7 +124,7 @@ export const products: Product[] = [
       storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong ngày mua do có trái cây tươi.'
     },
     price: 680000,
-    imageId: 'product-5',
+    imageId: 'product-2',
     collection: 'heart-shaped',
   },
   {
@@ -183,7 +183,7 @@ export const articles: Article[] = [
     date: 'Ngày 20 tháng 5, 2024',
     category: 'Câu chuyện người sáng lập',
     imageId: 'blog-1',
-    content: '<p>Câu chuyện của Entremet Hanoi không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ đầy nắng ở trung tâm Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm học tập tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm. Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê hương, nhưng với một nét chấm phá độc đáo của Việt Nam.</p><p>Cô đã dành nhiều năm để hoàn thiện tay nghề, thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây, và xoài, và điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương. Tầm nhìn của cô là tạo ra những chiếc bánh ngọt Pháp hiện đại vừa sang trọng vừa quen thuộc. Entremet Hanoi là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại.</p>'
+    content: '<p>Câu chuyện của Vibary không bắt đầu từ một tiệm bánh lớn, mà trong một căn bếp nhỏ đầy nắng ở trung tâm Hà Nội. Người sáng lập của chúng tôi, Lan, đã khám phá ra niềm đam mê với bánh ngọt Pháp trong một năm học tập tại Paris. Cô bị mê hoặc bởi tính nghệ thuật, sự chính xác và sự cân bằng tinh tế của hương vị trong mỗi chiếc bánh entremet cô nếm. Khi trở về Việt Nam, cô mơ ước mang phép màu đó về quê hương, nhưng với một nét chấm phá độc đáo của Việt Nam.</p><p>Cô đã dành nhiều năm để hoàn thiện tay nghề, thử nghiệm với các loại trái cây địa phương theo mùa như vải, chanh dây, và xoài, và điều chỉnh độ ngọt để phù hợp với khẩu vị địa phương. Tầm nhìn của cô là tạo ra những chiếc bánh ngọt Pháp hiện đại vừa sang trọng vừa quen thuộc. Vibary là đỉnh cao của giấc mơ đó—một sự tôn vinh kỹ thuật, sự sáng tạo và những nguyên liệu tươi ngon nhất mà đất nước xinh đẹp của chúng ta mang lại.</p>'
   },
   {
     id: 'news-2',
@@ -193,7 +193,7 @@ export const articles: Article[] = [
     date: 'Ngày 15 tháng 5, 2024',
     category: 'Hậu trường',
     imageId: 'blog-2',
-    content: '<p>Cần những gì để tạo ra một chiếc bánh Entremet Hanoi? Nó bắt đầu từ cảm hứng—thường là từ một loại trái cây theo mùa hoặc một ký ức về một mùi hương đặc biệt. Các đầu bếp bánh của chúng tôi sau đó bắt đầu một quy trình tỉ mỉ gồm phác thảo, kết hợp hương vị và thử nghiệm. Mỗi lớp được chế tác và đông lạnh riêng biệt trước khi được lắp ráp thành một tổng thể hoàn hảo. Nét chấm phá cuối cùng, lớp men hay "glaçage", là một khoảnh khắc tập trung tuyệt đối, đòi hỏi một bàn tay vững vàng và nhiệt độ chính xác để đạt được độ bóng như gương đặc trưng. Đó là một công việc của tình yêu, một vũ điệu của khoa học và nghệ thuật mà chúng tôi tự hào chia sẻ với bạn.</p>'
+    content: '<p>Cần những gì để tạo ra một chiếc bánh Vibary? Nó bắt đầu từ cảm hứng—thường là từ một loại trái cây theo mùa hoặc một ký ức về một mùi hương đặc biệt. Các đầu bếp bánh của chúng tôi sau đó bắt đầu một quy trình tỉ mỉ gồm phác thảo, kết hợp hương vị và thử nghiệm. Mỗi lớp được chế tác và đông lạnh riêng biệt trước khi được lắp ráp thành một tổng thể hoàn hảo. Nét chấm phá cuối cùng, lớp men hay "glaçage", là một khoảnh khắc tập trung tuyệt đối, đòi hỏi một bàn tay vững vàng và nhiệt độ chính xác để đạt được độ bóng như gương đặc trưng. Đó là một công việc của tình yêu, một vũ điệu của khoa học và nghệ thuật mà chúng tôi tự hào chia sẻ với bạn.</p>'
   },
   {
     id: 'news-3',
