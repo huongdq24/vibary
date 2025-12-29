@@ -54,64 +54,52 @@ function HowToOrder() {
     <div className="py-16 sm:py-24">
       <div className="relative">
         <div
-          className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-border"
+          className="absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-border"
           aria-hidden="true"
         />
-        <div className="relative space-y-16">
-          {howToSteps.map((item) => {
+        <div className="space-y-16">
+          {howToSteps.map((item, itemIdx) => {
             const image = item.imageId
               ? PlaceHolderImages.find((p) => p.id === item.imageId)
               : null;
             const isOdd = item.step % 2 !== 0;
 
-            const imageContent = image ? (
-              <div className="flex items-center justify-center px-8">
-                <Image
-                  src={image.imageUrl}
-                  alt={image.description}
-                  width={300}
-                  height={250}
-                  className="object-contain"
-                  data-ai-hint={image.imageHint}
-                />
-              </div>
-            ) : <div />;
-
-            const textContent = (
-              <div className="relative flex items-center">
-                 <div className="absolute left-1/2 -translate-x-1/2 bg-background z-10">
-                    <div className="h-8 w-8 rounded-full border bg-background flex items-center justify-center font-headline text-lg">
-                        {item.step}
-                    </div>
-                </div>
-                <div className={cn(
-                    "flex-1",
-                    isOdd ? "text-left pl-12" : "text-right pr-12"
-                )}>
-                  <h3 className="font-headline text-4xl">{item.title}</h3>
-                  <p className="mt-2 text-muted-foreground max-w-sm mx-auto">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            );
-
             return (
               <div
                 key={item.step}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+                className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-2"
               >
-                {isOdd ? (
-                  <>
-                    {textContent}
-                    {imageContent}
-                  </>
-                ) : (
-                  <>
-                    {imageContent}
-                    {textContent}
-                  </>
-                )}
+                <div
+                  className={cn(
+                    'text-center md:text-left',
+                    isOdd ? 'md:text-right' : 'md:text-left',
+                    isOdd ? 'md:pr-12' : 'md:pl-12'
+                  )}
+                >
+                  <h3 className="font-headline text-4xl">{item.title}</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+                <div className={cn(
+                  'flex items-center justify-center px-8',
+                  isOdd ? 'md:order-last' : 'md:order-first'
+                )}>
+                  {image && (
+                    <Image
+                      src={image.imageUrl}
+                      alt={image.description}
+                      width={300}
+                      height={250}
+                      className="object-contain"
+                      data-ai-hint={image.imageHint}
+                    />
+                  )}
+                </div>
+
+                <div className="absolute left-1/2 top-1/2 z-10 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border bg-background font-headline text-lg">
+                  {item.step}
+                </div>
               </div>
             );
           })}
@@ -120,6 +108,7 @@ function HowToOrder() {
     </div>
   );
 }
+
 
 export default function FaqPage() {
   const faqIllustration = PlaceHolderImages.find(p => p.id === "faq-illustration");
