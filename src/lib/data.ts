@@ -58,6 +58,7 @@ export const products: Product[] = [
     ],
     imageId: 'product-1',
     collection: 'special-occasions',
+    categorySlug: 'banh-sinh-nhat',
   },
   {
     id: 'prod-002',
@@ -77,6 +78,7 @@ export const products: Product[] = [
     ],
     imageId: 'product-2',
     collection: 'special-occasions',
+    categorySlug: 'banh-sinh-nhat',
   },
   {
     id: 'prod-003',
@@ -92,6 +94,7 @@ export const products: Product[] = [
     price: 380000,
     imageId: 'product-3',
     collection: 'half-entremet',
+    categorySlug: 'banh-ngot',
   },
   {
     id: 'prod-004',
@@ -111,6 +114,7 @@ export const products: Product[] = [
     ],
     imageId: 'product-4',
     collection: 'special-occasions',
+    categorySlug: 'banh-sinh-nhat',
   },
   {
     id: 'prod-005',
@@ -126,6 +130,55 @@ export const products: Product[] = [
     price: 680000,
     imageId: 'product-5',
     collection: 'heart-shaped',
+    categorySlug: 'banh-ngot',
+  },
+  {
+    id: 'prod-006',
+    slug: 'baby-mango-bliss',
+    name: 'Baby Mango Bliss',
+    description: 'Chiếc bánh nhỏ tràn ngập ánh nắng và hương vị xoài ngọt ngào.',
+    detailedDescription: {
+      flavor: 'Mousse xoài nhẹ với nhân thạch chanh dây. Kích thước hoàn hảo cho một khoảnh khắc hạnh phúc nhỏ.',
+      ingredients: 'Mousse xoài, thạch chanh dây, bánh bông lan hạnh nhân.',
+      serving: 'Phục vụ 1-2 người.',
+      storage: 'Bảo quản trong tủ lạnh. Dùng trong vòng 2 ngày.'
+    },
+    price: 250000,
+    imageId: 'product-6',
+    collection: 'baby-collection',
+    categorySlug: 'banh-man',
+  },
+  {
+    id: 'prod-007',
+    slug: 'raspberry-pistachio-half',
+    name: 'Raspberry & Pistachio Half',
+    description: 'Sự kết hợp sống động của mâm xôi chua và hạt dẻ cười bùi.',
+    detailedDescription: {
+      flavor: 'Mousse hạt dẻ cười mịn màng với trái tim thạch mâm xôi chua, trên nền bánh dacquoise hạt dẻ cười tinh tế.',
+      ingredients: 'Mousse hạt dẻ cười, thạch mâm xôi, bánh dacquoise hạt dẻ cười.',
+      serving: 'Phục vụ 2-4 người (Half Entremet).',
+      storage: 'Bảo quản trong tủ lạnh. Màu sắc và hương vị ngon nhất trong ngày đầu tiên.'
+    },
+    price: 420000,
+    imageId: 'product-7',
+    collection: 'half-entremet',
+    categorySlug: 'do-uong',
+  },
+  {
+    id: 'prod-008',
+    slug: 'summer-berry-cheesecake',
+    name: 'Summer Berry Cheesecake',
+    description: 'Phiên bản hiện đại của một món kinh điển, tràn ngập các loại quả mọng.',
+    detailedDescription: {
+      flavor: 'Kem cheesecake không nướng nhẹ nhàng được trang trí bằng một hỗn hợp các loại quả mọng mùa hè tươi trên đế bánh quy bơ.',
+      ingredients: 'Phô mai kem, kem tươi, hỗn hợp quả mọng (dâu tây, việt quất, mâm xôi), đế bánh quy digestive.',
+      serving: 'Phục vụ 6-8 người.',
+      storage: 'Bảo quản trong tủ lạnh. Ngon nhất khi dùng trong vòng 24 giờ.'
+    },
+    price: 640000,
+    imageId: 'product-8',
+    collection: 'special-occasions',
+    categorySlug: 'banh-khac',
   }
 ];
 

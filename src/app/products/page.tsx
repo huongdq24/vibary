@@ -63,13 +63,7 @@ export default function ProductsPage() {
     if (!activeCategory) {
       return products;
     }
-    
-    // Placeholder: show all products for 'banh-sinh-nhat' until data is updated
-    if (activeCategory === 'banh-sinh-nhat') {
-        return products;
-    }
-
-    return [];
+    return products.filter(p => p.categorySlug === activeCategory);
   };
   
   const filteredProducts = getFilteredProducts();

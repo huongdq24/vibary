@@ -16,6 +16,7 @@ export type Product = {
   }[];
   imageId: string;
   collection: string;
+  categorySlug: string;
 };
 
 export type Collection = {
