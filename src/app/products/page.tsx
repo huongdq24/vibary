@@ -10,7 +10,6 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 const productCategories = [
-    { slug: 'all', title: 'Tất cả' },
     { slug: 'banh-ngot', title: 'Bánh ngọt' },
     { slug: 'banh-man', title: 'Bánh mặn' },
     { slug: 'banh-sinh-nhat', title: 'Bánh sinh nhật' },
@@ -24,15 +23,21 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const collectionSlug = searchParams.get('collection');
 
-  const [activeCategory, setActiveCategory] = useState<string | null>(collectionSlug ?? 'all');
+  const [activeCategory, setActiveCategory] = useState<string | null>(collectionSlug ?? 'banh-sinh-nhat');
 
   // NOTE: This filtering logic is a placeholder.
   // The actual products don't have these new categories yet.
   // The filter will show all products for now, except for the placeholder categories.
   const getFilteredProducts = () => {
-    if (!activeCategory || activeCategory === 'all') {
+    if (!activeCategory) {
       return products;
     }
+    
+    // Placeholder: show all products for 'banh-sinh-nhat' until data is updated
+    if (activeCategory === 'banh-sinh-nhat') {
+        return products;
+    }
+
     // Since products don't have these new categories, we'll return an empty array
     // for now to show that the filtering mechanism is in place.
     // In a real scenario, you'd filter products based on the activeCategory.
@@ -40,7 +45,7 @@ export default function ProductsPage() {
     return [];
   };
   
-  const filteredProducts = activeCategory === 'all' ? products : getFilteredProducts();
+  const filteredProducts = getFilteredProducts();
 
   return (
     <div className="bg-background">
