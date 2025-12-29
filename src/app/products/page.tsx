@@ -131,9 +131,11 @@ export default function ProductsPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 sm:divide-x">
                 {categoryProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <div key={product.id} className="sm:px-8">
+                    <ProductCard product={product} />
+                  </div>
                 ))}
               </div>
 
