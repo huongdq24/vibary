@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { products } from '@/lib/data';
 import type { Product } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -35,7 +34,7 @@ const productSchema = z.object({
     description: z.string().min(10, { message: "Mô tả phải có ít nhất 10 ký tự." }),
 });
 
-type ProductFormValues = z.infer<typeof productSchema>;
+export type ProductFormValues = z.infer<typeof productSchema>;
 
 const productCategories = [
     { slug: 'banh-sinh-nhat', title: 'Bánh sinh nhật' },
@@ -48,7 +47,7 @@ const productCategories = [
 
 interface ProductFormProps {
   product?: Product;
-  onSuccess: () => void;
+  onSuccess: (data: ProductFormValues, product?: Product) => void;
 }
 
 export function ProductForm({ product, onSuccess }: ProductFormProps) {
@@ -73,17 +72,12 @@ export function ProductForm({ product, onSuccess }: ProductFormProps) {
   });
 
   const onSubmit = (data: ProductFormValues) => {
-    console.log("Form data submitted:", data);
-    
-    // This is where you would typically call an API to save the data.
-    // For this demo, we'll just show a success toast.
-    
     toast({
         title: product ? "Cập nhật thành công!" : "Thêm thành công!",
         description: `Sản phẩm "${data.name}" đã được ${product ? 'cập nhật' : 'thêm'}.`,
     });
 
-    onSuccess();
+    onSuccess(data, product);
   };
 
   return (

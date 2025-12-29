@@ -40,7 +40,7 @@ import {
   TabsTrigger,
 } from '@/components/ui/tabs';
 import Image from 'next/image';
-import { products } from '@/lib/data';
+import { products as initialProducts } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useState } from 'react';
 import type { Product } from '@/lib/types';
@@ -63,10 +63,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { ProductForm } from './product-form';
+import { ProductForm, type ProductFormValues } from './product-form';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ProductsPage() {
+    const [productList, setProductList] = useState<Product[]>(initialProducts);
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(undefined);
@@ -94,13 +95,46 @@ export default function ProductsPage() {
     
     const handleDelete = () => {
         if (!selectedProduct) return;
-        console.log(`Deleting product: ${selectedProduct.name}`);
+        
+        setProductList(prevList => prevList.filter(p => p.id !== selectedProduct.id));
+
         toast({
             title: "Xóa thành công",
             description: `Sản phẩm "${selectedProduct.name}" đã được xóa.`,
         });
         closeDeleteConfirm();
     }
+    
+    const handleFormSuccess = (data: ProductFormValues, product?: Product) => {
+        if (product) {
+            // Update existing product
+            setProductList(prevList => prevList.map(p => p.id === product.id ? { ...p, ...data, price: Number(data.price), stock: Number(data.stock), slug: data.name.toLowerCase().replace(/ /g, '-') } : p));
+        } else {
+            // Add new product
+            const newProduct: Product = {
+                id: `prod-${Date.now()}`,
+                slug: data.name.toLowerCase().replace(/ /g, '-'),
+                name: data.name,
+                subtitle: data.categorySlug,
+                description: data.description,
+                detailedDescription: {
+                    flavor: 'Cập nhật sau',
+                    ingredients: 'Cập nhật sau',
+                    serving: 'Cập nhật sau',
+                    storage: 'Cập nhật sau',
+                    dimensions: 'Cập nhật sau',
+                    accessories: ['01 Chiếc nến sinh nhật', '01 Dao cắt bánh']
+                },
+                price: Number(data.price),
+                stock: Number(data.stock),
+                imageIds: ['product-1'],
+                collection: 'special-occasions',
+                categorySlug: data.categorySlug,
+            };
+            setProductList(prevList => [newProduct, ...prevList]);
+        }
+        closeForm();
+    };
 
 
     return (
@@ -157,7 +191,7 @@ export default function ProductsPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                   {products.map(product => {
+                   {productList.map(product => {
                      const image = PlaceHolderImages.find(p => p.id === product.imageIds[0]);
                      return (
                         <TableRow key={product.id}>
@@ -217,7 +251,7 @@ export default function ProductsPage() {
               </CardContent>
               <CardFooter>
                 <div className="text-xs text-muted-foreground">
-                  Hiển thị <strong>{products.length}</strong> trên <strong>{products.length}</strong> sản phẩm
+                  Hiển thị <strong>{productList.length}</strong> trên <strong>{productList.length}</strong> sản phẩm
                 </div>
               </CardFooter>
             </Card>
@@ -232,7 +266,7 @@ export default function ProductsPage() {
                     </DialogDescription>
                 </DialogHeader>
                 <div className="py-4">
-                   <ProductForm product={selectedProduct} onSuccess={closeForm} />
+                   <ProductForm product={selectedProduct} onSuccess={handleFormSuccess} />
                 </div>
             </DialogContent>
         </Dialog>
