@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { collections, products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import React from 'react';
@@ -289,5 +289,3 @@ export default function Home() {
     </>
   );
 }
-
-    
