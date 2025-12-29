@@ -12,11 +12,11 @@ import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 export default function ProductDetailPage({
-  params,
+  params: { slug },
 }: {
   params: { slug: string };
 }) {
-  const product = products.find((p) => p.slug === params.slug);
+  const product = products.find((p) => p.slug === slug);
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
