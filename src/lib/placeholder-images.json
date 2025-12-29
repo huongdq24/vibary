@@ -171,7 +171,7 @@
     {
       "id": "category-other-cakes",
       "description": "Other types of cakes.",
-      "imageUrl": "/images/product/anhbia.jpg",
+      "imageUrl": "/images/product/anhbia_jpg",
       "imageHint": "assorted cakes"
     },
     {
@@ -185,6 +185,18 @@
       "description": "Illustration for the how-to-buy page.",
       "imageUrl": "/images/how-to-buy-illustration.png",
       "imageHint": "line art drawing"
+    },
+    {
+      "id": "faq-step-1",
+      "description": "Illustration for choosing a product.",
+      "imageUrl": "/images/how-to-buy-step-1.png",
+      "imageHint": "shopping cart"
+    },
+    {
+      "id": "faq-step-2",
+      "description": "Illustration for writing a wish.",
+      "imageUrl": "/images/how-to-buy-step-2.png",
+      "imageHint": "greeting card"
     }
   ]
 }
