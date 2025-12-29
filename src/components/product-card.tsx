@@ -12,7 +12,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const placeholder = PlaceHolderImages.find((p) => p.id === product.imageId);
 
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border-0 shadow-none">
+    <Card className="group relative flex h-full flex-col overflow-hidden border-0 shadow-none bg-transparent">
       <Link href={`/products/${product.slug}`} className="flex flex-col h-full text-center">
         <CardHeader className="p-0">
           <div className="aspect-square w-full overflow-hidden">
@@ -28,8 +28,8 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
         </CardHeader>
-        <CardContent className="absolute bottom-4 right-4">
-          <CardTitle className="font-body text-xs uppercase tracking-widest bg-white/80 text-black px-3 py-1.5 rounded-full border border-black/20 backdrop-blur-sm">
+        <CardContent className="absolute bottom-4 left-1/2 -translate-x-1/2 w-auto whitespace-nowrap">
+          <CardTitle className="font-body text-xs uppercase tracking-widest bg-white/90 text-black px-3 py-1.5 rounded-full border border-black/10 backdrop-blur-sm shadow-sm">
             {product.name}
           </CardTitle>
         </CardContent>

@@ -111,7 +111,7 @@ function AnnouncementBar() {
 }
 
 function FeaturedProducts() {
-    const featuredProducts = [...products, ...products]; // Duplicate products for continuous scroll
+    const featuredProducts = [...products, ...products, ...products, ...products]; // Duplicate products for continuous scroll
     const plugin = React.useRef(
       Autoplay({ delay: 2000, stopOnInteraction: true })
     )
@@ -138,12 +138,10 @@ function FeaturedProducts() {
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
                 >
-                    <CarouselContent>
+                    <CarouselContent className="-ml-0">
                         {featuredProducts.map((product, index) => (
-                            <CarouselItem key={`${product.id}-${index}`} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                <div className="p-1">
-                                    <ProductCard product={product} />
-                                </div>
+                            <CarouselItem key={`${product.id}-${index}`} className="basis-1/2 md:basis-1/3 lg:basis-1/5 pl-0">
+                                <ProductCard product={product} />
                             </CarouselItem>
                         ))}
                     </CarouselContent>
