@@ -1,7 +1,8 @@
 
+
 "use client";
 
-import { useCart } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -11,7 +12,7 @@ import { Minus, Plus, Trash2, X } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CartPage() {
-  const { cartItems, updateQuantity, removeFromCart, totalPrice, cartCount } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, totalPrice, cartCount } = useAppStore();
 
   return (
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

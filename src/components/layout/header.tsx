@@ -9,9 +9,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useCart } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-cart";
 import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from 'react';
 
 
@@ -27,7 +26,7 @@ const secondaryNavLinks = [
 ]
 
 export function Header() {
-  const { cartCount } = useCart();
+  const { cartCount } = useAppStore();
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
 

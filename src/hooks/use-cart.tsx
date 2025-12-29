@@ -1,7 +1,9 @@
 
+
 "use client";
 
-import type { CartItem } from "@/lib/types";
+import type { CartItem, Product } from "@/lib/types";
+import { products as initialProducts } from "@/lib/data";
 import {
   createContext,
   useContext,
@@ -11,7 +13,8 @@ import {
 } from "react";
 import { useToast } from "./use-toast";
 
-interface CartContextType {
+interface AppContextType {
+  // Cart
   cartItems: CartItem[];
   addToCart: (item: Omit<CartItem, "quantity"> & { quantity?: number }) => void;
   removeFromCart: (id: string, size?: string) => void;
@@ -19,26 +22,37 @@ interface CartContextType {
   clearCart: () => void;
   cartCount: number;
   totalPrice: number;
+  // Products
+  products: Product[];
+  addProduct: (product: Product) => void;
+  updateProduct: (product: Product) => void;
+  deleteProduct: (productId: string) => void;
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const useCart = () => {
-  const context = useContext(CartContext);
+export const useAppStore = () => {
+  const context = useContext(AppContext);
   if (!context) {
-    throw new Error("useCart phải được sử dụng trong một CartProvider");
+    throw new Error("useAppStore must be used within an AppProvider");
   }
   return context;
 };
 
-export const CartProvider = ({ children }: { children: ReactNode }) => {
+export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [products, setProducts] = useState<Product[]>(initialProducts);
   const { toast } = useToast();
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
+      try {
+        setCartItems(JSON.parse(storedCart));
+      } catch (e) {
+        console.error("Failed to parse cart from localStorage", e);
+        setCartItems([]);
+      }
     }
   }, []);
 
@@ -93,6 +107,18 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCartItems([]);
   };
 
+  const addProduct = (product: Product) => {
+    setProducts(prev => [product, ...prev]);
+  };
+
+  const updateProduct = (updatedProduct: Product) => {
+    setProducts(prev => prev.map(p => p.id === updatedProduct.id ? updatedProduct : p));
+  };
+  
+  const deleteProduct = (productId: string) => {
+    setProducts(prev => prev.filter(p => p.id !== productId));
+  }
+
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const totalPrice = cartItems.reduce(
@@ -101,7 +127,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 
   return (
-    <CartContext.Provider
+    <AppContext.Provider
       value={{
         cartItems,
         addToCart,
@@ -110,9 +136,13 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         clearCart,
         cartCount,
         totalPrice,
+        products,
+        addProduct,
+        updateProduct,
+        deleteProduct
       }}
     >
       {children}
-    </CartContext.Provider>
+    </AppContext.Provider>
   );
 };

@@ -36,7 +36,6 @@ import {
   TabsContent,
 } from '@/components/ui/tabs';
 import Image from 'next/image';
-import { products as initialProducts } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { useState } from 'react';
 import type { Product } from '@/lib/types';
@@ -59,9 +58,10 @@ import {
 } from "@/components/ui/alert-dialog";
 import { ProductForm, type ProductFormValues } from './product-form';
 import { useToast } from '@/hooks/use-toast';
+import { useAppStore } from '@/hooks/use-cart';
 
 export default function ProductsPage() {
-    const [productList, setProductList] = useState<Product[]>(initialProducts);
+    const { products, addProduct, updateProduct, deleteProduct } = useAppStore();
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState<Product | undefined>(undefined);
@@ -90,7 +90,7 @@ export default function ProductsPage() {
     const handleDelete = () => {
         if (!selectedProduct) return;
         
-        setProductList(prevList => prevList.filter(p => p.id !== selectedProduct.id));
+        deleteProduct(selectedProduct.id);
 
         toast({
             title: "Xóa thành công",
@@ -103,20 +103,15 @@ export default function ProductsPage() {
     const handleFormSubmit = (data: ProductFormValues) => {
         if (selectedProduct) {
             // Update existing product
-            setProductList(prevList => 
-                prevList.map(p => 
-                    p.id === selectedProduct.id 
-                    ? { 
-                        ...p, 
-                        ...data, 
-                        price: Number(data.price), 
-                        stock: Number(data.stock),
-                        slug: data.name.toLowerCase().replace(/ /g, '-'),
-                        imageIds: [data.imageId] 
-                      } 
-                    : p
-                )
-            );
+            const updated: Product = {
+                ...selectedProduct,
+                ...data,
+                price: Number(data.price),
+                stock: Number(data.stock),
+                slug: data.name.toLowerCase().replace(/ /g, '-'),
+                imageIds: [data.imageId] 
+            };
+            updateProduct(updated);
             toast({
                 title: "Cập nhật thành công!",
                 description: `Sản phẩm "${data.name}" đã được cập nhật.`,
@@ -143,7 +138,7 @@ export default function ProductsPage() {
                 collection: 'special-occasions',
                 categorySlug: data.categorySlug,
             };
-            setProductList(prevList => [newProduct, ...prevList]);
+            addProduct(newProduct);
             toast({
                 title: "Thêm thành công!",
                 description: `Sản phẩm "${data.name}" đã được thêm vào hệ thống.`,
@@ -204,7 +199,7 @@ export default function ProductsPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                   {productList.map(product => {
+                   {products.map(product => {
                      const image = PlaceHolderImages.find(p => p.id === product.imageIds[0]);
                      return (
                         <TableRow key={product.id}>
@@ -263,7 +258,7 @@ export default function ProductsPage() {
               </CardContent>
               <CardFooter>
                 <div className="text-xs text-muted-foreground">
-                  Hiển thị <strong>{productList.length}</strong> trên <strong>{productList.length}</strong> sản phẩm
+                  Hiển thị <strong>{products.length}</strong> trên <strong>{products.length}</strong> sản phẩm
                 </div>
               </CardFooter>
             </Card>
@@ -308,5 +303,3 @@ export default function ProductsPage() {
         </>
     )
 }
-
-    

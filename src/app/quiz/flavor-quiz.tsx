@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState } from "react";
@@ -27,8 +28,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Loader2 } from "lucide-react";
-import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
+import { useAppStore } from "@/hooks/use-cart";
 
 const formSchema = z.object({
   preferredFruits: z.string().min(1, "Vui lòng nhập ít nhất một loại trái cây."),
@@ -51,6 +52,7 @@ const steps = [
 ];
 
 export function FlavorQuiz() {
+  const { products } = useAppStore();
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [recommendation, setRecommendation] = useState<{

@@ -2,12 +2,11 @@
 
 'use client';
 
-import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
+import { useAppStore } from "@/hooks/use-cart";
 
 const productCategories = [
     { 
@@ -50,6 +49,7 @@ const productCategories = [
 
 
 export default function ProductsPage() {
+  const { products } = useAppStore();
   const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 

@@ -1,6 +1,8 @@
 
-import { products } from "@/lib/data";
+
+'use client';
 import ProductDetailClient from './product-detail-client';
+import { useAppStore } from '@/hooks/use-cart';
 
 // Server component to fetch slug and pass to client component
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
@@ -9,7 +11,8 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 }
 
 // Re-generate static paths
-export async function generateStaticParams() {
+export function generateStaticParams() {
+    const { products } = useAppStore();
     return products.map(product => ({
         slug: product.slug
     }))

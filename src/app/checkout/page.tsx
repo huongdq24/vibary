@@ -1,7 +1,8 @@
 
+
 "use client";
 
-import { useCart } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-cart";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -54,7 +55,7 @@ const checkoutSchema = z.object({
 });
 
 export default function CheckoutPage() {
-  const { cartItems, totalPrice, clearCart } = useCart();
+  const { cartItems, totalPrice, clearCart } = useAppStore();
   const router = useRouter();
 
   const form = useForm<z.infer<typeof checkoutSchema>>({
@@ -275,5 +276,3 @@ export default function CheckoutPage() {
     </div>
   );
 }
-
-    

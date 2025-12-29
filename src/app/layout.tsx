@@ -7,7 +7,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { CartProvider } from "@/hooks/use-cart";
+import { AppProvider } from "@/hooks/use-cart";
 import { Toaster } from "@/components/ui/toaster";
 import { usePathname } from "next/navigation";
 
@@ -40,14 +40,14 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const isAdminPage = pathname.startsWith('/admin');
 
   return (
-     <CartProvider>
+     <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
             {!isAdminPage && <Header />}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
             {!isAdminPage && <Footer />}
         </div>
         <Toaster />
-    </CartProvider>
+    </AppProvider>
   )
 }
 

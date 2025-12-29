@@ -4,11 +4,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { collections, products, articles } from '@/lib/data';
+import { articles } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, PlayCircle, Phone } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -20,6 +18,8 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from '@/lib/utils';
+import { useAppStore } from '@/hooks/use-cart';
+import { Phone } from 'lucide-react';
 
 
 const marqueeVariantsLR = {
@@ -312,6 +312,7 @@ function WorkshopSection() {
 
 
 function FeaturedProducts() {
+    const { products } = useAppStore();
     const featuredProducts = [...products, ...products];
 
     return (
@@ -346,6 +347,7 @@ function FeaturedProducts() {
 }
 
 function NewArrivals() {
+  const { products } = useAppStore();
   const newProducts = products.slice(0, 4);
   return (
     <section className="bg-white py-16 sm:py-24">

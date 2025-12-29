@@ -1,13 +1,14 @@
 
+
 "use client";
 
-import { products, faqs } from "@/lib/data";
+import { faqs } from "@/lib/data";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { useCart } from "@/hooks/use-cart";
+import { useAppStore } from '@/hooks/use-cart';
 import { notFound } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -19,8 +20,8 @@ import {
 } from "@/components/ui/accordion";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
+  const { products, addToCart } = useAppStore();
   const product = products.find((p) => p.slug === slug);
-  const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
   if (!product) {
