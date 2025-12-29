@@ -8,7 +8,7 @@ import { collections, products, articles } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, PlayCircle, Phone } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -208,9 +208,9 @@ function AnnouncementBar() {
             <div key={index} className="flex-shrink-0 flex items-center h-10 px-8">
               <p className="font-body text-sm text-[#0A0A0A] text-center tracking-wider">
                 {text.includes("091 255 03 35") ? (
-                  <>
-                    GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335">091 255 03 35</a>
-                  </>
+                  <span className="flex items-center">
+                    GẤP GÁP ĐẶT BÁNH GỌI <Phone className="mx-2 h-4 w-4" /><a href="tel:0912550335">091 255 03 35</a>
+                  </span>
                 ) : text}
               </p>
             </div>
