@@ -1,3 +1,6 @@
+
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { collections, products } from '@/lib/data';
@@ -10,16 +13,34 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel"
+import React from 'react';
 
 function HeroCarousel() {
   const heroBanners = PlaceHolderImages.filter(p => p.id.startsWith('hero-banner'));
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
 
   return (
-    <section className="w-full">
+    <section className="relative w-full">
       <Carousel
+        setApi={setApi}
         opts={{
           loop: true,
         }}
@@ -28,7 +49,7 @@ function HeroCarousel() {
         <CarouselContent>
           {heroBanners.map((banner, index) => (
             <CarouselItem key={banner.id}>
-              <div className="relative h-[60vh] min-h-[400px] md:h-[calc(100vh-128px)] w-full">
+              <div className="relative h-[60vh] min-h-[400px] md:h-[calc(100vh-80px)] w-full">
                 <Image
                   src={banner.imageUrl}
                   alt={banner.description}
@@ -43,7 +64,7 @@ function HeroCarousel() {
                     <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl leading-tight max-w-2xl mt-4">
                         Cùng một tình yêu dịu dàng.
                     </h1>
-                    <Button asChild variant="outline" size="lg" className="mt-8 bg-white border-white text-black hover:bg-white/90">
+                    <Button asChild variant="outline" size="lg" className="mt-8 bg-transparent text-white border-white hover:bg-white hover:text-black">
                         <Link href="/products">KHÁM PHÁ NGAY</Link>
                     </Button>
                 </div>
@@ -51,13 +72,20 @@ function HeroCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-             <div className="flex items-center gap-2">
-                <CarouselPrevious className="static -translate-y-0 text-white bg-transparent border-0 hover:bg-white/20" />
-                <CarouselNext className="static -translate-y-0 text-white bg-transparent border-0 hover:bg-white/20" />
-            </div>
-        </div>
       </Carousel>
+      <div className="absolute bottom-8 left-0 right-0">
+         <div className="container mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 sm:px-6 lg:px-8">
+            {Array.from({ length: count }).map((_, i) => (
+                <button
+                    key={i}
+                    onClick={() => api?.scrollTo(i)}
+                    className="h-1 w-full rounded-full"
+                >
+                    <div className={`h-1 w-full rounded-full ${current === i + 1 ? 'bg-white' : 'bg-white/50'}`} />
+                </button>
+            ))}
+        </div>
+    </div>
     </section>
   );
 }
