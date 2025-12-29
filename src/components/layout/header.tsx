@@ -16,23 +16,29 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/hooks/use-cart";
 import { Logo } from "@/components/icons";
 
+function AnnouncementBar() {
+  return (
+     <div className="bg-primary text-primary-foreground">
+        <div className="container mx-auto flex h-10 max-w-7xl items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
+              <span className="flex items-center gap-1 text-xs">TRAO BÁNH TẬN TAY, TẠI HÀ NỘI</span>
+              <span className="flex items-center gap-1 text-xs">GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330</span>
+          </div>
+        </div>
+      </div>
+  )
+}
+
 export function Header() {
   const { cartCount } = useCart();
 
   return (
+    <>
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="bg-primary text-primary-foreground">
-        <div className="container mx-auto flex h-10 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1">
-                TRAO BÁNH TẬN TAY, TẠI HÀ NỘI
-            </div>
-          </div>
-          <div className="flex items-center gap-1">
-            GẤP GÁP ĐẶT BÁNH GỌI 📞 090 786 0330
-          </div>
-        </div>
-      </div>
       <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <nav className="hidden items-center gap-6 md:flex">
           <Link
@@ -111,6 +117,9 @@ export function Header() {
           </Sheet>
         </div>
       </div>
+      
     </header>
+    <AnnouncementBar />
+    </>
   );
 }
