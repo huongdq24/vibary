@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
 
 const howToSteps = [
   {
@@ -52,58 +53,32 @@ const howToSteps = [
 function HowToOrder() {
   return (
     <div className="py-16 sm:py-24">
-      <div className="relative">
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-px"></div>
+      <div className="space-y-16">
         {howToSteps.map((item, index) => {
            const image = item.imageId ? PlaceHolderImages.find(p => p.id === item.imageId) : null;
-           const isEven = index % 2 === 0;
 
           return (
-            <div key={item.step} className="group relative grid grid-cols-2 gap-x-12 items-center">
-              <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-                <div className="h-8 w-8 rounded-full bg-background border flex items-center justify-center font-headline text-lg">
+            <div key={item.step} className="relative flex flex-col items-center text-center">
+              {image && (
+                <Image 
+                  src={image.imageUrl}
+                  alt={image.description}
+                  width={200}
+                  height={200}
+                  className="object-contain mb-6"
+                  data-ai-hint={image.imageHint}
+                />
+              )}
+              <div className="flex items-center gap-4">
+                <h3 className="font-headline text-4xl">{item.title}</h3>
+                <div className="h-8 w-8 rounded-full border flex items-center justify-center font-headline text-lg flex-shrink-0">
                   {item.step}
                 </div>
               </div>
+              <p className="mt-2 text-muted-foreground max-w-sm mx-auto">{item.description}</p>
               
-              {isEven ? (
-                 <>
-                    <div className="text-right pr-20">
-                      <h3 className="font-headline text-4xl">{item.title}</h3>
-                      <p className="mt-2 text-muted-foreground">{item.description}</p>
-                    </div>
-                    <div className="pl-20 py-10">
-                       {image && (
-                         <Image 
-                           src={image.imageUrl}
-                           alt={image.description}
-                           width={250}
-                           height={250}
-                           className="object-contain"
-                           data-ai-hint={image.imageHint}
-                         />
-                       )}
-                    </div>
-                 </>
-              ) : (
-                <>
-                   <div className="pr-20 py-10 flex justify-end">
-                      {image && (
-                         <Image 
-                           src={image.imageUrl}
-                           alt={image.description}
-                           width={250}
-                           height={250}
-                           className="object-contain"
-                           data-ai-hint={image.imageHint}
-                         />
-                       )}
-                   </div>
-                   <div className="text-left pl-20">
-                     <h3 className="font-headline text-4xl">{item.title}</h3>
-                     <p className="mt-2 text-muted-foreground">{item.description}</p>
-                   </div>
-                </>
+              {index < howToSteps.length - 1 && (
+                <Separator className="mt-16 w-20" />
               )}
             </div>
           )
