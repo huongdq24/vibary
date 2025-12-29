@@ -26,7 +26,7 @@ function HeroCarousel() {
         className="w-full"
       >
         <CarouselContent>
-          {heroBanners.map((banner) => (
+          {heroBanners.map((banner, index) => (
             <CarouselItem key={banner.id}>
               <div className="relative h-[60vh] min-h-[400px] md:h-[calc(100vh-128px)] w-full">
                 <Image
@@ -34,7 +34,7 @@ function HeroCarousel() {
                   alt={banner.description}
                   fill
                   className="object-cover"
-                  priority={heroBanners.indexOf(banner) === 0}
+                  priority={index === 0}
                   data-ai-hint={banner.imageHint}
                 />
                  <div className="absolute inset-0 bg-black/30" />
@@ -62,6 +62,24 @@ function HeroCarousel() {
   );
 }
 
+function AnnouncementBar() {
+  return (
+     <div className="bg-background text-foreground border-y">
+        <div className="container mx-auto flex h-10 max-w-full items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-fraunces text-sm text-black">
+              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
+              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
+              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
+              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
+              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
+              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
+              <p>GẤP GÁP ĐẶT BÁNH GỌI <a href="tel:0912550335" className="font-bold">091 255 03 35</a></p>
+              <p>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</p>
+          </div>
+        </div>
+      </div>
+  )
+}
 
 function FeaturedCollections() {
   return (
@@ -135,6 +153,7 @@ export default function Home() {
   return (
     <>
       <HeroCarousel />
+      <AnnouncementBar />
       <FeaturedCollections />
       <NewArrivals />
     </>

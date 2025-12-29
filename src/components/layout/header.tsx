@@ -3,34 +3,13 @@
 import Link from "next/link";
 import {
   Menu,
-  Phone,
   ShoppingBag,
 } from "lucide-react";
-import { navLinks } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/hooks/use-cart";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-function AnnouncementBar() {
-  return (
-     <div className="bg-background text-foreground border-t">
-        <div className="container mx-auto flex h-10 max-w-full items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="animate-marquee whitespace-nowrap flex items-center gap-12 font-body text-sm text-black">
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4" />GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35</span>
-              <span>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4" />GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35</span>
-              <span>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4" />GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35</span>
-              <span>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
-              <span className="flex items-center gap-2"><Phone className="h-4 w-4" />GẤP GÁP ĐẶT BÁNH GỌI 091 255 03 35</span>
-              <span>TRAO BÁNH TẬN TAY, TẠI BẮC NINH</span>
-          </div>
-        </div>
-      </div>
-  )
-}
 
 const mainNavLinks = [
     { href: '/products', label: 'SẢN PHẨM' },
@@ -90,7 +69,7 @@ export function Header() {
              ))}
           </nav>
           <Button variant="ghost" size="icon" asChild>
-            <Link href="/cart" className="flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black">
+            <Link href="/cart" className="relative flex items-center gap-1 text-sm font-body uppercase tracking-wider text-black">
               <ShoppingBag className="h-5 w-5" />
               <span className="hidden md:inline">GIỎ</span>
               {cartCount > 0 && (
@@ -133,7 +112,6 @@ export function Header() {
       </div>
       
     </header>
-    <AnnouncementBar />
     </>
   );
 }
