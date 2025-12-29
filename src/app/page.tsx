@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { collections, products, articles } from '@/lib/data';
+import { collections, products } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, MessageSquareQuote } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import {
   Carousel,
@@ -28,7 +28,7 @@ function HeroCarousel() {
         <CarouselContent>
           {heroBanners.map((banner) => (
             <CarouselItem key={banner.id}>
-              <div className="relative h-[60vh] min-h-[400px] w-full">
+              <div className="relative h-[60vh] min-h-[400px] md:h-[calc(100vh-128px)] w-full">
                 <Image
                   src={banner.imageUrl}
                   alt={banner.description}
@@ -38,23 +38,25 @@ function HeroCarousel() {
                   data-ai-hint={banner.imageHint}
                 />
                  <div className="absolute inset-0 bg-black/30" />
-                 <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8">
-                    <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl leading-tight">
-                        Nghệ Thuật Bánh Ngọt Pháp Hiện Đại
+                 <div className="container relative mx-auto flex h-full max-w-7xl flex-col items-start justify-center text-left text-white px-4 sm:px-6 lg:px-8">
+                    <p className="text-lg uppercase tracking-widest font-body">BST BÁNH TRÁI TIM</p>
+                    <h1 className="font-headline text-4xl md:text-6xl lg:text-7xl leading-tight max-w-2xl mt-4">
+                        Cùng một tình yêu dịu dàng.
                     </h1>
-                    <p className="mt-4 max-w-2xl text-lg md:text-xl">
-                        Chế tác từ những nguyên liệu tươi ngon nhất của Việt Nam.
-                    </p>
-                    <Button asChild size="lg" className="mt-8">
-                        <Link href="/products">Khám Phá Bộ Sưu Tập</Link>
+                    <Button asChild variant="outline" size="lg" className="mt-8 bg-white border-white text-black hover:bg-white/90">
+                        <Link href="/products">KHÁM PHÁ NGAY</Link>
                     </Button>
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 border-white hover:bg-white hover:text-black" />
-        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 border-white hover:bg-white hover:text-black" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+             <div className="flex items-center gap-2">
+                <CarouselPrevious className="static -translate-y-0 text-white bg-transparent border-0 hover:bg-white/20" />
+                <CarouselNext className="static -translate-y-0 text-white bg-transparent border-0 hover:bg-white/20" />
+            </div>
+        </div>
       </Carousel>
     </section>
   );
