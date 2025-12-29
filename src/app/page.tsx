@@ -249,25 +249,25 @@ function NewArrivals() {
 }
 
 function HotNews() {
-  const latestArticles = articles.slice(0, 4);
+  const latestArticles = articles.slice(0, 3);
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="font-headline text-4xl md:text-5xl">Tin tức "nóng hổi"</h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {latestArticles.map((article) => {
             const image = PlaceHolderImages.find((p) => p.id === article.imageId);
             return (
               <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col gap-4">
                 {image && (
-                  <div className="aspect-h-9 aspect-w-16 w-full overflow-hidden rounded-lg">
+                  <div className="aspect-w-4 aspect-h-3 w-full overflow-hidden rounded-lg">
                     <Image
                       src={image.imageUrl}
                       alt={article.title}
                       width={600}
-                      height={400}
+                      height={450}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       data-ai-hint={image.imageHint}
                     />
