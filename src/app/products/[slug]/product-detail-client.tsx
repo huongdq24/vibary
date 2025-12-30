@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { faqs } from "@/lib/data";
@@ -7,7 +6,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useAppStore } from '@/hooks/use-app-store';
 import { notFound } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
@@ -18,11 +17,42 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { cn } from "@/lib/utils";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const { products, addToCart } = useAppStore();
   const product = products.find((p) => p.slug === slug);
   const [quantity, setQuantity] = useState(1);
+  const [isBarSticky, setIsBarSticky] = useState(false);
+  const footerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+        (footerRef as React.MutableRefObject<HTMLDivElement>).current = footerElement;
+    }
+    
+    const handleScroll = () => {
+        const footer = footerRef.current;
+        if (footer) {
+            const footerTop = footer.getBoundingClientRect().top;
+            const viewportHeight = window.innerHeight;
+            // When the top of the footer is within the viewport, make the bar sticky.
+            if (footerTop <= viewportHeight) {
+                setIsBarSticky(true);
+            } else {
+                setIsBarSticky(false);
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   if (!product) {
     notFound();
@@ -47,6 +77,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
                           'BÁNH ENTREMET';
 
   return (
+    <>
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
@@ -176,7 +207,12 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
              </Accordion>
           </div>
       </div>
-
     </div>
+    <div className={cn("w-full transition-all duration-300", 
+        isBarSticky ? 'fixed top-20 z-40' : 'relative'
+    )}>
+        <AnnouncementBar />
+    </div>
+    </>
   );
 }

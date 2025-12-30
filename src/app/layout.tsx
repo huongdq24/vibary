@@ -11,6 +11,7 @@ import { AppProvider } from "@/hooks/use-app-store";
 import { Toaster } from "@/components/ui/toaster";
 import { usePathname } from "next/navigation";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import React from "react";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -32,7 +33,11 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith('/admin');
 
-  const showAnnouncementBar = ['/how-to-buy', '/about', '/faq', '/news', '/contact', '/products/'].some(path => pathname.startsWith(path)) || pathname === '/products';
+  // We hide the announcement bar on the homepage, cart, and checkout, and product detail pages
+  // because they have custom logic for it.
+  const showAnnouncementBar = !['/', '/cart', '/checkout'].includes(pathname) && !/^\/products\/.+/.test(pathname);
+
+  const footerRef = React.useRef<HTMLDivElement>(null);
 
   return (
      <AppProvider>
@@ -40,7 +45,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
             {!isAdminPage && <Header />}
             {showAnnouncementBar && <AnnouncementBar />}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
-            {!isAdminPage && <Footer />}
+            {!isAdminPage && <Footer ref={footerRef}/>}
         </div>
         <Toaster />
     </AppProvider>
