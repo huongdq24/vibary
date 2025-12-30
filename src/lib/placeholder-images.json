@@ -111,20 +111,20 @@
     {
       "id": "blog-1",
       "description": "Image for founder story article.",
-      "imageUrl": "https://images.unsplash.com/photo-1691052252990-4cd1fdda73dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwYXN0cnklMjBjaGVmfGVufDB8fHx8MTc2Njg2MDY2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pastry chef"
+      "imageUrl": "https://images.prismic.io/lafuong/Zq-Kv-iA_esB_C0j_laf-be-in-blossom-entremet-cake-lafuong-pastry-hanoi-1.jpg?auto=format%2Ccompress&ar=4%3A3&fit=crop",
+      "imageHint": "pink entremet"
     },
     {
       "id": "blog-2",
       "description": "Image for behind the scenes article.",
-      "imageUrl": "https://images.unsplash.com/photo-1714386351168-2567bc57efad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FrZSUyMGRlY29yYXRpbmd8ZW58MHx8fHwxNzY2OTQzODg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cake decorating"
+      "imageUrl": "https://images.prismic.io/lafuong/Zq-L4eiA_esB_C2d_laf-beloved-darling-entremet-cake-lafuong-pastry-hanoi-1.jpg?auto=format%2Ccompress&ar=4%3A3&fit=crop",
+      "imageHint": "yellow entremet"
     },
     {
       "id": "blog-3",
       "description": "Image for shopping guide article.",
-      "imageUrl": "https://images.unsplash.com/photo-1606987482245-560456106cc7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsYXB0b3AlMjBjYWtlfGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "laptop cake"
+      "imageUrl": "https://images.prismic.io/lafuong/Zq-M9eiA_esB_C3y_laf-a-little-grace-entremet-cake-lafuong-pastry-hanoi-1.jpg?auto=format%2Ccompress&ar=4%3A3&fit=crop",
+      "imageHint": "white entremet"
     },
     {
       "id": "quiz-banner",
