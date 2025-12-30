@@ -370,7 +370,6 @@ function NewArrivals() {
 
 function HotNews() {
   const latestArticles = articles.slice(0, 3);
-  const singleImage = PlaceHolderImages.find((p) => p.id === 'blog-1');
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -379,18 +378,19 @@ function HotNews() {
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {latestArticles.map((article) => {
+            const image = PlaceHolderImages.find((p) => p.id === article.imageId);
             return (
               <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col">
                 <div className="flex-grow flex flex-col">
-                  {singleImage && (
+                  {image && (
                     <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
                       <Image
-                        src={singleImage.imageUrl}
+                        src={image.imageUrl}
                         alt={article.title}
                         width={600}
                         height={450}
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={singleImage.imageHint}
+                        data-ai-hint={image.imageHint}
                       />
                     </div>
                   )}
