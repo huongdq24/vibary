@@ -17,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const { products, addToCart } = useAppStore();
@@ -199,6 +200,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
           </div>
       </div>
     </div>
+    <AnnouncementBar />
     </>
   );
 }

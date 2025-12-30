@@ -31,6 +31,7 @@ const fraunces = Fraunces({
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith('/admin');
+  const isProductPage = pathname.startsWith('/products');
 
   const footerRef = React.useRef<HTMLDivElement>(null);
 
@@ -45,7 +46,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
      <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
             {!isAdminPage && <Header />}
-            {!isAdminPage && (
+            {!isAdminPage && !isProductPage && (
               <div className="sticky top-20 z-40">
                 <AnnouncementBar />
               </div>

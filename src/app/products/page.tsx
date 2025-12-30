@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppStore } from "@/hooks/use-app-store";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 const productCategories = [
     { 
@@ -84,6 +85,7 @@ export default function ProductsPage() {
 
 
   return (
+    <>
     <div className="bg-background">
         <nav className="sticky top-20 z-30 bg-background/80 backdrop-blur-lg border-b">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -147,5 +149,7 @@ export default function ProductsPage() {
         })}
       </div>
     </div>
+    <AnnouncementBar />
+    </>
   );
 }
