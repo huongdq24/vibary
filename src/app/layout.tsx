@@ -2,7 +2,7 @@
 "use client";
 
 import type { Metadata } from "next";
-import { Playfair_Display, PT_Sans, Fraunces, Lexend } from "next/font/google";
+import { Playfair_Display, Fraunces, Lexend } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
