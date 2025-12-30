@@ -127,6 +127,60 @@
       "imageHint": "white entremet"
     },
     {
+      "id": "blog-4",
+      "description": "An elegant entremet cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1633352638067-fdf2c07561c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxlbnRyZW1ldCUyMGNha2V8ZW58MHx8fHwxNzY2OTc2NjY1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "entremet cake"
+    },
+    {
+      "id": "blog-5",
+      "description": "A cake with a perfect mirror glaze.",
+      "imageUrl": "https://images.unsplash.com/photo-1696680787753-47aca4cf84ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWlycm9yJTIwZ2xhemV8ZW58MHx8fHwxNzY3MDYyMDA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mirror glaze"
+    },
+    {
+      "id": "blog-6",
+      "description": "Tropical fruits like mango and passionfruit.",
+      "imageUrl": "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0cm9waWNhbCUyMGZydWl0c3xlbnwwfHx8fDE3NjY5NTA5OTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tropical fruits"
+    },
+    {
+      "id": "blog-7",
+      "description": "A birthday party with a cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1601268588577-319223ba7cb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YmlydGhkYXklMjBwYXJ0eXxlbnwwfHx8fDE3NjY5NTgxMjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "birthday party"
+    },
+    {
+      "id": "blog-8",
+      "description": "Cocoa beans and chocolate bars.",
+      "imageUrl": "https://images.unsplash.com/photo-1545567724-9b16e57c906d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb2NvYSUyMGJlYW5zfGVufDB8fHx8MTc2NzA2MjAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cocoa beans"
+    },
+    {
+      "id": "blog-9",
+      "description": "A slice of dacquoise cake.",
+      "imageUrl": "https://images.unsplash.com/photo-1645805740318-31bb7604ffd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYWNxdW9pc2UlMjBjYWtlfGVufDB8fHx8MTc2NzA2MjAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dacquoise cake"
+    },
+    {
+      "id": "blog-10",
+      "description": "A slice of cake and a cup of tea.",
+      "imageUrl": "https://images.unsplash.com/photo-1571916467369-9879f85d41e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYWtlJTIwdGVhfGVufDB8fHx8MTc2NzA2MjAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cake tea"
+    },
+    {
+      "id": "blog-11",
+      "description": "A busy pastry kitchen.",
+      "imageUrl": "https://images.unsplash.com/photo-1610016198131-046a3975346f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXN0cnklMjBraXRjaGVufGVufDB8fHx8MTc2Njk3NjY2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pastry kitchen"
+    },
+    {
+      "id": "blog-12",
+      "description": "A collection of small petit cakes.",
+      "imageUrl": "https://images.unsplash.com/photo-1764380746818-18c01e96df12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXRpdCUyMGZvdXJzfGVufDB8fHx8MTc2NzA2MjAwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "petit fours"
+    },
+    {
       "id": "quiz-banner",
       "description": "Banner image for the flavor quiz section.",
       "imageUrl": "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWtlJTIwc2xpY2V8ZW58MHx8fHwxNzY2OTY5NzkxfDA&ixlib=rb-4.1.0&q=80&w=1080",

@@ -343,6 +343,96 @@ export const articles: Article[] = [
     imageId: 'blog-3',
     content: '<p>Chúng tôi tin rằng niềm vui thưởng thức một chiếc bánh đẹp nên dành cho tất cả mọi người, ngay cả những người thích sự yên tĩnh hơn là trò chuyện. Đó là lý do tại sao chúng tôi đã thiết kế trang web của mình để trở thành một trải nghiệm yên bình và liền mạch. Bạn có thể duyệt qua toàn bộ bộ sưu tập của chúng tôi, tìm thấy sự kết hợp hoàn hảo của bạn với bài trắc nghiệm hương vị của chúng tôi và đặt hàng mà không cần phải nhấc điện thoại. Chỉ cần chọn bánh của bạn, chọn thời gian giao hàng và để chúng tôi lo phần còn lại. Đó là khoảnh khắc nuông chiều của bạn, theo cách của bạn.</p>'
   },
+  {
+    id: 'news-4',
+    slug: 'art-of-entremet',
+    title: 'Sự Tinh Tế Của Bánh Entremet: Khi Nghệ Thuật Gặp Vị Ngon',
+    excerpt: 'Khám phá thế giới của những chiếc bánh entremet, nơi mỗi lớp bánh là một câu chuyện về sự tỉ mỉ và sáng tạo.',
+    date: 'Ngày 25 tháng 5, 2024',
+    category: 'Văn hóa bánh ngọt',
+    imageId: 'blog-4',
+    content: '<h2>Entremet là gì?</h2><p>Entremet, một thuật ngữ bắt nguồn từ tiếng Pháp cổ, ban đầu dùng để chỉ các món ăn hoặc tiết mục giải trí được trình bày giữa các phần của một bữa tiệc lớn. Ngày nay, nó đã phát triển thành một loại bánh mousse nhiều lớp phức tạp, thể hiện đỉnh cao của nghệ thuật làm bánh Pháp. Mỗi chiếc bánh là một tác phẩm kiến trúc thu nhỏ, đòi hỏi kỹ thuật, sự chính xác và một con mắt nghệ thuật.</p><h2>Cấu trúc của một chiếc Entremet</h2><p>Một chiếc entremet điển hình bao gồm nhiều lớp với kết cấu và hương vị khác nhau, được thiết kế để tạo ra một trải nghiệm vị giác hài hòa. Các lớp phổ biến bao gồm:</p><ul><li><strong>Mousse:</strong> Lớp nền nhẹ và thoáng, thường làm từ sô cô la, trái cây hoặc kem.</li><li><strong>Cremieux hoặc Curd:</strong> Một lớp kem đậm đặc, mang lại hương vị chính.</li><li><strong>Bạt bánh (Biscuit):</strong> Như Joconde hoặc Dacquoise, tạo nên cấu trúc và độ mềm mại.</li><li><strong>Lớp giòn (Croustillant):</strong> Thường làm từ feuilletine hoặc các loại hạt, thêm vào kết cấu giòn tan thú vị.</li><li><strong>Lớp phủ (Glaçage):</strong> Lớp men bóng như gương hoặc lớp phun nhung mịn màng, tạo nên vẻ ngoài hoàn hảo.</li></ul><p>Tại Vibary, chúng tôi coi mỗi chiếc entremet là một bức tranh, và chúng tôi là những người nghệ sĩ. Hãy khám phá các tác phẩm của chúng tôi và cảm nhận sự khác biệt.</p>'
+  },
+  {
+    id: 'news-5',
+    slug: 'secret-of-mirror-glaze',
+    title: 'Bí Mật Đằng Sau Lớp Men Bóng Gương (Glaçage)',
+    excerpt: 'Làm thế nào để chúng tôi tạo ra lớp phủ bóng loáng đầy mê hoặc cho những chiếc bánh của mình? Hãy cùng tìm hiểu kỹ thuật này.',
+    date: 'Ngày 28 tháng 5, 2024',
+    category: 'Mẹo làm bánh',
+    imageId: 'blog-5',
+    content: '<h2>Nghệ thuật của sự hoàn hảo</h2><p>Lớp men bóng gương, hay "glaçage miroir" trong tiếng Pháp, là một trong những kỹ thuật ấn tượng nhất trong nghệ thuật làm bánh hiện đại. Nó không chỉ mang lại một vẻ ngoài lộng lẫy, sang trọng mà còn bảo vệ lớp mousse bên trong, giữ cho bánh luôn tươi và ẩm. Chìa khóa để có một lớp men hoàn hảo nằm ở ba yếu tố: nhiệt độ, công thức và kỹ thuật.</p><h3>Nhiệt độ là tất cả</h3><p>Cả bánh và men đều phải ở nhiệt độ chính xác. Bánh phải được đông lạnh hoàn toàn để lớp men có thể bám vào và đông lại ngay lập tức. Trong khi đó, men phải được đun nóng và làm nguội đến một nhiệt độ cụ thể (thường khoảng 32-35°C) trước khi đổ. Quá nóng, men sẽ quá lỏng và chảy đi. Quá nguội, nó sẽ quá dày và không tạo được bề mặt mịn.</p><h3>Công thức cân bằng</h3><p>Một công thức men bóng gương cơ bản thường bao gồm nước, đường, sữa đặc, gelatin và sô cô la (trắng, sữa hoặc đen). Mỗi thành phần đều có một vai trò quan trọng. Gelatin tạo độ đông, sữa đặc mang lại độ che phủ và độ bóng. Sự cân bằng chính xác là điều cần thiết để có được kết quả mong muốn. Tại Vibary, chúng tôi đã dành hàng giờ để hoàn thiện công thức của riêng mình, đảm bảo độ bóng hoàn hảo và hương vị tuyệt vời.</p>'
+  },
+  {
+    id: 'news-6',
+    slug: 'vietnamese-fruits-in-french-pastry',
+    title: 'Hương Vị Việt Trong Bánh Ngọt Pháp',
+    excerpt: 'Hành trình kết hợp những loại trái cây nhiệt đới của Việt Nam vào kỹ thuật làm bánh cổ điển của Pháp.',
+    date: 'Ngày 01 tháng 6, 2024',
+    category: 'Khám phá hương vị',
+    imageId: 'blog-6',
+    content: '<p>Tôn vinh nguồn nguyên liệu địa phương là một phần cốt lõi trong triết lý của Vibary. Chúng tôi tự hào tìm kiếm những loại trái cây tươi ngon nhất từ khắp các vùng miền Việt Nam để đưa vào những chiếc bánh ngọt kiểu Pháp của mình. Từ vị ngọt ngào của vải thiều Lục Ngạn, hương thơm nồng nàn của xoài cát Hòa Lộc, đến vị chua thanh của chanh dây Đà Lạt - mỗi loại quả đều mang một câu chuyện riêng.</p><p>Thách thức nằm ở việc cân bằng hương vị. Trái cây nhiệt đới thường có vị ngọt và hương thơm mạnh mẽ. Các đầu bếp của chúng tôi phải khéo léo điều chỉnh công thức, giảm lượng đường và kết hợp các yếu tố khác để làm nổi bật hương vị tự nhiên của trái cây mà không làm lấn át sự tinh tế của các lớp bánh khác. Kết quả là những sáng tạo độc đáo, vừa mang đậm dấu ấn Pháp, vừa tôn vinh trọn vẹn hương vị quê nhà.</p>'
+  },
+  {
+    id: 'news-7',
+    slug: 'perfect-cake-for-every-occasion',
+    title: 'Chọn Bánh Hoàn Hảo Cho Mọi Dịp',
+    excerpt: 'Từ sinh nhật đến những bữa tiệc trà, hãy để chúng tôi giúp bạn tìm thấy chiếc bánh lý tưởng.',
+    date: 'Ngày 05 tháng 6, 2024',
+    category: 'Hướng dẫn mua sắm',
+    imageId: 'blog-7',
+    content: '<p>Một chiếc bánh không chỉ là một món tráng miệng, nó là trung tâm của lễ kỷ niệm. Việc chọn đúng chiếc bánh có thể nâng tầm bất kỳ sự kiện nào.</p><ul><li><strong>Sinh nhật:</strong> Hãy chọn một chiếc bánh vui tươi và đầy màu sắc. Các hương vị trái cây như chanh dây hoặc dâu tây luôn là lựa chọn phổ biến. Chiếc "BELOVED DARLING" của chúng tôi là một gợi ý tuyệt vời.</li><li><strong>Kỷ niệm:</strong> Một chiếc bánh tinh tế và lãng mạn là lựa chọn hoàn hảo. Bánh hình trái tim như "A GENTLE BLEND" với hương dâu và vani sẽ là một thông điệp ngọt ngào.</li><li><strong>Quà tặng:</strong> Để thể hiện sự trân trọng, hãy chọn một chiếc bánh có hương vị độc đáo và sang trọng. "A LITTLE GRACE" với matcha và yuzu là một lựa chọn thanh lịch và đầy bất ngờ.</li><li><strong>Tụ họp bạn bè:</strong> Một chiếc bánh dễ chia sẻ với hương vị được nhiều người yêu thích như sô cô la là phù hợp nhất. "SUMMER CALLING" của chúng tôi chắc chắn sẽ làm hài lòng mọi người.</li></ul>'
+  },
+  {
+    id: 'news-8',
+    slug: 'chocolate-story',
+    title: 'Câu Chuyện Về Sô-cô-la: Từ Hạt Cacao Đến Thanh Sô-cô-la',
+    excerpt: 'Hành trình kỳ diệu của hạt cacao và lý do tại sao chúng tôi chỉ chọn loại sô-cô-la ngon nhất.',
+    date: 'Ngày 10 tháng 6, 2024',
+    category: 'Khám phá hương vị',
+    imageId: 'blog-8',
+    content: '<p>Sô-cô-la không chỉ là một nguyên liệu, đó là một niềm đam mê. Tại Vibary, chúng tôi rất coi trọng sô-cô-la. Chúng tôi tin rằng chất lượng của một chiếc bánh sô-cô-la phụ thuộc hoàn toàn vào chất lượng của sô-cô-la được sử dụng.</p><p>Chúng tôi hợp tác với các nhà cung cấp sô-cô-la danh tiếng, những người có cùng cam kết về chất lượng và đạo đức. Chúng tôi ưu tiên sử dụng sô-cô-la "single-origin" (có nguồn gốc từ một vùng duy nhất) để làm nổi bật hương vị đặc trưng của từng vùng đất trồng cacao. Từ hương trái cây của cacao Peru đến hương vị đậm đà của cacao Việt Nam, mỗi loại đều mang đến một trải nghiệm khác biệt.</p><p>Quá trình từ hạt cacao đến thanh sô-cô-la rất phức tạp, bao gồm lên men, sấy khô, rang, nghiền và "conching" (quá trình khuấy trộn để phát triển hương vị). Bằng cách hiểu rõ quy trình này, chúng tôi có thể chọn ra loại sô-cô-la hoàn hảo nhất cho từng sáng tạo của mình.</p>'
+  },
+  {
+    id: 'news-9',
+    slug: 'why-we-love-dacquoise',
+    title: 'Tại Sao Chúng Tôi Yêu Thích Bạt Bánh Dacquoise',
+    excerpt: 'Tìm hiểu về loại bạt bánh hạnh nhân mềm, dai nhẹ đã trở thành nền tảng cho nhiều sáng tạo của chúng tôi.',
+    date: 'Ngày 14 tháng 6, 2024',
+    category: 'Câu chuyện làm bánh',
+    imageId: 'blog-9',
+    content: '<p>Trong thế giới bánh ngọt Pháp, có rất nhiều loại bạt bánh khác nhau, nhưng Dacquoise chiếm một vị trí đặc biệt trong trái tim chúng tôi. Được làm từ lòng trắng trứng, đường và bột hạnh nhân hoặc hạt phỉ, Dacquoise có một kết cấu độc đáo: mềm mại, hơi dai, và tan chảy trong miệng.</p><p>Không giống như các loại bạt bánh bông lan khác, Dacquoise không chứa bột mì, làm cho nó nhẹ hơn và tự nhiên không chứa gluten. Điều này làm cho nó trở thành một lựa chọn tuyệt vời cho những người nhạy cảm với gluten. Hương vị hạt dẻ tinh tế của nó cũng kết hợp hoàn hảo với nhiều loại mousse và kem, tạo nên một lớp nền vững chắc mà không lấn át các hương vị khác. Đó là lý do tại sao bạn sẽ tìm thấy nó trong nhiều chiếc bánh của Vibary, như chiếc "BE IN BLOSSOM" đặc trưng của chúng tôi.</p>'
+  },
+  {
+    id: 'news-10',
+    slug: 'the-perfect-pairing-cakes-and-tea',
+    title: 'Sự Kết Hợp Hoàn Hảo: Bánh Ngọt và Trà',
+    excerpt: 'Nâng tầm trải nghiệm thưởng thức bánh của bạn bằng cách kết hợp chúng với loại trà phù hợp.',
+    date: 'Ngày 18 tháng 6, 2024',
+    category: 'Văn hóa bánh ngọt',
+    imageId: 'blog-10',
+    content: '<p>Thưởng thức một miếng bánh ngon đã là một niềm vui, nhưng khi kết hợp với một tách trà phù hợp, trải nghiệm đó có thể trở nên thăng hoa. Dưới đây là một vài gợi ý từ Vibary:</p><ul><li><strong>Bánh trái cây (như BELOVED DARLING):</strong> Kết hợp với một loại trà xanh nhẹ nhàng như Sencha hoặc trà lài. Vị thanh mát của trà sẽ làm nổi bật hương vị tươi mới của trái cây.</li><li><strong>Bánh sô cô la (như SUMMER CALLING):</strong> Một tách trà đen đậm đà như Earl Grey hoặc English Breakfast sẽ là bạn đồng hành lý tưởng. Vị chát nhẹ của trà sẽ cân bằng sự đậm đà của sô cô la.</li><li><strong>Bánh trà xanh (như A LITTLE GRACE):</strong> Để tăng cường hương vị matcha, hãy thử kết hợp với Genmaicha (trà xanh gạo lứt rang). Hương thơm của gạo rang sẽ bổ sung tuyệt vời cho vị trà xanh.</li><li><strong>Bánh hương hoa (như BE IN BLOSSOM):</strong> Một loại trà trắng tinh tế hoặc trà hoa cúc sẽ là sự lựa chọn hoàn hảo, tôn lên hương thơm nhẹ nhàng của bánh.</li></ul>'
+  },
+  {
+    id: 'news-11',
+    slug: 'a-day-in-the-vibary-kitchen',
+    title: 'Một Ngày Trong Bếp Bánh Vibary',
+    excerpt: 'Từ bình minh đến hoàng hôn, hãy xem cách đội ngũ của chúng tôi mang những chiếc bánh ngọt vào cuộc sống.',
+    date: 'Ngày 22 tháng 6, 2024',
+    category: 'Hậu trường',
+    imageId: 'blog-11',
+    content: '<p>Một ngày trong bếp của Vibary bắt đầu từ rất sớm. Không khí tràn ngập mùi thơm của bơ đang tan chảy và hạnh nhân đang được nướng. Các đầu bếp của chúng tôi, di chuyển với sự chính xác và tập trung, bắt đầu chuẩn bị các thành phần cho ngày hôm đó. Mọi thứ đều được cân đo đong đếm một cách tỉ mỉ.</p><p>Giữa buổi sáng là thời gian lắp ráp. Các lớp mousse, cremieux và bạt bánh được xếp chồng lên nhau một cách cẩn thận. Buổi chiều là lúc dành cho công đoạn hoàn thiện: đổ men, phun phủ và trang trí. Mỗi chiếc bánh đều được kiểm tra kỹ lưỡng trước khi được đặt vào hộp, sẵn sàng cho hành trình đến với khách hàng. Đó là một bản giao hưởng của sự chăm chỉ, kỹ năng và niềm đam mê, tất cả để tạo ra một khoảnh khắc ngọt ngào cho bạn.</p>'
+  },
+  {
+    id: 'news-12',
+    slug: 'the-beauty-of-simplicity-our-petit-cakes',
+    title: 'Vẻ Đẹp Của Sự Đơn Giản: Những Chiếc Bánh Petit Của Chúng Tôi',
+    excerpt: 'Đôi khi, những điều tuyệt vời nhất lại đến từ những thứ nhỏ bé nhất. Khám phá bộ sưu tập bánh petit của chúng tôi.',
+    date: 'Ngày 26 tháng 6, 2024',
+    category: 'Khám phá hương vị',
+    imageId: 'blog-12',
+    content: '<p>Trong một thế giới luôn vận động, đôi khi chúng ta chỉ cần một khoảnh khắc nhỏ bé để nuông chiều bản thân. Đó chính là nguồn cảm hứng cho Bộ sưu tập Baby (Petit) của chúng tôi. Những chiếc bánh này là phiên bản thu nhỏ của các hương vị đặc trưng của Vibary, được chế tác với cùng sự chăm chút và tỉ mỉ.</p><p>Với kích thước hoàn hảo cho một hoặc hai người, chúng là món quà lý tưởng cho bản thân sau một ngày dài, hoặc một cách ngọt ngào để nói lời cảm ơn với ai đó. Mặc dù nhỏ bé về kích thước, chúng vẫn mang đầy đủ sự phức tạp về hương vị và kết cấu của những người anh em lớn hơn. Hãy thử một chiếc Baby Mango Bliss và cảm nhận niềm vui lan tỏa.</p>'
+  }
 ];
 
 export const faqs: FaqItem[] = [
@@ -392,3 +482,4 @@ export const faqs: FaqItem[] = [
         answer: 'Bánh của chúng tôi được giữ lạnh để đảm bảo kết cấu. Nếu bạn cần di chuyển, hãy đảm bảo bánh được giữ trong môi trường mát (tốt nhất là có đá khô hoặc trong thùng giữ nhiệt) và hạn chế di chuyển dưới trời nắng gắt quá 15-20 phút để tránh bánh bị chảy.'
     }
 ];
+
