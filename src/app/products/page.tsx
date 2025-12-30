@@ -124,7 +124,7 @@ export default function ProductsPage() {
                             href={`#${category.slug}`}
                             onClick={() => setActiveCategory(category.slug)}
                             className={cn(
-                                "text-sm font-bold uppercase text-[#0A0A0A] hover:opacity-70 transition-all whitespace-nowrap pb-1",
+                                "text-sm font-lexend uppercase text-[#0A0A0A] hover:opacity-70 transition-all whitespace-nowrap pb-1",
                                 activeCategory === category.slug ? 'border-b-2 border-[#0A0A0A]' : 'border-b-2 border-transparent'
                             )}
                         >
