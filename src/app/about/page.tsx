@@ -24,7 +24,7 @@ export default function AboutPage() {
                     <h1 className="font-headline text-4xl leading-tight md:text-6xl">
                         CÔNG TY CỔ PHẦN VIBARY
                     </h1>
-                    <p className="mt-4 text-xl">ĐIỂM ĐẾN CỦA ẨM THỰC BÁNH TẠI BẮC NINH</p>
+                    <p className="mt-4 text-xl font-fraunces">ĐIỂM ĐẾN CỦA ẨM THỰC BÁNH TẠI BẮC NINH</p>
                 </div>
             </header>
 
@@ -75,7 +75,7 @@ export default function AboutPage() {
                     <h3>Bánh Tiệc Tea Break</h3>
                     <p>Dịch vụ này dành riêng cho doanh nghiệp và cá nhân tổ chức sự kiện, mang đến những bữa tiệc nhẹ đầy ngon miệng và sáng tạo. Chúng tôi hiểu rằng tiệc tea break không chỉ là cơ hội để thưởng thức ẩm thực mà còn là cách thể hiện tình cảm và chia sẻ.</p>
 
-                    <p className="text-center mt-12">
+                    <p className="text-center mt-12 font-fraunces">
                         <strong>Với đội ngũ nhiệt huyết và sự tận tâm đối với nghệ thuật ẩm thực, chúng tôi cam kết mang đến những sản phẩm bánh tinh túy và độc đáo nhất cho mọi dịp. Hãy để Vibary chia sẻ niềm vui và hạnh phúc trong cuộc sống của bạn qua những chiếc bánh ngon và đẹp mắt.</strong>
                     </p>
                 </div>

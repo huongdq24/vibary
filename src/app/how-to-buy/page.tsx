@@ -70,7 +70,7 @@ function HowToOrder() {
                   )}
                 >
                   <h3 className="font-headline text-4xl">{item.title}</h3>
-                  <p className="mt-2 text-muted-foreground">
+                  <p className="mt-2 text-muted-foreground font-fraunces">
                     {item.description}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function HowToBuyPage() {
     <div className="container mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-16 text-center">
         <h1 className="font-headline text-4xl md:text-5xl">Đặt bánh đơn giản, chỉ trong tích tắc.</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
           Giữ vững lời hứa giúp bạn thưởng thức món bánh ngọt Pháp yêu thích ngay tại nhà, cách đặt bánh tại VIBARY được tối ưu chỉ với vài bước thật dễ dàng.
         </p>
         {faqIllustration && (

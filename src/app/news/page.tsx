@@ -9,7 +9,7 @@ export default function NewsPage() {
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="mb-12 text-center">
         <h1 className="font-headline text-4xl md:text-5xl">Tin Tức & Câu Chuyện</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
           Từ hành trình của người sáng lập đến những góc nhìn hậu trường, hãy lặn sâu vào thế giới của VIBARY.
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function NewsPage() {
                   <CardTitle className="font-headline text-xl">{article.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{article.excerpt}</p>
+                  <p className="text-sm text-muted-foreground font-fraunces">{article.excerpt}</p>
                 </CardContent>
               </Card>
             </Link>

@@ -53,35 +53,38 @@ export default function ProductsPage() {
   const { products } = useAppStore();
   const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
-  const [isBarSticky, setIsBarSticky] = useState(false);
   const footerRef = useRef<HTMLDivElement | null>(null);
+  const [isBarSticky, setIsBarSticky] = useState(false);
+  const [footerHeight, setFooterHeight] = useState(0);
 
   useEffect(() => {
-    // We need to find the footer in the DOM to get its height
     const footerElement = document.querySelector('footer');
     if (footerElement) {
         footerRef.current = footerElement;
+        setFooterHeight(footerElement.offsetHeight);
     }
-    
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
         if (!footerRef.current) return;
-        const announcementBarHeight = 40; // Approx height
-        const windowHeight = window.innerHeight;
-        const scrollPosition = window.scrollY;
-        const documentHeight = document.body.offsetHeight;
         
-        // When the bottom of the viewport is at or below the top of the footer
-        // we should make the announcement bar sticky to the top.
-        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerRef.current.offsetHeight + announcementBarHeight;
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.body.offsetHeight;
+
+        // Check if the bottom of the viewport is about to cover the footer
+        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerHeight;
 
         setIsBarSticky(shouldBeSticky);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll(); 
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [footerHeight]);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -156,7 +159,7 @@ export default function ProductsPage() {
                   <h1 className="font-headline text-4xl md:text-5xl mt-2 uppercase font-bold">{category.title}</h1>
                   <Separator className="my-2 h-0.5 w-full bg-foreground" />
                 </div>
-                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
                   {category.description}
                 </p>
               </div>
@@ -180,17 +183,21 @@ export default function ProductsPage() {
        <div
           className={cn(
             "w-full transition-opacity duration-300 z-40",
-            isBarSticky ? "sticky top-20 opacity-100" : "fixed bottom-0 opacity-0 pointer-events-none"
+            isBarSticky
+              ? "sticky top-20 opacity-100"
+              : "fixed bottom-0 opacity-0 pointer-events-none"
           )}
         >
           <AnnouncementBar />
         </div>
-        <div className={cn(
+        <div
+          className={cn(
             "w-full transition-opacity duration-300 z-20",
-             isBarSticky ? "opacity-0" : "opacity-100"
-        )}>
-            <div className="h-10" />
-            <AnnouncementBar />
+            isBarSticky ? "opacity-0" : "opacity-100"
+          )}
+        >
+          <div className="h-10" />
+          <AnnouncementBar />
         </div>
     </div>
   );

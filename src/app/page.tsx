@@ -213,7 +213,7 @@ function CategorySection() {
                       <h3 className="font-lexend text-[21px] font-normal tracking-wide" style={{ color: '#0A0A0A' }}>
                           {category.name}
                       </h3>
-                      <p className="mt-2 text-lg opacity-90">{category.description}</p>
+                      <p className="mt-2 text-lg opacity-90 font-fraunces">{category.description}</p>
                       <span className="mt-4 inline-flex items-center text-2xl font-light">
                       →<span className="ml-2 text-sm uppercase tracking-wider opacity-80">Khám phá</span>
                       </span>
@@ -239,7 +239,7 @@ function WorkshopSection() {
             <h2 className="mt-4 font-headline text-4xl md:text-5xl">
               Công việc mà chúng tôi yêu thích mỗi ngày
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0">
+            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0 font-fraunces">
               Ghé thăm Tiktok của VIBARY để xem những tư liệu chân thực
               nhất – về cách mà chúng tôi hoàn thiện một chiếc bánh thật tinh tế
               gửi trao tới bạn.
@@ -276,7 +276,7 @@ function FeaturedProducts() {
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl">Mang tới trải nghiệm<br/>đặt bánh Pháp cao cấp trực tuyến</h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
                         VIBARY có mặt tại đây là để mang tới cho bạn trải nghiệm thưởng thức bánh ngọt Pháp hiện đại, dành cho người Việt.
                     </p>
                     <Button asChild className="mt-8 bg-black text-white hover:bg-black/80 rounded-full font-bold" variant="default" size="lg">
@@ -310,7 +310,7 @@ function NewArrivals() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-3xl md:text-4xl">Sản Phẩm Mới</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
             Tươi mới từ bếp bánh của chúng tôi, hãy khám phá những sáng tạo mới nhất.
           </p>
         </div>
@@ -349,7 +349,7 @@ function HotNews() {
                 </div>
                 <div className="mt-4 flex flex-grow flex-col">
                     <h3 className="font-headline text-xl group-hover:underline flex-grow">{article.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{article.excerpt}</p>
+                    <p className="mt-2 text-sm text-muted-foreground font-fraunces">{article.excerpt}</p>
                 </div>
               </Link>
             );
