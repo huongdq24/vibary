@@ -4,7 +4,8 @@
 import Link from "next/link";
 import { Instagram, Facebook, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { cn } from "@/lib/utils";
 
 const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -13,8 +14,42 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 )
 
 export const Footer = React.forwardRef<HTMLDivElement>((props, ref) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // document.documentElement.scrollHeight: Total height of the entire page
+      // window.innerHeight: Height of the visible part of the window (viewport)
+      // window.scrollY: How far the user has scrolled down from the top
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+      
+      // Show the footer when the user is within 200px of the bottom
+      if (pageHeight - scrollPosition < 200) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check in case the page is not scrollable or already at the bottom
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <footer className="bg-white text-center py-16 sm:py-24" ref={ref}>
+    <footer 
+      className={cn(
+        "footer-container bg-white text-center py-16 sm:py-24",
+        isVisible ? "footer-visible" : "footer-hidden"
+      )} 
+      ref={ref}
+    >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="space-y-4">
