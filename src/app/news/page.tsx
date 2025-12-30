@@ -21,13 +21,13 @@ export default function NewsPage() {
             <Link href={`/news/${article.slug}`} key={article.id}>
               <Card className="h-full overflow-hidden transition-shadow hover:shadow-xl">
                 {image && (
-                  <div className="aspect-w-16 aspect-h-9">
+                  <div className="aspect-[4/3] relative">
                     <Image
                       src={image.imageUrl}
                       alt={article.title}
-                      width={600}
-                      height={400}
+                      fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       data-ai-hint={image.imageHint}
                     />
                   </div>
