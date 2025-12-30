@@ -28,19 +28,37 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith('/admin');
   const isProductPage = pathname.startsWith('/products');
   const isHomePage = pathname === '/';
 
   return (
+    <>
+      <div className="relative flex min-h-dvh flex-col bg-background">
+        {!isAdminPage && <Header />}
+        {!isAdminPage && !isProductPage && !isHomePage && (
+          <div className="sticky top-20 z-40">
+            <AnnouncementBar />
+          </div>
+        )}
+        <main className="relative z-10 bg-background">{children}</main>
+        {!isAdminPage && <Footer />}
+      </div>
+      <Toaster />
+    </>
+  );
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
     <html lang="vi" suppressHydrationWarning>
-       <head>
+      <head>
         <title>VIBARY - Bánh ngọt Pháp hiện đại</title>
         <meta name="description" content="Bánh Entremet thanh lịch tại Bắc Ninh, làm từ trái cây Việt Nam theo mùa." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,17 +74,7 @@ export default function RootLayout({
         )}
       >
         <AppProvider>
-            <div className="relative flex min-h-dvh flex-col bg-background">
-                {!isAdminPage && <Header />}
-                {!isAdminPage && !isProductPage && !isHomePage && (
-                  <div className="sticky top-20 z-40">
-                    <AnnouncementBar />
-                  </div>
-                )}
-                <main className="relative z-10 bg-background">{children}</main>
-                {!isAdminPage && <Footer />}
-            </div>
-            <Toaster />
+          <LayoutContent>{children}</LayoutContent>
         </AppProvider>
       </body>
     </html>
