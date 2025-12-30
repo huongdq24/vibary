@@ -11,7 +11,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
+        body: ['Lexend', 'sans-serif'],
         headline: ['Playfair Display', 'serif'],
         fraunces: ['Fraunces', 'serif'],
         lexend: ['Lexend', 'sans-serif'],

@@ -18,20 +18,14 @@ const playfair = Playfair_Display({
   variable: "--font-headline",
 });
 
-const ptSans = PT_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-body",
+const lexend = Lexend({
+  subsets: ['latin'],
+  variable: '--font-body',
 });
 
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
-});
-
-const lexend = Lexend({
-  subsets: ['latin'],
-  variable: '--font-lexend',
 });
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
@@ -40,7 +34,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
 
   // We hide the announcement bar on the homepage, cart, and checkout, and product detail pages
   // because they have custom logic for it.
-  const showAnnouncementBar = !['/', '/cart', '/checkout', '/products'].includes(pathname) && !/^\/products\/.+/.test(pathname);
+  const showAnnouncementBar = !['/', '/cart', '/checkout', '/products'].includes(pathname) && !/^\/products\/.+/.test(pathname) && !/^\/admin/.test(pathname);
 
   const footerRef = React.useRef<HTMLDivElement>(null);
 
@@ -82,7 +76,6 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-body antialiased",
           playfair.variable,
-          ptSans.variable,
           fraunces.variable,
           lexend.variable
         )}
