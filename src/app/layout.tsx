@@ -1,5 +1,5 @@
 
-"use client";
+'use client';
 
 import type { Metadata } from "next";
 import { Playfair_Display, Fraunces, Lexend } from "next/font/google";
@@ -28,34 +28,16 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-function LayoutContent({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const isAdminPage = pathname.startsWith('/admin');
-  const isProductPage = pathname.startsWith('/products');
-  const isHomePage = pathname === '/';
-
-  return (
-     <AppProvider>
-        <div className="relative flex min-h-dvh flex-col bg-background">
-            {!isAdminPage && <Header />}
-            {!isAdminPage && !isProductPage && !isHomePage && (
-              <div className="sticky top-20 z-40">
-                <AnnouncementBar />
-              </div>
-            )}
-            <main className={cn("flex-1", !isAdminPage && "relative z-10 bg-background")}>{children}</main>
-            {!isAdminPage && <Footer />}
-        </div>
-        <Toaster />
-    </AppProvider>
-  )
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isAdminPage = pathname.startsWith('/admin');
+  const isProductPage = pathname.startsWith('/products');
+  const isHomePage = pathname === '/';
+
   return (
     <html lang="vi" suppressHydrationWarning>
        <head>
@@ -73,7 +55,19 @@ export default function RootLayout({
           lexend.variable
         )}
       >
-        <LayoutContent>{children}</LayoutContent>
+        <AppProvider>
+            <div className="relative flex min-h-dvh flex-col bg-background">
+                {!isAdminPage && <Header />}
+                {!isAdminPage && !isProductPage && !isHomePage && (
+                  <div className="sticky top-20 z-40">
+                    <AnnouncementBar />
+                  </div>
+                )}
+                <main className="relative z-10 bg-background">{children}</main>
+                {!isAdminPage && <Footer />}
+            </div>
+            <Toaster />
+        </AppProvider>
       </body>
     </html>
   );
