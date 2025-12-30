@@ -52,6 +52,9 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
+    <div className="sticky top-20 z-30">
+        <AnnouncementBar />
+    </div>
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
@@ -200,7 +203,6 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
           </div>
       </div>
     </div>
-    <AnnouncementBar />
     </>
   );
 }

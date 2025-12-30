@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import { ProductCard } from "@/components/product-card";
@@ -128,7 +127,7 @@ export default function ProductsPage() {
                   <h1 className="font-headline text-4xl md:text-5xl mt-2 uppercase font-bold">{category.title}</h1>
                   <Separator className="my-2 h-0.5 w-full bg-foreground" />
                 </div>
-                <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
+                <p className="mx-auto mt-4 max-w-2xl text-lg font-fraunces text-muted-foreground">
                   {category.description}
                 </p>
               </div>
