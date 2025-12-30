@@ -58,7 +58,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { ProductForm, type ProductFormValues } from './product-form';
 import { useToast } from '@/hooks/use-toast';
-import { useAppStore } from '@/hooks/use-cart';
+import { useAppStore } from '@/hooks/use-app-store';
 
 export default function ProductsPage() {
     const { products, addProduct, updateProduct, deleteProduct } = useAppStore();
