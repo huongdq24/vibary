@@ -44,27 +44,45 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart && storedCart.length > 0) { // Check if storedCart is not null and not an empty string
-      try {
-        const parsedCart = JSON.parse(storedCart);
-        if (Array.isArray(parsedCart)) { // Ensure parsed data is an array
-          setCartItems(parsedCart);
-        } else {
-          setCartItems([]);
+    if (typeof window !== 'undefined') {
+        try {
+            const storedCart = localStorage.getItem("cart");
+            if (storedCart) {
+                setCartItems(JSON.parse(storedCart));
+            }
+        } catch (e) {
+            console.error("Failed to parse cart from localStorage", e);
+            setCartItems([]);
         }
-      } catch (e) {
-        console.error("Failed to parse cart from localStorage", e);
-        setCartItems([]);
-      }
-    } else {
-        setCartItems([]);
+
+        try {
+            const storedProducts = localStorage.getItem("products");
+             if (storedProducts) {
+                setProducts(JSON.parse(storedProducts));
+            } else {
+                // If no products in local storage, initialize with default and save
+                localStorage.setItem("products", JSON.stringify(initialProducts));
+                setProducts(initialProducts);
+            }
+        } catch (e) {
+            console.error("Failed to parse products from localStorage", e);
+            setProducts(initialProducts);
+        }
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    if (typeof window !== 'undefined') {
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
+
+  useEffect(() => {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem("products", JSON.stringify(products));
+    }
+  }, [products]);
+
 
   const addToCart = (item: Omit<CartItem, "quantity"> & { quantity?: number }) => {
     const quantityToAdd = item.quantity || 1;

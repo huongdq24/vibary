@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from '@/lib/utils';
-import { useAppStore } from '@/hooks/use-cart';
+import { useAppStore } from '@/hooks/use-app-store';
 import { Phone } from 'lucide-react';
 
 

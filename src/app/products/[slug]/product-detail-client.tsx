@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { useAppStore } from '@/hooks/use-cart';
+import { useAppStore } from '@/hooks/use-app-store';
 import { notFound } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
 import { Input } from "@/components/ui/input";

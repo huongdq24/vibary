@@ -29,7 +29,7 @@ import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Loader2 } from "lucide-react";
 import { ProductCard } from "@/components/product-card";
-import { useAppStore } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-app-store";
 
 const formSchema = z.object({
   preferredFruits: z.string().min(1, "Vui lòng nhập ít nhất một loại trái cây."),

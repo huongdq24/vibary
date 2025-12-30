@@ -7,7 +7,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { AppProvider } from "@/hooks/use-cart";
+import { AppProvider } from "@/hooks/use-app-store";
 import { Toaster } from "@/components/ui/toaster";
 import { usePathname } from "next/navigation";
 

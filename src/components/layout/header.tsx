@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useAppStore } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-app-store";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from 'react';
 

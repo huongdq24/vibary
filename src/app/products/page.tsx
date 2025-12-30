@@ -6,7 +6,7 @@ import { ProductCard } from "@/components/product-card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
-import { useAppStore } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-app-store";
 
 const productCategories = [
     { 

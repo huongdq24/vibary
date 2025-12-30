@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useAppStore } from "@/hooks/use-cart";
+import { useAppStore } from "@/hooks/use-app-store";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
