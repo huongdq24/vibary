@@ -43,7 +43,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 <AnnouncementBar />
               </div>
             )}
-            <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
+            <main className={cn("flex-1", !isAdminPage && "relative z-10 bg-background")}>{children}</main>
             {!isAdminPage && <Footer />}
         </div>
         <Toaster />
