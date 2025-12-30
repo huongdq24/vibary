@@ -19,6 +19,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from '@/lib/utils';
 import { useAppStore } from '@/hooks/use-app-store';
+import { AnnouncementBar } from '@/components/layout/announcement-bar';
 
 
 const marqueeVariantsLR = {
@@ -237,7 +238,7 @@ function WorkshopSection() {
             <h2 className="mt-4 font-headline text-4xl md:text-5xl">
               Công việc mà chúng tôi yêu thích mỗi ngày
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground font-fraunces">
+            <p className="mx-auto mt-6 max-w-xl text-lg font-fraunces text-muted-foreground">
               Ghé thăm Tiktok của VIBARY để xem những tư liệu chân thực
               nhất – về cách mà chúng tôi hoàn thiện một chiếc bánh thật tinh tế
               gửi trao tới bạn.
@@ -274,7 +275,7 @@ function FeaturedProducts() {
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl">Mang tới trải nghiệm<br/>đặt bánh Pháp cao cấp trực tuyến</h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
+                    <p className="mx-auto mt-4 max-w-2xl text-lg font-fraunces text-muted-foreground">
                         VIBARY có mặt tại đây là để mang tới cho bạn trải nghiệm thưởng thức bánh ngọt Pháp hiện đại, dành cho người Việt.
                     </p>
                     <Button asChild className="mt-8 bg-black text-white hover:bg-black/80 rounded-full font-bold" variant="default" size="lg">
@@ -308,7 +309,7 @@ function NewArrivals() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="font-headline text-3xl md:text-4xl">Sản Phẩm Mới</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground font-fraunces">
+          <p className="mx-auto mt-4 max-w-2xl text-lg font-fraunces text-muted-foreground">
             Tươi mới từ bếp bánh của chúng tôi, hãy khám phá những sáng tạo mới nhất.
           </p>
         </div>
@@ -336,18 +337,20 @@ function HotNews() {
             return (
               <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col">
                 <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
-                  <Image
-                    src={image?.imageUrl || ''}
-                    alt={article.title}
-                    width={600}
-                    height={450}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={image?.imageHint || ''}
-                  />
+                  {image && (
+                    <Image
+                      src={image.imageUrl}
+                      alt={article.title}
+                      width={600}
+                      height={400}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={image.imageHint}
+                    />
+                   )}
                 </div>
                 <div className="mt-4 flex flex-grow flex-col">
                     <h3 className="font-headline text-xl group-hover:underline flex-grow">{article.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground font-fraunces">{article.excerpt}</p>
+                    <p className="mt-2 text-sm font-fraunces text-muted-foreground">{article.excerpt}</p>
                 </div>
               </Link>
             );
@@ -363,6 +366,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div className="sticky top-20 z-40">
+        <AnnouncementBar />
+      </div>
       <FeaturedProducts />
       <CategorySection />
       <NewArrivals />

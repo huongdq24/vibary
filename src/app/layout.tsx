@@ -44,14 +44,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   return (
      <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
-            {!isAdminPage && (
-              <>
-                <Header />
-                <div className="sticky top-20 z-40">
-                  <AnnouncementBar />
-                </div>
-              </>
-            )}
+            {!isAdminPage && <Header />}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
             {!isAdminPage && <Footer ref={footerRef}/>}
         </div>
@@ -72,7 +65,7 @@ export default function RootLayout({
         <meta name="description" content="Bánh Entremet thanh lịch tại Bắc Ninh, làm từ trái cây Việt Nam theo mùa." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
       </head>
       <body
         className={cn(
