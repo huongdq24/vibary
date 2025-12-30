@@ -85,7 +85,7 @@ export default function ProductsPage() {
 
   return (
     <div className="bg-background">
-        <nav className="sticky top-20 z-40 bg-background/80 backdrop-blur-lg border-b">
+        <nav className="sticky top-[80px] z-40 bg-background/80 backdrop-blur-lg border-b">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-start items-center h-16 space-x-6 overflow-x-auto">
                     {productCategories.map(category => (

@@ -27,22 +27,31 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-// Metadata can't be in a client component, but we can export it separately.
-// For simplicity in this conversational context, we'll assume it's handled,
-// as the main change is conditional rendering based on path.
-// export const metadata: Metadata = {
-//   title: "VIBARY - Bánh ngọt Pháp hiện đại",
-//   description: "Bánh Entremet thanh lịch tại Bắc Ninh, làm từ trái cây Việt Nam theo mùa.",
-// };
+function SubHeader() {
+    return (
+        <div className="bg-gray-100 text-foreground border-b">
+            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                 <div className="flex items-center justify-center h-10">
+                    <p className="font-body text-sm text-center tracking-wider">
+                        TRAO BÁNH TẬN TAY
+                    </p>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith('/admin');
 
+  const showSubHeader = ['/how-to-buy', '/about', '/faq', '/news'].some(path => pathname.startsWith(path));
+
   return (
      <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
             {!isAdminPage && <Header />}
+            {showSubHeader && <SubHeader />}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
             {!isAdminPage && <Footer />}
         </div>
