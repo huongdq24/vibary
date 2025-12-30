@@ -58,7 +58,6 @@ export default function ProductsPage() {
   const [footerHeight, setFooterHeight] = useState(0);
 
   useEffect(() => {
-    // A bit of a workaround to get a stable reference to the footer
     const footerElement = document.querySelector('footer');
     if (footerElement) {
         footerRef.current = footerElement;
@@ -75,23 +74,21 @@ export default function ProductsPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (footerRef.current) {
-        const announcementBarHeight = 40; // Height of the announcement bar
-        const scrollBottom = window.innerHeight + window.scrollY;
-        const pageHeight = document.body.offsetHeight;
+      if (!footerRef.current) return;
 
-        // When the bottom of the viewport is about to hit the top of the footer,
-        // make the bar sticky.
-        if (scrollBottom >= pageHeight - footerHeight - announcementBarHeight) {
-            setIsBarSticky(false);
-        } else {
-            setIsBarSticky(true);
-        }
-      }
+      const announcementBarHeight = 40; // Approx height of the announcement bar
+      const headerHeight = 80;
+      const scrollPosition = window.scrollY;
+      const pageBottom = document.body.offsetHeight - window.innerHeight;
+
+      // Check if the scroll position is high enough to not overlap the footer
+      const shouldBeSticky = pageBottom - scrollPosition > footerHeight;
+      
+      setIsBarSticky(shouldBeSticky);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [footerHeight]);
@@ -128,7 +125,7 @@ export default function ProductsPage() {
 
   return (
     <div className="bg-background">
-        <nav className="sticky top-[80px] z-30 bg-background/80 backdrop-blur-lg border-b">
+        <nav className="sticky top-20 z-30 bg-background/80 backdrop-blur-lg border-b">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-start items-center h-16 space-x-6 overflow-x-auto">
                     {productCategories.map(category => (
@@ -189,16 +186,22 @@ export default function ProductsPage() {
           );
         })}
       </div>
-       <div style={{ paddingBottom: isBarSticky ? '0px' : `${footerHeight}px` }}>
-            <div className={cn(
-                "w-full transition-all duration-300 z-40", 
-                isBarSticky ? 'sticky top-[80px]' : 'fixed bottom-0'
-            )}
-             style={{ bottom: isBarSticky ? 'auto' : `${footerHeight}px` }}
-            >
-                <AnnouncementBar />
-            </div>
-       </div>
+      
+      {/* Wrapper for Announcement Bar */}
+       <div className="h-10" /> 
+       <div
+          className={cn(
+            "w-full transition-all duration-300 z-40",
+            isBarSticky
+              ? "sticky top-20"
+              : "fixed bottom-0 opacity-0 pointer-events-none"
+          )}
+          style={{
+             bottom: isBarSticky ? 'auto' : `${footerHeight}px`
+          }}
+        >
+          <AnnouncementBar />
+        </div>
     </div>
   );
 }
