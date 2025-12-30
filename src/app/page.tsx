@@ -366,6 +366,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div className="sticky top-20 z-30">
+        <AnnouncementBar />
+      </div>
       <FeaturedProducts />
       <CategorySection />
       <NewArrivals />
