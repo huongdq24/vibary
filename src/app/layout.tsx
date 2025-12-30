@@ -10,6 +10,7 @@ import { Footer } from "@/components/layout/footer";
 import { AppProvider } from "@/hooks/use-app-store";
 import { Toaster } from "@/components/ui/toaster";
 import { usePathname } from "next/navigation";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,31 +28,17 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-function SubHeader() {
-    return (
-        <div className="bg-gray-100 text-foreground border-b">
-            <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                 <div className="flex items-center justify-center h-10">
-                    <p className="font-body text-sm text-center tracking-wider">
-                        TRAO BÁNH TẬN TAY
-                    </p>
-                </div>
-            </div>
-        </div>
-    )
-}
-
 function LayoutContent({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdminPage = pathname.startsWith('/admin');
 
-  const showSubHeader = ['/how-to-buy', '/about', '/faq', '/news'].some(path => pathname.startsWith(path));
+  const showAnnouncementBar = ['/how-to-buy', '/about', '/faq', '/news', '/contact', '/products/'].some(path => pathname.startsWith(path)) || pathname === '/products';
 
   return (
      <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
             {!isAdminPage && <Header />}
-            {showSubHeader && <SubHeader />}
+            {showAnnouncementBar && <AnnouncementBar />}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
             {!isAdminPage && <Footer />}
         </div>
