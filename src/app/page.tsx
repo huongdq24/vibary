@@ -210,7 +210,7 @@ function CategorySection() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                      <h3 className="font-lexend text-[16px] font-normal tracking-wide" style={{ color: '#0A0A0A' }}>
+                      <h3 className="font-lexend text-[21px] font-normal tracking-wide" style={{ color: '#0A0A0A' }}>
                           {category.name}
                       </h3>
                       <p className="mt-2 text-lg opacity-90">{category.description}</p>
@@ -362,6 +362,35 @@ function HotNews() {
 
 
 export default function Home() {
+  const footerRef = React.useRef<HTMLDivElement | null>(null);
+  const [isBarSticky, setIsBarSticky] = useState(false);
+
+  useEffect(() => {
+    // We need to find the footer in the DOM to get its height
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+        footerRef.current = footerElement;
+    }
+    
+    const handleScroll = () => {
+        if (!footerRef.current) return;
+        const announcementBarHeight = 40; // Approx height
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.body.offsetHeight;
+        
+        // When the bottom of the viewport is at or below the top of the footer
+        // we should make the announcement bar sticky to the top.
+        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerRef.current.offsetHeight + announcementBarHeight;
+
+        setIsBarSticky(shouldBeSticky);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
