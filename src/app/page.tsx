@@ -210,8 +210,8 @@ function CategorySection() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
-                      <h3 className="text-3xl md:text-4xl font-bold tracking-wide">
-                      {category.name}
+                      <h3 className="font-lexend text-[16px] font-normal tracking-wide" style={{ color: '#0A0A0A' }}>
+                          {category.name}
                       </h3>
                       <p className="mt-2 text-lg opacity-90">{category.description}</p>
                       <span className="mt-4 inline-flex items-center text-2xl font-light">

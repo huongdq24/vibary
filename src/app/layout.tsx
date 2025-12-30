@@ -2,7 +2,7 @@
 "use client";
 
 import type { Metadata } from "next";
-import { Playfair_Display, PT_Sans, Fraunces } from "next/font/google";
+import { Playfair_Display, PT_Sans, Fraunces, Lexend } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
@@ -27,6 +27,11 @@ const ptSans = PT_Sans({
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
+});
+
+const lexend = Lexend({
+  subsets: ['latin'],
+  variable: '--font-lexend',
 });
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
@@ -78,7 +83,8 @@ export default function RootLayout({
           "min-h-screen bg-background font-body antialiased",
           playfair.variable,
           ptSans.variable,
-          fraunces.variable
+          fraunces.variable,
+          lexend.variable
         )}
       >
         <LayoutContent>{children}</LayoutContent>
