@@ -11,10 +11,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Lexend', 'sans-serif'],
+        body: ['var(--font-body)', 'Lexend'],
         headline: ['Playfair Display', 'serif'],
         fraunces: ['Fraunces', 'serif'],
-        lexend: ['Lexend', 'sans-serif'],
+        lexend: ['Lexend'],
         code: ['monospace'],
       },
       colors: {
