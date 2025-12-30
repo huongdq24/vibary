@@ -15,8 +15,15 @@ const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const Footer = React.forwardRef<HTMLDivElement>((props, ref) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     const handleScroll = () => {
       // document.documentElement.scrollHeight: Total height of the entire page
       // window.innerHeight: Height of the visible part of the window (viewport)
@@ -40,13 +47,13 @@ export const Footer = React.forwardRef<HTMLDivElement>((props, ref) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [isClient]);
 
   return (
     <footer 
       className={cn(
         "footer-container bg-white text-center py-16 sm:py-24",
-        isVisible ? "footer-visible" : "footer-hidden"
+        isClient && (isVisible ? "footer-visible" : "footer-hidden")
       )} 
       ref={ref}
     >
