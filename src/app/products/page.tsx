@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppStore } from "@/hooks/use-app-store";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 const productCategories = [
     { 
@@ -52,6 +53,36 @@ export default function ProductsPage() {
   const { products } = useAppStore();
   const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+  const [isBarSticky, setIsBarSticky] = useState(false);
+  const footerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const footerElement = document.querySelector('footer');
+    if (footerElement) {
+        (footerRef as React.MutableRefObject<HTMLDivElement>).current = footerElement;
+    }
+    
+    const handleScroll = () => {
+        const footer = footerRef.current;
+        if (footer) {
+            const footerTop = footer.getBoundingClientRect().top;
+            // The announcement bar has a height of 40px, and the header has a height of 80px.
+            // We want it to become sticky when the footer is about to be covered by the bar at the bottom.
+            const stickyTriggerPoint = window.innerHeight - 40; 
+            
+            if (footerTop <= stickyTriggerPoint) {
+                setIsBarSticky(true);
+            } else {
+                setIsBarSticky(false);
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +116,7 @@ export default function ProductsPage() {
 
   return (
     <div className="bg-background">
-        <nav className="sticky top-[80px] z-40 bg-background/80 backdrop-blur-lg border-b">
+        <nav className="sticky top-[80px] z-30 bg-background/80 backdrop-blur-lg border-b">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-start items-center h-16 space-x-6 overflow-x-auto">
                     {productCategories.map(category => (
@@ -146,6 +177,11 @@ export default function ProductsPage() {
           );
         })}
       </div>
+       <div className={cn("w-full transition-all duration-300 z-40", 
+            isBarSticky ? 'sticky top-[80px]' : 'fixed bottom-[var(--footer-height)]'
+        )}>
+            <AnnouncementBar />
+        </div>
     </div>
   );
 }

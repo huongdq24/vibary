@@ -337,21 +337,19 @@ function HotNews() {
             const image = PlaceHolderImages.find((p) => p.id === article.imageId);
             return (
               <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col">
-                {image && (
-                  <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
-                    <Image
-                      src={image.imageUrl}
-                      alt={article.title}
-                      width={600}
-                      height={450}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      data-ai-hint={image.imageHint}
-                    />
-                  </div>
-                )}
-                <div className="mt-4 flex-grow flex flex-col">
-                  <h3 className="font-headline text-xl group-hover:underline">{article.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground flex-grow">{article.excerpt}</p>
+                <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
+                  <Image
+                    src={image?.imageUrl || ''}
+                    alt={article.title}
+                    width={600}
+                    height={450}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={image?.imageHint || ''}
+                  />
+                </div>
+                <div className="mt-4 flex flex-grow flex-col">
+                    <h3 className="font-headline text-xl group-hover:underline flex-grow">{article.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{article.excerpt}</p>
                 </div>
               </Link>
             );
@@ -364,43 +362,11 @@ function HotNews() {
 
 
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [isSticky, setIsSticky] = useState(false);
-  // The header has a height of 80px (h-20)
-  const headerHeight = 80;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
-        if (heroBottom <= headerHeight) {
-          setIsSticky(true);
-        } else {
-          setIsSticky(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
 
   return (
     <>
-      <div ref={heroRef}>
-        <Hero />
-      </div>
-      <div
-        className={cn(
-          "transition-all duration-300",
-          isSticky ? "fixed top-20 z-40 w-full" : "relative"
-        )}
-      >
-        <AnnouncementBar />
-      </div>
+      <Hero />
+      <AnnouncementBar />
       <FeaturedProducts />
       <CategorySection />
       <NewArrivals />

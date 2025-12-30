@@ -35,9 +35,16 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
 
   // We hide the announcement bar on the homepage, cart, and checkout, and product detail pages
   // because they have custom logic for it.
-  const showAnnouncementBar = !['/', '/cart', '/checkout'].includes(pathname) && !/^\/products\/.+/.test(pathname);
+  const showAnnouncementBar = !['/', '/cart', '/checkout', '/products'].includes(pathname) && !/^\/products\/.+/.test(pathname);
 
   const footerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (footerRef.current) {
+        const height = footerRef.current.offsetHeight;
+        document.documentElement.style.setProperty('--footer-height', `${height}px`);
+    }
+  }, [pathname]);
 
   return (
      <AppProvider>

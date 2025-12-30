@@ -24,41 +24,15 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   const { products, addToCart } = useAppStore();
   const product = products.find((p) => p.slug === slug);
   const [quantity, setQuantity] = useState(1);
-  const [isBarSticky, setIsBarSticky] = useState(false);
-  const footerRef = useRef<HTMLDivElement>(null);
+  const [selectedSize, setSelectedSize] = useState<string | undefined>(
+    product?.sizes ? product.sizes[0].name : undefined
+  );
   
-  useEffect(() => {
-    const footerElement = document.querySelector('footer');
-    if (footerElement) {
-        (footerRef as React.MutableRefObject<HTMLDivElement>).current = footerElement;
-    }
-    
-    const handleScroll = () => {
-        const footer = footerRef.current;
-        if (footer) {
-            const footerTop = footer.getBoundingClientRect().top;
-            const viewportHeight = window.innerHeight;
-            // When the top of the footer is within the viewport, make the bar sticky.
-            if (footerTop <= viewportHeight) {
-                setIsBarSticky(true);
-            } else {
-                setIsBarSticky(false);
-            }
-        }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-
   if (!product) {
     notFound();
   }
 
-  const priceToShow = product.price;
+  const priceToShow = product.sizes?.find(s => s.name === selectedSize)?.price || product.price;
 
   const handleAddToCart = () => {
     addToCart({
@@ -68,6 +42,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
       imageId: product.imageIds[0],
       slug: product.slug,
       quantity: quantity,
+      size: selectedSize,
     });
     setQuantity(1); // Reset quantity after adding to cart
   };
@@ -78,6 +53,7 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
+    <AnnouncementBar />
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
@@ -103,6 +79,24 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
               <p className="text-sm uppercase tracking-widest text-muted-foreground">{collectionTitle}</p>
               <h1 className="font-headline text-6xl mt-2">{product.name}</h1>
               
+              {product.sizes && product.sizes.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="font-bold tracking-wider text-sm uppercase">Kích thước</h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {product.sizes.map((size) => (
+                      <Button
+                        key={size.name}
+                        variant={selectedSize === size.name ? 'default' : 'outline'}
+                        onClick={() => setSelectedSize(size.name)}
+                        className="rounded-full"
+                      >
+                        {size.name}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="mt-8 flex items-center gap-4">
                 <div className="flex items-center border rounded-md">
                   <Button variant="ghost" size="icon" className="h-11 w-11" onClick={() => setQuantity(q => Math.max(1, q - 1))}>
@@ -207,11 +201,6 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
              </Accordion>
           </div>
       </div>
-    </div>
-    <div className={cn("w-full transition-all duration-300", 
-        isBarSticky ? 'fixed top-20 z-40' : 'relative'
-    )}>
-        <AnnouncementBar />
     </div>
     </>
   );
