@@ -6,7 +6,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { useAppStore } from '@/hooks/use-app-store';
 import { notFound } from "next/navigation";
 import { Minus, Plus } from "lucide-react";
@@ -18,7 +18,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
-import { cn } from "@/lib/utils";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const { products, addToCart } = useAppStore();

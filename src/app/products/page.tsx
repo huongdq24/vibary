@@ -54,35 +54,47 @@ export default function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const [isBarSticky, setIsBarSticky] = useState(false);
-  const footerRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement | null>(null);
+  const [footerHeight, setFooterHeight] = useState(0);
 
   useEffect(() => {
+    // A bit of a workaround to get a stable reference to the footer
     const footerElement = document.querySelector('footer');
     if (footerElement) {
-        (footerRef as React.MutableRefObject<HTMLDivElement>).current = footerElement;
-    }
-    
-    const handleScroll = () => {
-        const footer = footerRef.current;
-        if (footer) {
-            const footerTop = footer.getBoundingClientRect().top;
-            // The announcement bar has a height of 40px, and the header has a height of 80px.
-            // We want it to become sticky when the footer is about to be covered by the bar at the bottom.
-            const stickyTriggerPoint = window.innerHeight - 40; 
-            
-            if (footerTop <= stickyTriggerPoint) {
-                setIsBarSticky(true);
-            } else {
-                setIsBarSticky(false);
+        footerRef.current = footerElement;
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                setFooterHeight(entry.contentRect.height);
             }
+        });
+        resizeObserver.observe(footerElement);
+        
+        return () => resizeObserver.unobserve(footerElement);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (footerRef.current) {
+        const announcementBarHeight = 40; // Height of the announcement bar
+        const scrollBottom = window.innerHeight + window.scrollY;
+        const pageHeight = document.body.offsetHeight;
+
+        // When the bottom of the viewport is about to hit the top of the footer,
+        // make the bar sticky.
+        if (scrollBottom >= pageHeight - footerHeight - announcementBarHeight) {
+            setIsBarSticky(false);
+        } else {
+            setIsBarSticky(true);
         }
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [footerHeight]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -177,11 +189,16 @@ export default function ProductsPage() {
           );
         })}
       </div>
-       <div className={cn("w-full transition-all duration-300 z-40", 
-            isBarSticky ? 'sticky top-[80px]' : 'fixed bottom-[var(--footer-height)]'
-        )}>
-            <AnnouncementBar />
-        </div>
+       <div style={{ paddingBottom: isBarSticky ? '0px' : `${footerHeight}px` }}>
+            <div className={cn(
+                "w-full transition-all duration-300 z-40", 
+                isBarSticky ? 'sticky top-[80px]' : 'fixed bottom-0'
+            )}
+             style={{ bottom: isBarSticky ? 'auto' : `${footerHeight}px` }}
+            >
+                <AnnouncementBar />
+            </div>
+       </div>
     </div>
   );
 }
