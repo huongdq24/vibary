@@ -34,15 +34,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
   const isProductPage = pathname.startsWith('/products');
   const isHomePage = pathname === '/';
 
-  const footerRef = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    if (footerRef.current) {
-        const height = footerRef.current.offsetHeight;
-        document.documentElement.style.setProperty('--footer-height', `${height}px`);
-    }
-  }, [pathname]);
-
   return (
      <AppProvider>
         <div className="relative flex min-h-dvh flex-col bg-background">
@@ -53,7 +44,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               </div>
             )}
             <main className={cn("flex-1", !isAdminPage && "flex-1")}>{children}</main>
-            {!isAdminPage && <Footer ref={footerRef}/>}
+            {!isAdminPage && <Footer />}
         </div>
         <Toaster />
     </AppProvider>

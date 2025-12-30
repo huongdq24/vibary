@@ -89,16 +89,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  .footer-container {
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  .footer-hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    pointer-events: none;
-  }
-  .footer-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
