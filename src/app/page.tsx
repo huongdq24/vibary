@@ -8,7 +8,7 @@ import { articles } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/product-card';
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Carousel,
@@ -19,8 +19,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { cn } from '@/lib/utils';
 import { useAppStore } from '@/hooks/use-app-store';
-import { Phone } from 'lucide-react';
-import { AnnouncementBar } from '@/components/layout/announcement-bar';
 
 
 const marqueeVariantsLR = {
@@ -239,7 +237,7 @@ function WorkshopSection() {
             <h2 className="mt-4 font-headline text-4xl md:text-5xl">
               Công việc mà chúng tôi yêu thích mỗi ngày
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground lg:mx-0 font-fraunces">
+            <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground font-fraunces">
               Ghé thăm Tiktok của VIBARY để xem những tư liệu chân thực
               nhất – về cách mà chúng tôi hoàn thiện một chiếc bánh thật tinh tế
               gửi trao tới bạn.
@@ -362,40 +360,9 @@ function HotNews() {
 
 
 export default function Home() {
-  const footerRef = React.useRef<HTMLDivElement | null>(null);
-  const [isBarSticky, setIsBarSticky] = useState(false);
-
-  useEffect(() => {
-    // We need to find the footer in the DOM to get its height
-    const footerElement = document.querySelector('footer');
-    if (footerElement) {
-        footerRef.current = footerElement;
-    }
-    
-    const handleScroll = () => {
-        if (!footerRef.current) return;
-        const announcementBarHeight = 40; // Approx height
-        const windowHeight = window.innerHeight;
-        const scrollPosition = window.scrollY;
-        const documentHeight = document.body.offsetHeight;
-        
-        // When the bottom of the viewport is at or below the top of the footer
-        // we should make the announcement bar sticky to the top.
-        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerRef.current.offsetHeight + announcementBarHeight;
-
-        setIsBarSticky(shouldBeSticky);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <>
       <Hero />
-      <AnnouncementBar />
       <FeaturedProducts />
       <CategorySection />
       <NewArrivals />

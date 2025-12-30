@@ -7,7 +7,6 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef } from "react";
 import { useAppStore } from "@/hooks/use-app-store";
-import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 const productCategories = [
     { 
@@ -53,38 +52,6 @@ export default function ProductsPage() {
   const { products } = useAppStore();
   const [activeCategory, setActiveCategory] = useState('banh-sinh-nhat');
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
-  const footerRef = useRef<HTMLDivElement | null>(null);
-  const [isBarSticky, setIsBarSticky] = useState(false);
-  const [footerHeight, setFooterHeight] = useState(0);
-
-  useEffect(() => {
-    const footerElement = document.querySelector('footer');
-    if (footerElement) {
-        footerRef.current = footerElement;
-        setFooterHeight(footerElement.offsetHeight);
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-        if (!footerRef.current) return;
-        
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.body.offsetHeight;
-
-        // Check if the bottom of the viewport is about to cover the footer
-        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerHeight;
-
-        setIsBarSticky(shouldBeSticky);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); 
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [footerHeight]);
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -179,26 +146,6 @@ export default function ProductsPage() {
           );
         })}
       </div>
-      
-       <div
-          className={cn(
-            "w-full transition-opacity duration-300 z-40",
-            isBarSticky
-              ? "sticky top-20 opacity-100"
-              : "fixed bottom-0 opacity-0 pointer-events-none"
-          )}
-        >
-          <AnnouncementBar />
-        </div>
-        <div
-          className={cn(
-            "w-full transition-opacity duration-300 z-20",
-            isBarSticky ? "opacity-0" : "opacity-100"
-          )}
-        >
-          <div className="h-10" />
-          <AnnouncementBar />
-        </div>
     </div>
   );
 }

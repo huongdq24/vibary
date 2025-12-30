@@ -17,7 +17,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { AnnouncementBar } from "@/components/layout/announcement-bar";
 
 export default function ProductDetailClient({ slug }: { slug: string }) {
   const { products, addToCart } = useAppStore();
@@ -52,7 +51,6 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
 
   return (
     <>
-    <AnnouncementBar />
     <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
         <div className="flex flex-col gap-4">
