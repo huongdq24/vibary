@@ -381,23 +381,21 @@ function HotNews() {
             const image = PlaceHolderImages.find((p) => p.id === article.imageId);
             return (
               <Link href={`/news/${article.slug}`} key={article.id} className="group flex flex-col">
-                <div className="flex-grow flex flex-col">
-                  {image && (
-                    <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
-                      <Image
-                        src={image.imageUrl}
-                        alt={article.title}
-                        width={600}
-                        height={450}
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={image.imageHint}
-                      />
-                    </div>
-                  )}
-                  <div className="mt-4 flex-grow flex flex-col">
-                    <h3 className="font-headline text-xl group-hover:underline">{article.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground flex-grow">{article.excerpt}</p>
+                {image && (
+                  <div className="w-full overflow-hidden rounded-lg aspect-[4/3]">
+                    <Image
+                      src={image.imageUrl}
+                      alt={article.title}
+                      width={600}
+                      height={450}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      data-ai-hint={image.imageHint}
+                    />
                   </div>
+                )}
+                <div className="mt-4 flex-grow flex flex-col">
+                  <h3 className="font-headline text-xl group-hover:underline">{article.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground flex-grow">{article.excerpt}</p>
                 </div>
               </Link>
             );
