@@ -55,43 +55,33 @@ export default function ProductsPage() {
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
   const [isBarSticky, setIsBarSticky] = useState(false);
   const footerRef = useRef<HTMLDivElement | null>(null);
-  const [footerHeight, setFooterHeight] = useState(0);
 
   useEffect(() => {
+    // We need to find the footer in the DOM to get its height
     const footerElement = document.querySelector('footer');
     if (footerElement) {
         footerRef.current = footerElement;
-        const resizeObserver = new ResizeObserver(entries => {
-            for (let entry of entries) {
-                setFooterHeight(entry.contentRect.height);
-            }
-        });
-        resizeObserver.observe(footerElement);
-        
-        return () => resizeObserver.unobserve(footerElement);
     }
-  }, []);
-
-  useEffect(() => {
+    
     const handleScroll = () => {
-      if (!footerRef.current) return;
+        if (!footerRef.current) return;
+        const announcementBarHeight = 40; // Approx height
+        const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.body.offsetHeight;
+        
+        // When the bottom of the viewport is at or below the top of the footer
+        // we should make the announcement bar sticky to the top.
+        const shouldBeSticky = scrollPosition + windowHeight >= documentHeight - footerRef.current.offsetHeight + announcementBarHeight;
 
-      const announcementBarHeight = 40; // Approx height of the announcement bar
-      const headerHeight = 80;
-      const scrollPosition = window.scrollY;
-      const pageBottom = document.body.offsetHeight - window.innerHeight;
-
-      // Check if the scroll position is high enough to not overlap the footer
-      const shouldBeSticky = pageBottom - scrollPosition > footerHeight;
-      
-      setIsBarSticky(shouldBeSticky);
+        setIsBarSticky(shouldBeSticky);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [footerHeight]);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -187,20 +177,20 @@ export default function ProductsPage() {
         })}
       </div>
       
-      {/* Wrapper for Announcement Bar */}
-       <div className="h-10" /> 
        <div
           className={cn(
-            "w-full transition-all duration-300 z-40",
-            isBarSticky
-              ? "sticky top-20"
-              : "fixed bottom-0 opacity-0 pointer-events-none"
+            "w-full transition-opacity duration-300 z-40",
+            isBarSticky ? "sticky top-20 opacity-100" : "fixed bottom-0 opacity-0 pointer-events-none"
           )}
-          style={{
-             bottom: isBarSticky ? 'auto' : `${footerHeight}px`
-          }}
         >
           <AnnouncementBar />
+        </div>
+        <div className={cn(
+            "w-full transition-opacity duration-300 z-20",
+             isBarSticky ? "opacity-0" : "opacity-100"
+        )}>
+            <div className="h-10" />
+            <AnnouncementBar />
         </div>
     </div>
   );
